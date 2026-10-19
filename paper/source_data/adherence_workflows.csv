@@ -1,0 +1,4 @@
+workflow,decisions,calls_per_decision,strict_goal_pct,hard_pass_pct,critical_violation_pct,end_to_end_strong_pass_pct,input_tokens_mean,output_tokens_mean
+SP,160,1,67.5,76.9,23.1,75.0,1263,60
+SC,160,2,81.9,85.6,14.4,83.8,2637,126
+MAS,160,3,86.9,93.1,6.9,89.4,3743,258

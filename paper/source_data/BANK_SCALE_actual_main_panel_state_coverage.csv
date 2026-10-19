@@ -1,0 +1,4 @@
+group,bank_frequency_threshold_among_known,full_bank_states,full_bank_records,actual_main_panel_observed_states,actual_main_panel_missing_states,actual_main_panel_state_coverage,actual_main_panel_records_in_group,actual_main_panel_record_share_among_known,actual_main_panel_record_share_all,actual_main_panel_known_records,actual_main_panel_total_records
+all_nonempty_known_states,,1026,9499649,983,43,0.9580896686159844,1899789,1.0,0.9498945,1899789,2000000
+frequency_le_1e-4,0.0001,574,122655,531,43,0.9250871080139372,24812,0.013060397759961765,0.012406,1899789,2000000
+frequency_le_1e-5,1e-05,271,8160,228,43,0.8413284132841329,1708,0.0008990472099796346,0.000854,1899789,2000000

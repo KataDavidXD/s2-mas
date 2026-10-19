@@ -1,0 +1,39 @@
+qid,label_zh,label_en,kind
+Q148,中华人民共和国,People's Republic of China,country
+Q956,北京市,Beijing,province_level_region
+Q8646,香港,Hong Kong,province_level_region
+Q8686,上海市,Shanghai,province_level_region
+Q11725,重庆市,Chongqing,province_level_region
+Q11736,天津市,Tianjin,province_level_region
+Q14773,澳门,Macau,province_level_region
+Q15175,广东省,Guangdong,province_level_region
+Q15176,广西壮族自治区,Guangxi,province_level_region
+Q16963,江苏省,Jiangsu,province_level_region
+Q16967,浙江省,Zhejiang,province_level_region
+Q17269,西藏自治区,Tibet Autonomous Region,province_level_region
+Q19206,黑龙江省,Heilongjiang,province_level_region
+Q19770,四川省,Sichuan,province_level_region
+Q21208,河北省,Hebei,province_level_region
+Q34800,新疆维吾尔自治区,Xinjiang,province_level_region
+Q40956,安徽省,Anhui,province_level_region
+Q41079,内蒙古自治区,Inner Mongolia,province_level_region
+Q41705,福建省,Fujian,province_level_region
+Q42200,海南省,Hainan,province_level_region
+Q42392,甘肃省,Gansu,province_level_region
+Q43194,云南省,Yunnan,province_level_region
+Q43407,山东省,Shandong,province_level_region
+Q43684,河南省,Henan,province_level_region
+Q43934,辽宁省,Liaoning,province_level_region
+Q45208,吉林省,Jilin,province_level_region
+Q45761,湖南省,Hunan,province_level_region
+Q45833,青海省,Qinghai,province_level_region
+Q46862,湖北省,Hubei,province_level_region
+Q46913,山西省,Shanxi,province_level_region
+Q47097,贵州省,Guizhou,province_level_region
+Q47974,陕西省,Shaanxi,province_level_region
+Q57052,江西省,Jiangxi,province_level_region
+Q57448,宁夏回族自治区,Ningxia,province_level_region
+Q57362,自治区,autonomous region of China,region_class
+Q779415,特别行政区,special administrative region of China,region_class
+Q1208802,直辖市,direct-administered municipality,region_class
+Q1615742,省,province of China,region_class

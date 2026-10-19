@@ -1,0 +1,580 @@
+{
+  "version": "cc0-china-knowledge-v1",
+  "label": "Wikidata中国相关行政知识词表（CC0，非人口分布）",
+  "license": "CC0-1.0",
+  "entities": [
+    {
+      "qid": "Q148",
+      "label_zh": "中华人民共和国",
+      "label_en": "People's Republic of China",
+      "kind": "country"
+    },
+    {
+      "qid": "Q956",
+      "label_zh": "北京市",
+      "label_en": "Beijing",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q8646",
+      "label_zh": "香港",
+      "label_en": "Hong Kong",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q8686",
+      "label_zh": "上海市",
+      "label_en": "Shanghai",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q11725",
+      "label_zh": "重庆市",
+      "label_en": "Chongqing",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q11736",
+      "label_zh": "天津市",
+      "label_en": "Tianjin",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q14773",
+      "label_zh": "澳门",
+      "label_en": "Macau",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q15175",
+      "label_zh": "广东省",
+      "label_en": "Guangdong",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q15176",
+      "label_zh": "广西壮族自治区",
+      "label_en": "Guangxi",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q16963",
+      "label_zh": "江苏省",
+      "label_en": "Jiangsu",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q16967",
+      "label_zh": "浙江省",
+      "label_en": "Zhejiang",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q17269",
+      "label_zh": "西藏自治区",
+      "label_en": "Tibet Autonomous Region",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q19206",
+      "label_zh": "黑龙江省",
+      "label_en": "Heilongjiang",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q19770",
+      "label_zh": "四川省",
+      "label_en": "Sichuan",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q21208",
+      "label_zh": "河北省",
+      "label_en": "Hebei",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q34800",
+      "label_zh": "新疆维吾尔自治区",
+      "label_en": "Xinjiang",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q40956",
+      "label_zh": "安徽省",
+      "label_en": "Anhui",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q41079",
+      "label_zh": "内蒙古自治区",
+      "label_en": "Inner Mongolia",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q41705",
+      "label_zh": "福建省",
+      "label_en": "Fujian",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q42200",
+      "label_zh": "海南省",
+      "label_en": "Hainan",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q42392",
+      "label_zh": "甘肃省",
+      "label_en": "Gansu",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q43194",
+      "label_zh": "云南省",
+      "label_en": "Yunnan",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q43407",
+      "label_zh": "山东省",
+      "label_en": "Shandong",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q43684",
+      "label_zh": "河南省",
+      "label_en": "Henan",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q43934",
+      "label_zh": "辽宁省",
+      "label_en": "Liaoning",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q45208",
+      "label_zh": "吉林省",
+      "label_en": "Jilin",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q45761",
+      "label_zh": "湖南省",
+      "label_en": "Hunan",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q45833",
+      "label_zh": "青海省",
+      "label_en": "Qinghai",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q46862",
+      "label_zh": "湖北省",
+      "label_en": "Hubei",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q46913",
+      "label_zh": "山西省",
+      "label_en": "Shanxi",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q47097",
+      "label_zh": "贵州省",
+      "label_en": "Guizhou",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q47974",
+      "label_zh": "陕西省",
+      "label_en": "Shaanxi",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q57052",
+      "label_zh": "江西省",
+      "label_en": "Jiangxi",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q57448",
+      "label_zh": "宁夏回族自治区",
+      "label_en": "Ningxia",
+      "kind": "province_level_region"
+    },
+    {
+      "qid": "Q57362",
+      "label_zh": "自治区",
+      "label_en": "autonomous region of China",
+      "kind": "region_class"
+    },
+    {
+      "qid": "Q779415",
+      "label_zh": "特别行政区",
+      "label_en": "special administrative region of China",
+      "kind": "region_class"
+    },
+    {
+      "qid": "Q1208802",
+      "label_zh": "直辖市",
+      "label_en": "direct-administered municipality",
+      "kind": "region_class"
+    },
+    {
+      "qid": "Q1615742",
+      "label_zh": "省",
+      "label_en": "province of China",
+      "kind": "region_class"
+    }
+  ],
+  "relations": [
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q956"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q8646"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q8686"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q11725"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q11736"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q14773"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q15175"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q15176"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q16963"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q16967"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q17269"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q19206"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q19770"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q21208"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q34800"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q40956"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q41079"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q41705"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q42200"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q42392"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q43194"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q43407"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q43684"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q43934"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q45208"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q45761"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q45833"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q46862"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q46913"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q47097"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q47974"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q57052"
+    },
+    {
+      "subject_qid": "Q148",
+      "property_qid": "P150",
+      "object_qid": "Q57448"
+    },
+    {
+      "subject_qid": "Q956",
+      "property_qid": "P31",
+      "object_qid": "Q1208802"
+    },
+    {
+      "subject_qid": "Q8646",
+      "property_qid": "P31",
+      "object_qid": "Q779415"
+    },
+    {
+      "subject_qid": "Q8686",
+      "property_qid": "P31",
+      "object_qid": "Q1208802"
+    },
+    {
+      "subject_qid": "Q11725",
+      "property_qid": "P31",
+      "object_qid": "Q1208802"
+    },
+    {
+      "subject_qid": "Q11736",
+      "property_qid": "P31",
+      "object_qid": "Q1208802"
+    },
+    {
+      "subject_qid": "Q14773",
+      "property_qid": "P31",
+      "object_qid": "Q779415"
+    },
+    {
+      "subject_qid": "Q15175",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q15176",
+      "property_qid": "P31",
+      "object_qid": "Q57362"
+    },
+    {
+      "subject_qid": "Q16963",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q16967",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q17269",
+      "property_qid": "P31",
+      "object_qid": "Q57362"
+    },
+    {
+      "subject_qid": "Q19206",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q19770",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q21208",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q34800",
+      "property_qid": "P31",
+      "object_qid": "Q57362"
+    },
+    {
+      "subject_qid": "Q40956",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q41079",
+      "property_qid": "P31",
+      "object_qid": "Q57362"
+    },
+    {
+      "subject_qid": "Q41705",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q42200",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q42392",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q43194",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q43407",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q43684",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q43934",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q45208",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q45761",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q45833",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q46862",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q46913",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q47097",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q47974",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q57052",
+      "property_qid": "P31",
+      "object_qid": "Q1615742"
+    },
+    {
+      "subject_qid": "Q57448",
+      "property_qid": "P31",
+      "object_qid": "Q57362"
+    }
+  ],
+  "properties": [
+    {
+      "property_qid": "P150",
+      "label_zh": "下辖行政领土实体",
+      "label_en": "contains the administrative territorial entity"
+    },
+    {
+      "property_qid": "P31",
+      "label_zh": "隶属于",
+      "label_en": "instance of"
+    }
+  ],
+  "usage_note": "结构化词表与归属/类型知识。实体与关系频次不是人口、家庭或职业权重；不含消费者选择标签。"
+}

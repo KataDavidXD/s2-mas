@@ -1,0 +1,430 @@
+{
+  "construction_version": "s2mas-independent-persona-v1-20261019",
+  "state": "complete_local_construction",
+  "generated_at_utc": "2026-10-18T20:30:11.534794+00:00",
+  "seed": 2026101919,
+  "independent_synthetic_households": 2000000,
+  "persona_top_level_fields": 14,
+  "household_id_pattern": "new-persona-{zero_based_index:09d}",
+  "shards": [
+    {
+      "file": "data/personas/personas-00000.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000000000",
+      "last_id": "new-persona-000049999",
+      "uncompressed_bytes": 51211004,
+      "compressed_bytes": 4155999
+    },
+    {
+      "file": "data/personas/personas-00001.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000050000",
+      "last_id": "new-persona-000099999",
+      "uncompressed_bytes": 51206476,
+      "compressed_bytes": 4156507
+    },
+    {
+      "file": "data/personas/personas-00002.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000100000",
+      "last_id": "new-persona-000149999",
+      "uncompressed_bytes": 51210140,
+      "compressed_bytes": 4156527
+    },
+    {
+      "file": "data/personas/personas-00003.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000150000",
+      "last_id": "new-persona-000199999",
+      "uncompressed_bytes": 51211473,
+      "compressed_bytes": 4157184
+    },
+    {
+      "file": "data/personas/personas-00004.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000200000",
+      "last_id": "new-persona-000249999",
+      "uncompressed_bytes": 51207746,
+      "compressed_bytes": 4156347
+    },
+    {
+      "file": "data/personas/personas-00005.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000250000",
+      "last_id": "new-persona-000299999",
+      "uncompressed_bytes": 51207418,
+      "compressed_bytes": 4155395
+    },
+    {
+      "file": "data/personas/personas-00006.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000300000",
+      "last_id": "new-persona-000349999",
+      "uncompressed_bytes": 51211321,
+      "compressed_bytes": 4158350
+    },
+    {
+      "file": "data/personas/personas-00007.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000350000",
+      "last_id": "new-persona-000399999",
+      "uncompressed_bytes": 51209788,
+      "compressed_bytes": 4158929
+    },
+    {
+      "file": "data/personas/personas-00008.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000400000",
+      "last_id": "new-persona-000449999",
+      "uncompressed_bytes": 51207868,
+      "compressed_bytes": 4154189
+    },
+    {
+      "file": "data/personas/personas-00009.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000450000",
+      "last_id": "new-persona-000499999",
+      "uncompressed_bytes": 51209550,
+      "compressed_bytes": 4156507
+    },
+    {
+      "file": "data/personas/personas-00010.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000500000",
+      "last_id": "new-persona-000549999",
+      "uncompressed_bytes": 51208836,
+      "compressed_bytes": 4157831
+    },
+    {
+      "file": "data/personas/personas-00011.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000550000",
+      "last_id": "new-persona-000599999",
+      "uncompressed_bytes": 51207153,
+      "compressed_bytes": 4155248
+    },
+    {
+      "file": "data/personas/personas-00012.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000600000",
+      "last_id": "new-persona-000649999",
+      "uncompressed_bytes": 51210890,
+      "compressed_bytes": 4161111
+    },
+    {
+      "file": "data/personas/personas-00013.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000650000",
+      "last_id": "new-persona-000699999",
+      "uncompressed_bytes": 51210080,
+      "compressed_bytes": 4155932
+    },
+    {
+      "file": "data/personas/personas-00014.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000700000",
+      "last_id": "new-persona-000749999",
+      "uncompressed_bytes": 51209682,
+      "compressed_bytes": 4156782
+    },
+    {
+      "file": "data/personas/personas-00015.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000750000",
+      "last_id": "new-persona-000799999",
+      "uncompressed_bytes": 51208414,
+      "compressed_bytes": 4157441
+    },
+    {
+      "file": "data/personas/personas-00016.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000800000",
+      "last_id": "new-persona-000849999",
+      "uncompressed_bytes": 51210635,
+      "compressed_bytes": 4157550
+    },
+    {
+      "file": "data/personas/personas-00017.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000850000",
+      "last_id": "new-persona-000899999",
+      "uncompressed_bytes": 51209449,
+      "compressed_bytes": 4160101
+    },
+    {
+      "file": "data/personas/personas-00018.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000900000",
+      "last_id": "new-persona-000949999",
+      "uncompressed_bytes": 51207997,
+      "compressed_bytes": 4158902
+    },
+    {
+      "file": "data/personas/personas-00019.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-000950000",
+      "last_id": "new-persona-000999999",
+      "uncompressed_bytes": 51209657,
+      "compressed_bytes": 4155392
+    },
+    {
+      "file": "data/personas/personas-00020.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001000000",
+      "last_id": "new-persona-001049999",
+      "uncompressed_bytes": 51209033,
+      "compressed_bytes": 4154293
+    },
+    {
+      "file": "data/personas/personas-00021.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001050000",
+      "last_id": "new-persona-001099999",
+      "uncompressed_bytes": 51209646,
+      "compressed_bytes": 4158009
+    },
+    {
+      "file": "data/personas/personas-00022.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001100000",
+      "last_id": "new-persona-001149999",
+      "uncompressed_bytes": 51208590,
+      "compressed_bytes": 4156095
+    },
+    {
+      "file": "data/personas/personas-00023.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001150000",
+      "last_id": "new-persona-001199999",
+      "uncompressed_bytes": 51210212,
+      "compressed_bytes": 4155143
+    },
+    {
+      "file": "data/personas/personas-00024.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001200000",
+      "last_id": "new-persona-001249999",
+      "uncompressed_bytes": 51209671,
+      "compressed_bytes": 4156553
+    },
+    {
+      "file": "data/personas/personas-00025.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001250000",
+      "last_id": "new-persona-001299999",
+      "uncompressed_bytes": 51209507,
+      "compressed_bytes": 4157303
+    },
+    {
+      "file": "data/personas/personas-00026.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001300000",
+      "last_id": "new-persona-001349999",
+      "uncompressed_bytes": 51207369,
+      "compressed_bytes": 4155892
+    },
+    {
+      "file": "data/personas/personas-00027.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001350000",
+      "last_id": "new-persona-001399999",
+      "uncompressed_bytes": 51208596,
+      "compressed_bytes": 4156103
+    },
+    {
+      "file": "data/personas/personas-00028.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001400000",
+      "last_id": "new-persona-001449999",
+      "uncompressed_bytes": 51208580,
+      "compressed_bytes": 4154504
+    },
+    {
+      "file": "data/personas/personas-00029.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001450000",
+      "last_id": "new-persona-001499999",
+      "uncompressed_bytes": 51207165,
+      "compressed_bytes": 4154827
+    },
+    {
+      "file": "data/personas/personas-00030.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001500000",
+      "last_id": "new-persona-001549999",
+      "uncompressed_bytes": 51210930,
+      "compressed_bytes": 4155144
+    },
+    {
+      "file": "data/personas/personas-00031.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001550000",
+      "last_id": "new-persona-001599999",
+      "uncompressed_bytes": 51210136,
+      "compressed_bytes": 4158772
+    },
+    {
+      "file": "data/personas/personas-00032.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001600000",
+      "last_id": "new-persona-001649999",
+      "uncompressed_bytes": 51209075,
+      "compressed_bytes": 4157899
+    },
+    {
+      "file": "data/personas/personas-00033.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001650000",
+      "last_id": "new-persona-001699999",
+      "uncompressed_bytes": 51209205,
+      "compressed_bytes": 4156320
+    },
+    {
+      "file": "data/personas/personas-00034.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001700000",
+      "last_id": "new-persona-001749999",
+      "uncompressed_bytes": 51208836,
+      "compressed_bytes": 4155775
+    },
+    {
+      "file": "data/personas/personas-00035.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001750000",
+      "last_id": "new-persona-001799999",
+      "uncompressed_bytes": 51207720,
+      "compressed_bytes": 4156033
+    },
+    {
+      "file": "data/personas/personas-00036.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001800000",
+      "last_id": "new-persona-001849999",
+      "uncompressed_bytes": 51209712,
+      "compressed_bytes": 4157054
+    },
+    {
+      "file": "data/personas/personas-00037.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001850000",
+      "last_id": "new-persona-001899999",
+      "uncompressed_bytes": 51210229,
+      "compressed_bytes": 4155118
+    },
+    {
+      "file": "data/personas/personas-00038.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001900000",
+      "last_id": "new-persona-001949999",
+      "uncompressed_bytes": 51209405,
+      "compressed_bytes": 4154450
+    },
+    {
+      "file": "data/personas/personas-00039.jsonl.gz",
+      "rows": 50000,
+      "first_id": "new-persona-001950000",
+      "last_id": "new-persona-001999999",
+      "uncompressed_bytes": 51209571,
+      "compressed_bytes": 4155489
+    }
+  ],
+  "persona_uncompressed_bytes": 2048368765,
+  "persona_compressed_bytes": 166263000,
+  "scenario_inputs": {
+    "file": "scenario_inputs.jsonl.gz",
+    "requests": 32000,
+    "household_task_pairs": 16000,
+    "households": 2000,
+    "uncompressed_bytes": 117381629,
+    "compressed_bytes": 11300790,
+    "model_answers": 0,
+    "monthly_ledger_results": 0
+  },
+  "small_example_subset": {
+    "file": "scenario_inputs_first20.jsonl.gz",
+    "requests": 320,
+    "household_task_pairs": 160,
+    "households": 20,
+    "uncompressed_bytes": 1172809,
+    "compressed_bytes": 113588,
+    "model_answers": 0,
+    "monthly_ledger_results": 0
+  },
+  "small_example_is_subset_of_formal_scenario_inputs": true,
+  "scenario_families": 8,
+  "conditions_per_household_task": 2,
+  "knowledge_entities": 38,
+  "knowledge_relations": 66,
+  "knowledge_assigned_region_concepts": 33,
+  "published_aggregate_input": {
+    "source": "real-survey aggregate reference",
+    "population_unit": "resident per-capita annual CNY",
+    "income_cny": 41314,
+    "consumption_cny": 28227,
+    "role": "Expectation scales only; no source household record input"
+  },
+  "authored_rng_parameters": {
+    "base_income_shape_cny": [
+      1000,
+      30000
+    ],
+    "base_expected_income_cny": 15500,
+    "base_essential_fraction": [
+      0.3,
+      1.1
+    ],
+    "base_adjustable_fraction": [
+      0.0,
+      0.4
+    ],
+    "spending_fraction_normalizer": 0.9,
+    "household_size_uniform_inclusive": [
+      1,
+      5
+    ],
+    "cash_income_months_inclusive": [
+      0,
+      6
+    ],
+    "asset_income_months_inclusive": [
+      0,
+      12
+    ],
+    "debt_income_months_inclusive": [
+      0,
+      24
+    ],
+    "annual_bps_choices": [
+      400,
+      800,
+      1200
+    ],
+    "contract_month_choices": [
+      12,
+      24,
+      36
+    ],
+    "independent_financial_rng_block_rows": 10000,
+    "knowledge_assignment": "Cycle actual 33 region concepts; not population probabilities"
+  },
+  "actual_constructed_annual_per_capita_cny": {
+    "mean_of_household_per_capita_income": 41324.716261434805,
+    "mean_of_household_per_capita_consumption": 28239.434357348582,
+    "assigned_person_weighted_income": 41317.970337962106,
+    "assigned_person_weighted_consumption": 28232.673230596905
+  },
+  "budget_coverage": {
+    "baseline_spending_exceeds_income_households": 103936,
+    "baseline_spending_and_dues_exceeds_income_households": 1403895
+  },
+  "elapsed_construction_seconds": 34.05673570000363,
+  "model_calls": 0,
+  "model_answers": 0,
+  "monthly_ledger_executions": 0,
+  "licenses": {
+    "new_persona_and_instantiated_inputs": "S2-MAS new synthetic research data v1",
+    "wikidata": "CC0-1.0",
+    "authored_designs_v1": "CC-BY-4.0",
+    "python": "Apache-2.0"
+  }
+}

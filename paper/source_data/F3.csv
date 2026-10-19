@@ -1,0 +1,6 @@
+model_family,model_version,base_or_trained,training_stage,backend,test_language,test_scope,qa_n,question_versions,accuracy_pct,question_macro_f1_pct
+English,original-base,base,Upstream,PyTorch BF16,en,earlier training corpus shared,240458,119,60.2080,29.5574
+English,rlcd-1,trained,3-round SFT/RLCD,PyTorch BF16,en,earlier training corpus shared,240458,119,74.5336,38.0164
+English,rlcd-2,trained,6-round SFT/RLCD,PyTorch BF16,en,earlier training corpus shared,240458,119,74.5586,38.3986
+Multilingual,multilingual-base,base,Upstream,PyTorch BF16,zh,earlier training corpus shared,240458,119,52.9140,27.3944
+Multilingual,rlcd-1,trained,3-round SFT/RLCD,PyTorch BF16,zh,earlier training corpus shared,240458,119,74.5195,37.9914

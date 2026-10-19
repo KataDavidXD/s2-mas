@@ -1,0 +1,8 @@
+step,input,operation,output,evidence_type
+Profile representation,Annual income / consumption brackets,Preserve field-specific bounds,"Annual-flow interval, CNY/year",Coded category
+Profile representation,Assets / debt brackets,Preserve field-specific bounds,"Balance-stock interval, CNY",Coded category
+Controlled amount assignment,Closed / open intervals,Midpoint / 1.25 x lower bound,Representative amount in CNY,Scenario assignment
+Monthly environment,Assigned annual income / consumption,Divide by 12,CNY/household/month,Scenario transformation
+Liquidity environment,Assigned financial assets,39.1% liquidity proxy,Initial cash in CNY,Scenario assignment
+Missing inputs,Unknown amount,Use explicit reference parameters,Assigned amount; original unknown retained,Scenario assignment
+Ledger arithmetic,Scenario amounts,Integer cents,Reported aggregate CNY,Accounting representation

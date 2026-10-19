@@ -1,0 +1,16 @@
+dimension,comparison,within_one_pct,persona_n,human_raters,ai_comparison_n,ai_ai_exact_pct
+M1,Human–human,87.3,100,6,,
+M2,Human–human,76.6,100,6,,
+M3,Human–human,100.0,100,6,,
+M4,Human–human,91.1,100,6,,
+M5,Human–human,78.9,100,6,,
+M1,DeepSeek–human mean,100.0,100,6,100,99
+M2,DeepSeek–human mean,92.0,100,6,100,99
+M3,DeepSeek–human mean,100.0,100,6,100,100
+M4,DeepSeek–human mean,91.0,100,6,100,100
+M5,DeepSeek–human mean,87.0,100,6,100,100
+M1,GLM–human mean,100.0,100,6,100,99
+M2,GLM–human mean,92.0,100,6,100,99
+M3,GLM–human mean,100.0,100,6,100,100
+M4,GLM–human mean,91.0,100,6,100,100
+M5,GLM–human mean,87.0,100,6,100,100

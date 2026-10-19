@@ -1,0 +1,4 @@
+metric,value,range_min,range_max,unit,scope
+population_pc1_explained_variance,0.3262,0.326,0.3264,fraction,50 shards
+complete_cases_per_population_shard_approx,4626000,,,rows,approximately per shard
+maximum_loading_sd,0.0003,,,loading,upper bound across the 50 shard loading vectors

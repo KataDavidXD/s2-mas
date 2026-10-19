@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-11",
+  "language": "Chinese",
+  "financial_model": "Bilingual Fin-Laya, multilingual-base financial adaptation",
+  "original_base": "mmBERT-based multilingual Laya",
+  "requested_api": "jev-latest",
+  "returned_api": "jev-1.13.0",
+  "local_hardware": "one NVIDIA A100 PCIe 40GB",
+  "local_precision": "FP16",
+  "batch_size": 1,
+  "concurrency": 1,
+  "cases": [
+    "DEMO-T1-INCOME-25",
+    "DEMO-T7-PLAN",
+    "DEMO-T4-PRODUCT"
+  ],
+  "warmups_per_case": 3,
+  "timed_calls_per_case": 20,
+  "shared_tokenizer": "jhu-clsp/mmBERT-base tokenizer used by the multilingual Laya base",
+  "token_count": "compact sorted JSON request; no special tokens; counted outside timed interval",
+  "timed_operations": "input preparation, tokenization, synchronized prediction and response formatting; API includes HTTPS round trip and service response",
+  "loading": "excluded",
+  "local_prompt_cache": false,
+  "provider_prompt_cache": "not controlled",
+  "rate_definition": "sum of shared input tokens divided by sum of measured elapsed seconds",
+  "decision_rate_definition": "number of measured calls divided by sum of measured elapsed seconds"
+}

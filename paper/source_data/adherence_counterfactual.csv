@@ -1,0 +1,3 @@
+workflow,decisions,pairs,calls_per_decision,choice_change_pct,both_goals_pct,single_strict_goal_pct,single_hard_pass_pct
+SC,320,160,2,77.5,58.1,79.1,100.0
+MAS,320,160,3,96.2,66.2,81.9,98.8

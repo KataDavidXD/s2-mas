@@ -1,0 +1,5 @@
+experiment,metric,comparison,difference_pp,ci_low_pp,ci_high_pp,cluster_personas,bootstrap_repetitions
+workflow,strict_goal,MAS - SP,19.4,13.1,25.0,20,10000
+workflow,strict_goal,MAS - SC,5.0,-1.9,11.9,20,10000
+counterfactual,choice_change,MAS - SC,18.8,15.0,22.5,20,10000
+counterfactual,both_goals,MAS - SC,8.1,1.2,15.0,20,10000

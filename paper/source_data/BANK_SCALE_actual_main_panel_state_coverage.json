@@ -1,0 +1,60 @@
+{
+  "version": "actual-main-panel-financial-state-coverage-20261014",
+  "panel": "Completed two-million-household main panel.",
+  "fields": [
+    "income.household_income_bracket",
+    "consumption.total",
+    "extended.financial_asset_bracket",
+    "extended.debt_amount_bracket"
+  ],
+  "main_panel_records": 2000000,
+  "main_panel_financial_state_known_records": 1899789,
+  "parent_bank_records": 10000000,
+  "parent_bank_financial_state_known_records": 9499649,
+  "frequency_denominator": "Four-field-known records in the complete 10M parent bank.",
+  "coverage_measure": "Number of full-bank nonempty known financial states represented by at least one actual main-panel record.",
+  "groups": [
+    {
+      "group": "all_nonempty_known_states",
+      "bank_frequency_threshold_among_known": null,
+      "full_bank_states": 1026,
+      "full_bank_records": 9499649,
+      "actual_main_panel_observed_states": 983,
+      "actual_main_panel_missing_states": 43,
+      "actual_main_panel_state_coverage": 0.9580896686159844,
+      "actual_main_panel_records_in_group": 1899789,
+      "actual_main_panel_record_share_among_known": 1.0,
+      "actual_main_panel_record_share_all": 0.9498945,
+      "actual_main_panel_known_records": 1899789,
+      "actual_main_panel_total_records": 2000000
+    },
+    {
+      "group": "frequency_le_1e-4",
+      "bank_frequency_threshold_among_known": 0.0001,
+      "full_bank_states": 574,
+      "full_bank_records": 122655,
+      "actual_main_panel_observed_states": 531,
+      "actual_main_panel_missing_states": 43,
+      "actual_main_panel_state_coverage": 0.9250871080139372,
+      "actual_main_panel_records_in_group": 24812,
+      "actual_main_panel_record_share_among_known": 0.013060397759961765,
+      "actual_main_panel_record_share_all": 0.012406,
+      "actual_main_panel_known_records": 1899789,
+      "actual_main_panel_total_records": 2000000
+    },
+    {
+      "group": "frequency_le_1e-5",
+      "bank_frequency_threshold_among_known": 1e-05,
+      "full_bank_states": 271,
+      "full_bank_records": 8160,
+      "actual_main_panel_observed_states": 228,
+      "actual_main_panel_missing_states": 43,
+      "actual_main_panel_state_coverage": 0.8413284132841329,
+      "actual_main_panel_records_in_group": 1708,
+      "actual_main_panel_record_share_among_known": 0.0008990472099796346,
+      "actual_main_panel_record_share_all": 0.000854,
+      "actual_main_panel_known_records": 1899789,
+      "actual_main_panel_total_records": 2000000
+    }
+  ]
+}

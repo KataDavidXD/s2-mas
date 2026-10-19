@@ -1,0 +1,15 @@
+field,label,population_mean_pc1_loading,population_shards
+household_size,Household size,0.027,50
+age,Age,-0.158,50
+education,Education,0.207,50
+household_income,Household income,0.345,50
+total_expenditure,Total expenditure,0.43,50
+food_expenditure,Food,0.343,50
+clothing_expenditure,Clothing,0.299,50
+housing_expenditure,Housing,0.3,50
+transport_communication,Transport / communication,0.317,50
+education_expenditure,Education expenditure,0.186,50
+medical_expenditure,Medical care,0.183,50
+other_expenditure,Other expenditure,0.337,50
+financial_assets,Financial assets,0.167,50
+debt_amount,Debt amount,0.144,50

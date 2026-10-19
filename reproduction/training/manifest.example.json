@@ -1,0 +1,20 @@
+[
+  {
+    "language": "en",
+    "split": "train",
+    "path": "native/en/train.jsonl.gz",
+    "records": 2925263
+  },
+  {
+    "language": "en",
+    "split": "dev",
+    "path": "native/en/dev.jsonl.gz",
+    "records": 412873
+  },
+  {
+    "language": "en",
+    "split": "test",
+    "path": "native/en/test.jsonl.gz",
+    "records": 240458
+  }
+]

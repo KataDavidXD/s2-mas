@@ -1,0 +1,13 @@
+task,workflow,decisions,strict_goal_pct
+Consumption adjustment,SP,40,57.5
+Consumption adjustment,SC,40,65.0
+Consumption adjustment,MAS,40,80.0
+Borrowing amount,SP,40,22.5
+Borrowing amount,SC,40,77.5
+Borrowing amount,MAS,40,90.0
+Risk allocation,SP,40,95.0
+Risk allocation,SC,40,97.5
+Risk allocation,MAS,40,95.0
+Debt-payment allocation,SP,40,95.0
+Debt-payment allocation,SC,40,87.5
+Debt-payment allocation,MAS,40,82.5

@@ -1,0 +1,53 @@
+{
+  "language": "en",
+  "common_test_rows": 240458,
+  "common_question_versions": 119,
+  "common_subset": "Frozen common held-out question set.",
+  "training_unique_budgets": [
+    50000,
+    200000
+  ],
+  "nested_training_samples": true,
+  "checkpoint_selection": "fixed dev20k question-macro F1 then accuracy",
+  "qwen_method_selection": "complete dev412873",
+  "test_used_for_selection": false,
+  "qwen_architecture": "last-nonpadding-L2-linear-candidate-softmax-v1",
+  "qwen_prompt": "full-state-question-options-focus-v1",
+  "qwen4b_upstream": "Qwen/Qwen3.5-4B-Base",
+  "qwen9b_upstream": "Qwen/Qwen3.5-9B",
+  "laya_upstream": "convaiinnovations/laya",
+  "historical_fin_laya": "separate full-data multi-stage system reference; not matched-budget control",
+  "private_individual_rows_included": false,
+  "metric_definitions": {
+    "accuracy": {
+      "unit": "fraction in [0,1]",
+      "aggregation": "Correct predictions divided by all 240458 common-test rows; row-weighted.",
+      "invalid_predictions": "Reported separately; invalid answers do not reduce the evaluation denominator."
+    },
+    "question_macro_f1": {
+      "unit": "fraction in [0,1]",
+      "per_question": "Macro F1 over the full legal candidate set, with zero_division=0.",
+      "aggregation": "Equal-weight mean across 119 question versions."
+    }
+  },
+  "exposure_definitions": {
+    "unique_training_rows": "Distinct downstream input rows in the nested sample; not the number of repeated optimizer exposures.",
+    "selected_stage_row_exposures": "Rows processed in this training stage up to the published checkpoint.",
+    "selected_cumulative_row_exposures": "Selected-stage exposures plus the selected initialization checkpoint exposures where training is continued.",
+    "terminal_stage_row_exposures": "Rows processed by this stage at termination; this is not necessarily the published checkpoint."
+  },
+  "formal_model_count": 10,
+  "reference_scope": "Historical full-data Fin-Laya and upstream original Laya are separate system references; this table lists the 10 formal downstream-trained versions.",
+  "method_definitions": {
+    "head_only": "Freeze the official backbone; train the shared linear decision head.",
+    "lora": "LoRA-SFT of the backbone together with the same decision-head architecture.",
+    "native_laya": "Update the native Laya encoder and original decision head; SFT, additional RLCD, and continued-SFT stages retain separate labels."
+  },
+  "comparison_scope": {
+    "qwen4b_internal": "Same upstream checkpoint and nested downstream row set; compare each 200k method best checkpoint on full dev, question-macro F1 first and accuracy second.",
+    "qwen4b9b": "Matched downstream rows; 4B-Base and 9B post-trained checkpoints differ in upstream training history as well as scale.",
+    "laya_controls": "Same downstream row IDs and observed labels, with the native Laya encoding and architecture.",
+    "reported_exposures": "Stage and cumulative checkpoint exposures accompany unique row budgets."
+  },
+  "full_test_rows": 418597
+}

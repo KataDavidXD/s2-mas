@@ -1,0 +1,127 @@
+{
+  "N": 240458,
+  "question_versions": 119,
+  "grouping": "Frozen question versions and four broad topic families.",
+  "fin_vs_majority": {
+    "equal_version_f1_gain": 0.06205758029635911,
+    "sample_weighted_version_f1_gain": 0.0741092369328945,
+    "sample_accuracy_gain": 0.02783438271964334,
+    "versions_with_positive_f1_gain": 80,
+    "versions_with_negative_f1_gain": 2,
+    "versions_with_equal_f1": 37
+  },
+  "rare_thresholds_fixed": [
+    30,
+    100,
+    1000
+  ],
+  "rare_groups": [
+    {
+      "denominator_group": "N<30",
+      "question_versions": 2,
+      "question_share": 0.01680672268907563,
+      "N": 22,
+      "qa_share": 9.149206930108376e-05,
+      "fin_equal_version_f1": 0.32692307692307687,
+      "majority_equal_version_f1": 0.475,
+      "equal_version_f1_gain": -0.1480769230769231,
+      "overall_equal_version_f1_gain_contribution": -0.0024886877828054306,
+      "overall_sample_weighted_f1_gain_contribution": -1.35478641080451e-05
+    },
+    {
+      "denominator_group": "30<=N<100",
+      "question_versions": 1,
+      "question_share": 0.008403361344537815,
+      "N": 77,
+      "qa_share": 0.0003202222425537932,
+      "fin_equal_version_f1": 0.4967320261437908,
+      "majority_equal_version_f1": 0.4967320261437908,
+      "equal_version_f1_gain": 0.0,
+      "overall_equal_version_f1_gain_contribution": 0.0,
+      "overall_sample_weighted_f1_gain_contribution": 0.0
+    },
+    {
+      "denominator_group": "100<=N<1000",
+      "question_versions": 47,
+      "question_share": 0.3949579831932773,
+      "N": 27784,
+      "qa_share": 0.11554616606642325,
+      "fin_equal_version_f1": 0.3485980657989322,
+      "majority_equal_version_f1": 0.2989787025315705,
+      "equal_version_f1_gain": 0.049619363267361626,
+      "overall_equal_version_f1_gain_contribution": 0.01959756364341174,
+      "overall_sample_weighted_f1_gain_contribution": 0.005176153318266898
+    },
+    {
+      "denominator_group": "N>=1000",
+      "question_versions": 69,
+      "question_share": 0.5798319327731093,
+      "N": 212575,
+      "qa_share": 0.8840421196217219,
+      "fin_equal_version_f1": 0.4076963986845235,
+      "majority_equal_version_f1": 0.3301761692953267,
+      "equal_version_f1_gain": 0.07752022938919687,
+      "overall_equal_version_f1_gain_contribution": 0.0449487044357528,
+      "overall_sample_weighted_f1_gain_contribution": 0.06894663147873564
+    }
+  ],
+  "families": [
+    {
+      "breakdown": "family",
+      "category": "financial_knowledge",
+      "question_versions": 11,
+      "N": 29198,
+      "fin_equal_version_f1": 0.3093140201753269,
+      "majority_equal_version_f1": 0.18532987222337052,
+      "equal_version_f1_gain": 0.12398414795195639,
+      "fin_accuracy": 0.6181245290773341,
+      "majority_accuracy": 0.5351393931091171,
+      "accuracy_gain": 0.082985135968217,
+      "fin_sample_weighted_version_f1": 0.3189155427593132,
+      "majority_sample_weighted_version_f1": 0.19223569357810127
+    },
+    {
+      "breakdown": "family",
+      "category": "financial_product_saving_and_credit_behavior",
+      "question_versions": 56,
+      "N": 124129,
+      "fin_equal_version_f1": 0.5132502105460263,
+      "majority_equal_version_f1": 0.4653682113962662,
+      "equal_version_f1_gain": 0.047881999149759935,
+      "fin_accuracy": 0.8933851074285623,
+      "majority_accuracy": 0.8787873905372636,
+      "accuracy_gain": 0.014597716891298556,
+      "fin_sample_weighted_version_f1": 0.5289041003134636,
+      "majority_sample_weighted_version_f1": 0.4654724459357658
+    },
+    {
+      "breakdown": "family",
+      "category": "other_predefined_domain",
+      "question_versions": 45,
+      "N": 69208,
+      "fin_equal_version_f1": 0.2569327062515716,
+      "majority_equal_version_f1": 0.19484234767736527,
+      "equal_version_f1_gain": 0.06209035857420624,
+      "fin_accuracy": 0.5725783146457057,
+      "majority_accuracy": 0.5451392902554618,
+      "accuracy_gain": 0.027439024390243906,
+      "fin_sample_weighted_version_f1": 0.2787971185686158,
+      "majority_sample_weighted_version_f1": 0.20643118962018217
+    },
+    {
+      "breakdown": "family",
+      "category": "risk_and_investment_attitudes",
+      "question_versions": 7,
+      "N": 17923,
+      "fin_equal_version_f1": 0.2799001411350141,
+      "majority_equal_version_f1": 0.2019618069108174,
+      "equal_version_f1_gain": 0.0779383342241967,
+      "fin_accuracy": 0.5971098588405959,
+      "majority_accuracy": 0.5659208837806171,
+      "accuracy_gain": 0.031188975059978797,
+      "fin_sample_weighted_version_f1": 0.2878529289567489,
+      "majority_sample_weighted_version_f1": 0.2187042584716473
+    }
+  ],
+  "denominator_definition": "Within each version, candidate-class F1 includes every defined option with empty denominators zero. Equal-version F1 gives all 119 versions the same weight; sample-weighted version F1 weights those same F1 scores by each version N. Neither pools unrelated answer classes across questions."
+}

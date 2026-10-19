@@ -1,0 +1,4 @@
+application,distinct_households,financial_parent_records,model_choices,model_episodes,horizon_months,models,languages
+original_one_shot,2000000,,4000000,4000000,16,1,1
+persistent_decisions,2000,,2048000,88000,16/24,2,1
+static_task_suite,,207,181892,,12,2,2

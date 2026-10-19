@@ -1,0 +1,16 @@
+{
+  "sft": {
+    "n": 240458,
+    "correct": 179217,
+    "accuracy": 0.7453151901787423,
+    "mean_question_macro_f1": 0.37877455708233115,
+    "evaluated_question_versions": 119
+  },
+  "rlcd": {
+    "n": 240458,
+    "correct": 179282,
+    "accuracy": 0.7455855076562227,
+    "mean_question_macro_f1": 0.38398550838191864,
+    "evaluated_question_versions": 119
+  }
+}

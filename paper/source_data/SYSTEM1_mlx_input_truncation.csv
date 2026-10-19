@@ -1,0 +1,7 @@
+model,scope,N,max_len,head_max_len,state_truncated_rows,state_truncated_fraction,mean_original_state_tokens,mean_kept_state_tokens,mean_dropped_state_tokens,mean_encoded_input_tokens,max_encoded_input_tokens,method
+Fin-Laya MLX,shared-240458,240458,512,256,0,0.0,81.93354764657445,81.93354764657445,0.0,159.7549468098379,230,CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward
+Fin-Laya MLX,q-stratified-20k/full-profile,20000,512,256,0,0.0,81.92555,81.92555,0.0,159.74045,229,CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward
+Base Laya MLX,shared-240458,240458,512,256,0,0.0,81.93354764657445,81.93354764657445,0.0,159.7549468098379,230,CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward
+Base Laya MLX,q-stratified-20k/full-profile,20000,512,256,0,0.0,81.92555,81.92555,0.0,159.74045,229,CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward
+Fin-Laya MLX,q-stratified-20k/shuffled-profile,20000,512,256,0,0.0,81.9439,81.9439,0.0,159.7588,229,CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward
+Fin-Laya MLX,q-stratified-20k/empty-profile,20000,512,256,0,0.0,1.0,1.0,0.0,78.8149,132,CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward

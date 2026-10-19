@@ -1,0 +1,26 @@
+dimension,dimension_name,score,count,rating_n,persona_n,human_raters,share_pct,human_mean
+M1,Accuracy,1,0,600,100,6,0.0,4.685
+M1,Accuracy,2,4,600,100,6,0.6666666666666666,4.685
+M1,Accuracy,3,43,600,100,6,7.166666666666667,4.685
+M1,Accuracy,4,91,600,100,6,15.166666666666666,4.685
+M1,Accuracy,5,462,600,100,6,77.0,4.685
+M2,No over-inference,1,0,600,100,6,0.0,4.285
+M2,No over-inference,2,6,600,100,6,1.0,4.285
+M2,No over-inference,3,119,600,100,6,19.833333333333332,4.285
+M2,No over-inference,4,173,600,100,6,28.833333333333332,4.285
+M2,No over-inference,5,302,600,100,6,50.333333333333336,4.285
+M3,Important-field coverage,1,0,600,100,6,0.0,4.985
+M3,Important-field coverage,2,0,600,100,6,0.0,4.985
+M3,Important-field coverage,3,0,600,100,6,0.0,4.985
+M3,Important-field coverage,4,9,600,100,6,1.5,4.985
+M3,Important-field coverage,5,591,600,100,6,98.5,4.985
+M4,Internal consistency,1,13,600,100,6,2.1666666666666665,4.67
+M4,Internal consistency,2,23,600,100,6,3.8333333333333335,4.67
+M4,Internal consistency,3,28,600,100,6,4.666666666666667,4.67
+M4,Internal consistency,4,21,600,100,6,3.5,4.67
+M4,Internal consistency,5,515,600,100,6,85.83333333333333,4.67
+M5,Overall fidelity,1,11,600,100,6,1.8333333333333333,4.225
+M5,Overall fidelity,2,23,600,100,6,3.8333333333333335,4.225
+M5,Overall fidelity,3,96,600,100,6,16.0,4.225
+M5,Overall fidelity,4,160,600,100,6,26.666666666666668,4.225
+M5,Overall fidelity,5,310,600,100,6,51.666666666666664,4.225

@@ -1,0 +1,8 @@
+path,previous,optimized,execution_effect
+Action lookup and synchronization,Repeated linear searches; O(N²) total work,Indexed lookup; O(N) work,Lower overhead as the choice batch grows
+Operation-state queries,Revalidate all agents for each query,Read the relevant shard and state,Avoid repeated cohort-wide scans
+Decision-request construction,Copy whole requests; decode repeated descriptors per agent,Reduce copying; decode identical descriptors once,Less allocation and serialization
+Snapshot handling,Copy matrix rows in Python,Compact matrix representation with C-level copying,Lower snapshot cost
+Model connections,Shared client limited to 100 connections,Scale the pool with concurrency; shard pools above 100,Higher utilization of model capacity
+Partition decisions,Process same-session partitions sequentially,Optional parallel partitions with bounded dispatch,Overlap inference without overrunning the service
+Durable writeback,Multiple independent write operations,One atomic transaction per round,100-choice persistence: 0.349 s vs 0.345 s in memory-backed storage

@@ -1,0 +1,5 @@
+run,judge,valid_personas,planned_personas,pooled_mean,within_one_pct
+Flash,DeepSeek Flash,100,100,4.996,94.0
+Flash,GLM Flash,100,100,5.0,94.0
+Pro,DeepSeek V4 Pro,98,100,5.0,94.3
+Pro,GLM 5.3,100,100,5.0,94.0

@@ -1,0 +1,25 @@
+study,cohort,judge,model_name,metric,within_one_pct,n_personas,n_human_raters,n_comparisons,agreement_count_from_reported_pct,reference
+Stage Q,fixed 100-persona panel,DeepSeek,deepseek-flash,M1,100,100,6,100,100,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,DeepSeek,deepseek-flash,M2,92,100,6,100,92,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,DeepSeek,deepseek-flash,M3,100,100,6,100,100,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,DeepSeek,deepseek-flash,M4,91,100,6,100,91,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,DeepSeek,deepseek-flash,M5,87,100,6,100,87,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,DeepSeek,deepseek-flash,Overall,94.0,100,6,500,470,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,GLM,glm-5.3-flash,M1,100,100,6,100,100,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,GLM,glm-5.3-flash,M2,92,100,6,100,92,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,GLM,glm-5.3-flash,M3,100,100,6,100,100,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,GLM,glm-5.3-flash,M4,91,100,6,100,91,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,GLM,glm-5.3-flash,M5,87,100,6,100,87,six-human mean for same persona and dimension
+Stage Q,fixed 100-persona panel,GLM,glm-5.3-flash,Overall,94.0,100,6,500,470,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,Claude,Claude Opus 4.8,M1,92,100,6,100,92,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,Claude,Claude Opus 4.8,M2,88,100,6,100,88,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,Claude,Claude Opus 4.8,M3,100,100,6,100,100,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,Claude,Claude Opus 4.8,M4,92,100,6,100,92,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,Claude,Claude Opus 4.8,M5,97,100,6,100,97,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,Claude,Claude Opus 4.8,Overall,93.8,100,6,500,469,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,GPT,GPT-5.5,M1,69,100,6,100,69,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,GPT,GPT-5.5,M2,81,100,6,100,81,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,GPT,GPT-5.5,M3,95,100,6,100,95,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,GPT,GPT-5.5,M4,55,100,6,100,55,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,GPT,GPT-5.5,M5,96,100,6,100,96,six-human mean for same persona and dimension
+MatrAIx,matched 100-persona human evaluation,GPT,GPT-5.5,Overall,79.2,100,6,500,396,six-human mean for same persona and dimension

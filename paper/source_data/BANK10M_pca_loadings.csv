@@ -1,0 +1,15 @@
+field,bank_pc1
+household.household_size,0.03695789531222081
+decision_maker.age_group,-0.15638107134642862
+decision_maker.education,0.20395617956926457
+income.household_income_bracket,0.3454996221094296
+consumption.total,0.4289550608981051
+consumption.food,0.3409431958734421
+consumption.clothing,0.2966867985475143
+consumption.housing,0.2983005811222289
+consumption.transport_comm,0.3152872996595209
+consumption.education,0.18546625543802905
+consumption.health,0.18172829559903467
+consumption.other,0.3345658310185223
+extended.financial_asset_bracket,0.16997085138439386
+extended.debt_amount_bracket,0.16824562390766923

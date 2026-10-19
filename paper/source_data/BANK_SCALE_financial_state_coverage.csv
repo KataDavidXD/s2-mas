@@ -1,0 +1,16 @@
+sample_n,group,known_sample_records,observed_states,group_sample_records,full_bank_group_states
+100000,all_nonempty_known_states,95106,786,95106,1026
+1000000,all_nonempty_known_states,950289,956,950289,1026
+2000000,all_nonempty_known_states,1900078,981,1900078,1026
+5000000,all_nonempty_known_states,4749893,1007,4749893,1026
+10000000,all_nonempty_known_states,9499649,1026,9499649,1026
+100000,frequency_le_1e-4,95106,334,1178,574
+1000000,frequency_le_1e-4,950289,504,12409,574
+2000000,frequency_le_1e-4,1900078,529,24753,574
+5000000,frequency_le_1e-4,4749893,555,61517,574
+10000000,frequency_le_1e-4,9499649,574,122655,574
+100000,frequency_le_1e-5,95106,57,68,271
+1000000,frequency_le_1e-5,950289,201,827,271
+2000000,frequency_le_1e-5,1900078,226,1635,271
+5000000,frequency_le_1e-5,4749893,252,4076,271
+10000000,frequency_le_1e-5,9499649,271,8160,271
