@@ -1,8 +1,10 @@
 # S²-MAS model repositories
 
-Current collection: [S²-MAS models](https://huggingface.co/collections/ya9919/s-mas-models-v43).
+Current collection: [S²-MAS models](https://huggingface.co/collections/ya9919/s-mas-models-finq-and-finl).
 
 The paper compares six decision-model routes and twelve models or systems. Seventeen repository entries package ten trained release versions, six named checkpoint/runtime entries and one compatibility entry. Two three-round entries currently provide documentation only and contain no usable model weights. Runtime conversions and aliases do not add independent matched training runs.
+
+FinQ uses Qwen3.5-4B-Base with LoRA and a decision head on the 200k training condition. FinL is the full-data six-round encoder model; FinL-mlx is its MLX deployment.
 
 ## Ten trained release versions
 
@@ -16,7 +18,7 @@ The paper compares six decision-model routes and twelve models or systems. Seven
 | [qwen3.5-4b-base-finance-head-50k](https://huggingface.co/ya9919/qwen3.5-4b-base-finance-head-50k) | Qwen4B Base, head-only, 50k |
 | [qwen3.5-4b-base-finance-head-200k](https://huggingface.co/ya9919/qwen3.5-4b-base-finance-head-200k) | Qwen4B Base, head-only, 200k |
 | [qwen3.5-4b-base-finance-lora-head-50k](https://huggingface.co/ya9919/qwen3.5-4b-base-finance-lora-head-50k) | Qwen4B Base, LoRA and decision head, 50k |
-| [qwen3.5-4b-base-finance-lora-head-200k](https://huggingface.co/ya9919/qwen3.5-4b-base-finance-lora-head-200k) | Qwen4B Base, LoRA and decision head, 200k |
+| [FinQ](https://huggingface.co/ya9919/FinQ) | Qwen4B Base, LoRA and decision head, 200k |
 | [qwen3.5-9b-finance-lora-head-200k](https://huggingface.co/ya9919/qwen3.5-9b-finance-lora-head-200k) | Qwen9B, LoRA and decision head, 200k |
 
 ## Full-data checkpoints, formats and compatibility
@@ -24,9 +26,9 @@ The paper compares six decision-model routes and twelve models or systems. Seven
 | Repository | Role |
 |---|---|
 | [fin-laya-3-rounds](https://huggingface.co/ya9919/fin-laya-3-rounds) | Documentation-only entry for the native three-round checkpoint; no usable weights are currently hosted |
-| [fin-laya-6-rounds](https://huggingface.co/ya9919/fin-laya-6-rounds) | native continuation |
+| [FinL](https://huggingface.co/ya9919/FinL) | native continuation |
 | [fin-laya-mlx-3-rounds](https://huggingface.co/ya9919/fin-laya-mlx-3-rounds) | Documentation-only entry for the paired three-round MLX format; no usable weights are currently hosted |
-| [fin-laya-mlx-6-rounds](https://huggingface.co/ya9919/fin-laya-mlx-6-rounds) | MLX deployment format and full-data system reference |
+| [FinL-mlx](https://huggingface.co/ya9919/FinL-mlx) | MLX deployment format and full-data system reference |
 | [fin-laya-multilingual](https://huggingface.co/ya9919/fin-laya-multilingual) | Multilingual native checkpoint |
 | [fin-laya-multilingual-mlx](https://huggingface.co/ya9919/fin-laya-multilingual-mlx) | Multilingual MLX deployment format |
 | [fin-laya](https://huggingface.co/ya9919/fin-laya) | Compatibility entry |

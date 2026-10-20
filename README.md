@@ -2,21 +2,21 @@
 
 **500 million household personas, 36 fields, six decision-model routes, ten trained release versions and twelve benchmarked models or systems.** S²-MAS connects reusable household decisions with monthly financial state evolution.
 
-Fin-Laya uses the **largest disclosed domain post-training set among the financial decision models compared in the paper: 2,925,263 training examples**. S²-MAS completes paired-condition simulation of **12,000,000 distinct synthetic household agents—the largest model-inferred MAS population among the completed studies compared in the paper**.
+FinL uses the **largest disclosed SFT + RLCD training set among the financial decision models compared in the paper: 2,925,263 training examples**. S²-MAS completes paired-condition simulation of **12,000,000 distinct synthetic household agents—the largest model-inferred MAS population among the completed studies compared in the paper**.
 
 - **74.5544% accuracy · 38.3746% macro-F1**, on 240,458 shared test records spanning 119 question versions and 8,275 groups.
-- **9.10 ms · 22.72× faster than the Jev API · 2.42× faster than the same checkpoint in PyTorch**, measured for bilingual Fin-Laya MLX on three fixed Chinese inputs, 60 timed calls per arm, batch and concurrency 1, with local models on one A100 PCIe 40GB. Timing includes preparation and synchronized prediction or API round trip.
+- **9.10 ms · 22.72× faster than the Jev API · 2.42× faster than the same checkpoint in PyTorch**, measured for FinL-bilingual-mlx on three fixed Chinese inputs, 60 timed calls per arm, batch and concurrency 1, with local models on one A100 PCIe 40GB. Timing includes preparation and synchronized prediction or API round trip.
 
 **Completed scale run: 12M distinct agents · 24M paired-condition choices · 288M ledger states · 3 h 59 m 17 s · 14 GPUs (8 H100 80GB + 6 A100 40GB).**
 
 [Latest manuscript](paper/S2_MAS_Paper.pdf) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
 
-arXiv update pending.
+Manuscript v51: 58 pages, 13 main figures and 7 supplementary figures. Submitted to arXiv; public identifier pending.
 
 | Resource | Entry point and scope |
 |---|---|
 | Paper and scientific scripts | [Paper resources and aggregate plotting](paper/README.md) and [training and evaluation scripts](reproduction/training/README.md) |
-| Decision models | [17-repository model catalog](resources/MODEL_CATALOG.md) · [model collection](https://huggingface.co/collections/ya9919/s-mas-models-v43): ten trained release versions, trained checkpoints, runtime formats and one compatibility entry |
+| Decision models | [17-repository model catalog](resources/MODEL_CATALOG.md) · [model collection](https://huggingface.co/collections/ya9919/s-mas-models-finq-and-finl): ten trained release versions, trained checkpoints, runtime formats and one compatibility entry |
 | Synthetic companion | [Generation code, schema and terms](resources/public_companion/README.md); 2M independently constructed financial personas and 32k unlabeled inputs. The complete data are in the [Hugging Face dataset](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion) · [dataset resources collection](https://huggingface.co/collections/ya9919/s-mas-dataset-resources); paper and code bundles are in [GitHub releases](https://github.com/KataDavidXD/s2-mas/releases) |
 | Wikidata component | [Actual CC0 knowledge files](resources/wikidata/README.md): 38 entities and 66 parent/type relations for assigned contexts |
 

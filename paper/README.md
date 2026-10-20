@@ -1,18 +1,17 @@
 # S²-MAS paper and reported resources
 
-[Latest manuscript PDF](S2_MAS_Paper.pdf) · [LaTeX](main.tex) · [Figures](figures/) · [Reported aggregates](source_data/) · [Plotting scripts](figure_code/) · [Poster](posters/S2_MAS_Poster.pdf) · [Social poster](posters/S2_MAS_Poster_Social.pdf)
+[Latest manuscript PDF](S2_MAS_Paper.pdf) · [LaTeX](main.tex) · [Figures](figures/) · [Reported aggregates](source_data/) · [Plotting scripts](figure_code/)
 
-The paper connects a 500M-persona resource, six decision-model routes and ten trained release versions with household choice and financial state evolution. The 12M-household application reports age/income and financial-stock heterogeneity alongside 18 additional persona attributes. Figure 7 and Tables S41–S47 connect consumption responses to purchase choices, cash use and actual payments. Tables S46–S47 give the education, employment and household-size comparisons and the complete category results. Figures 8–10 cover the five-shock design, shock-relative adjustments and within-route purchase-goal contrasts. Appendix S13 retains the two-million-household fixed-plan credit application.
+Version v51 contains 58 pages, 13 main figures and 7 supplementary figures. S²-MAS links 500 million household personas, trainable decision models and a stateful execution engine to consumption, cash and repayment paths. FinQ and FinL are the principal decision policies; FinL-mlx executes the reported household applications.
 
-[Synthetic companion](../resources/public_companion/README.md), [CC0 Wiki context](../resources/wikidata/README.md) and the [model catalog](../resources/MODEL_CATALOG.md) have separate component entries and terms. Public code covers scientific plotting, decision-model training/evaluation and independent synthetic companion generation. The GENESE/MAS engine implementation remains private.
+Figure 9 and Tables S41–S47 explain consumption heterogeneity in the 12M-household application. Figure 10 defines the five shock paths. Table 8 fixes the purchase goal at CNY 20,000; Figure 11 and Table 9 compare each shock with its same-goal unshocked reference. Figure 12 maps the directions of shock and goal effects, and Figure 13 follows the within-route 30k-minus-20k contrasts through 24 months. Tables S49–S50 support the purchase-timing and bank-offer explanations. Appendix S13 retains the two-million-household fixed-plan credit application.
 
-Compile `main.tex` twice with XeLaTeX using TeX Gyre Termes and TeX Gyre Heros. Replot figures from the supplied aggregate CSVs:
+[Synthetic companion](../resources/public_companion/README.md), [CC0 Wikidata context](../resources/wikidata/README.md) and the [model catalog](../resources/MODEL_CATALOG.md) have separate component entries and terms. Public code covers scientific plotting, decision-model training and evaluation, and independent synthetic companion generation. The GENESE/MAS engine implementation remains private.
+
+Compile `main.tex` twice with XeLaTeX using TeX Gyre Termes and TeX Gyre Heros. Replot the shock direction map from the reported monthly means:
 
 ```sh
-python figure_code/scale12m_heterogeneity.py --data-dir source_data --output-dir artifacts/heterogeneity
-python figure_code/replot_dynamic_shocks.py --source-data source_data --output-dir artifacts/shock-figures
-python figure_code/framework_overview.py --output-dir figures --qa-dir artifacts/figure-layout
-python figure_code/decision_training_routes.py --output-dir figures --qa-dir artifacts/figure-layout
+python figure_code/shock_direction_map.py --monthly-source source_data/dynamic_shock_monthly_means.csv --output-dir artifacts/directions --source-data-dir artifacts/source_data --qa-dir artifacts/figure-layout
 ```
 
-The remaining plotting scripts use their associated aggregate tables. Code and data components retain the terms supplied at their entry points.
+Other figure scripts use their associated aggregate tables. Code and data retain the terms supplied at their component entries.
