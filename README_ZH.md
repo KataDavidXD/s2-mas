@@ -16,7 +16,7 @@
 | 资源 | 入口与范围 |
 |---|---|
 | 论文与科研脚本 | [论文、聚合数据与绘图复现](paper/README.md)和[训练／评测脚本](reproduction/training/README.md) |
-| 决策模型 | [17 个仓库的模型目录](resources/MODEL_CATALOG.md) · [sharp 模型合集](https://huggingface.co/collections/ya9919/s-mas-models-finq-and-finl-6ad68009810d66654272d854)：区分十个训练发布版本、具名checkpoint、运行格式与一个兼容入口 |
+| 决策模型 | [17 个仓库的模型目录](resources/MODEL_CATALOG.md) · [sharp 模型合集](https://huggingface.co/collections/ya9919/s-mas-models-sharp)：区分十个训练发布版本、具名checkpoint、运行格式与一个兼容入口 |
 | 合成配套 | [生成代码、结构与条款](resources/public_companion/README.md)；含 200 万个独立构造的金融 persona 与 32,000 条无标签输入，完整数据的分发入口为 [Hugging Face](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion) · [数据资源合集](https://huggingface.co/collections/ya9919/s-mas-dataset-resources) 与 [GitHub Release](https://github.com/KataDavidXD/s2-mas/releases) |
 | Wikidata 组件 | [实际 CC0 知识文件](resources/wikidata/README.md)：38 个实体、66 条父级／类型关系，用于赋值语境 |
 
@@ -35,5 +35,4 @@
 
 科研合作：[yli9919@hku.hk](mailto:yli9919@hku.hk)。
 
-
-
+[Blog](https://huggingface.co/blog/ya9919/s2-mas) · [双海报与引擎对照页](publicity/20261021_sharp/)

@@ -16,7 +16,7 @@ Manuscript v52 · 21 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/26
 | Resource | Entry point and scope |
 |---|---|
 | Paper and scientific scripts | [Paper resources and aggregate plotting](paper/README.md) and [training and evaluation scripts](reproduction/training/README.md) |
-| Decision models | [17-repository model catalog](resources/MODEL_CATALOG.md) · [sharp model collection](https://huggingface.co/collections/ya9919/s-mas-models-finq-and-finl-6ad68009810d66654272d854): ten trained release versions, trained checkpoints, runtime formats and one compatibility entry |
+| Decision models | [17-repository model catalog](resources/MODEL_CATALOG.md) · [sharp model collection](https://huggingface.co/collections/ya9919/s-mas-models-sharp): ten trained release versions, trained checkpoints, runtime formats and one compatibility entry |
 | Synthetic companion | [Generation code, schema and terms](resources/public_companion/README.md); 2M independently constructed financial personas and 32k unlabeled inputs. The complete data are in the [Hugging Face dataset](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion) · [dataset resources collection](https://huggingface.co/collections/ya9919/s-mas-dataset-resources); paper and code bundles are in [GitHub releases](https://github.com/KataDavidXD/s2-mas/releases) |
 | Wikidata component | [Actual CC0 knowledge files](resources/wikidata/README.md): 38 entities and 66 parent/type relations for assigned contexts |
 
@@ -35,6 +35,4 @@ Public scientific plotting, training and evaluation scripts use [Apache-2.0](LIC
 
 Research collaboration: [yli9919@hku.hk](mailto:yli9919@hku.hk).
 
-
-
-
+[Blog](https://huggingface.co/blog/ya9919/s2-mas) · [Posters and engine comparison](publicity/20261021_sharp/)
