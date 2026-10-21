@@ -12,7 +12,7 @@
       "p95_ms": 22.012269496917725
     },
     {
-      "label": "Bilingual Fin-Laya · PyTorch A100",
+      "label": "sharp-322m · PyTorch A100",
       "n": 60,
       "shared_input_tokens": 20180,
       "elapsed_seconds": 1.323509369045496,
@@ -23,7 +23,7 @@
       "p95_ms": 22.222757898271084
     },
     {
-      "label": "Bilingual Fin-Laya · MLX CUDA A100",
+      "label": "sharp-322m-mlx · MLX CUDA A100",
       "n": 60,
       "shared_input_tokens": 20180,
       "elapsed_seconds": 0.5460625551640987,
@@ -80,7 +80,7 @@
       "shared_input_tokens_per_second": 18153.912602717726
     },
     {
-      "model": "Bilingual Fin-Laya · PyTorch A100",
+      "model": "sharp-322m · PyTorch A100",
       "case": "DEMO-T1-INCOME-25",
       "n": 20,
       "p50_ms": 21.942943334579468,
@@ -91,7 +91,7 @@
       "shared_input_tokens_per_second": 9925.375298967754
     },
     {
-      "model": "Bilingual Fin-Laya · PyTorch A100",
+      "model": "sharp-322m · PyTorch A100",
       "case": "DEMO-T7-PLAN",
       "n": 20,
       "p50_ms": 22.082477807998657,
@@ -102,7 +102,7 @@
       "shared_input_tokens_per_second": 17784.924741474293
     },
     {
-      "model": "Bilingual Fin-Laya · PyTorch A100",
+      "model": "sharp-322m · PyTorch A100",
       "case": "DEMO-T4-PRODUCT",
       "n": 20,
       "p50_ms": 22.096527740359306,
@@ -113,7 +113,7 @@
       "shared_input_tokens_per_second": 17997.488237387788
     },
     {
-      "model": "Bilingual Fin-Laya · MLX CUDA A100",
+      "model": "sharp-322m-mlx · MLX CUDA A100",
       "case": "DEMO-T1-INCOME-25",
       "n": 20,
       "p50_ms": 8.298719301819801,
@@ -124,7 +124,7 @@
       "shared_input_tokens_per_second": 26177.186114833257
     },
     {
-      "model": "Bilingual Fin-Laya · MLX CUDA A100",
+      "model": "sharp-322m-mlx · MLX CUDA A100",
       "case": "DEMO-T7-PLAN",
       "n": 20,
       "p50_ms": 10.50763949751854,
@@ -135,7 +135,7 @@
       "shared_input_tokens_per_second": 37506.05051444765
     },
     {
-      "model": "Bilingual Fin-Laya · MLX CUDA A100",
+      "model": "sharp-322m-mlx · MLX CUDA A100",
       "case": "DEMO-T4-PRODUCT",
       "n": 20,
       "p50_ms": 8.394597098231316,

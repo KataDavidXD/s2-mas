@@ -117,7 +117,7 @@ z
     <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="85.875102" y="46.945109" transform="rotate(-0 85.875102 46.945109)">Encoder option scoring</text>
    </g>
    <g id="text_4">
-    <text style="font-size: 7.4px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; fill: #243344" transform="translate(32.202555 62.017912)">Base Laya · FinL · Laya-Finance</text>
+    <text style="font-size: 7.4px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; fill: #243344" transform="translate(19.657243 62.017912)">Base Laya · sharp-421m · Laya-Finance</text>
     <text style="font-size: 7.4px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; fill: #243344" transform="translate(38.365367 71.136823)">Von 1.3 · OpenDecider Nano</text>
    </g>
    <g id="text_5">
@@ -480,10 +480,10 @@ z
     <text style="font-weight: 700; font-size: 9px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #243344" x="21.875645" y="178.878719" transform="rotate(-0 21.875645 178.878719)">Ten trained release versions in the common comparison</text>
    </g>
    <g id="text_17">
-    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #62528b" x="124.274776" y="199.876076" transform="rotate(-0 124.274776 199.876076)">Laya · encoder adaptation</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #62528b" x="124.274776" y="199.876076" transform="rotate(-0 124.274776 199.876076)">sharp-421m · encoder adaptation</text>
    </g>
    <g id="text_18">
-    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #257a7a" x="383.117024" y="199.983654" transform="rotate(-0 383.117024 199.983654)">Qwen · head, adaptation and scale</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #257a7a" x="383.117024" y="199.983654" transform="rotate(-0 383.117024 199.983654)">sharp-4b / 9b · adaptation and scale</text>
    </g>
    <g id="text_19">
     <text style="font-weight: 700; font-size: 8.1px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="125.696986" y="226.013952" transform="rotate(-0 125.696986 226.013952)">Original Laya</text>
@@ -543,7 +543,7 @@ z
     <text style="font-weight: 700; font-size: 8.1px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="444.272061" y="280.744271" transform="rotate(-0 444.272061 280.744271)">LoRA + head</text>
    </g>
    <g id="text_38">
-    <text style="font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="444.272061" y="296.367773" transform="rotate(-0 444.272061 296.367773)">50k / FinQ (200k)</text>
+    <text style="font-size: 7.5px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="444.272061" y="296.367773" transform="rotate(-0 444.272061 296.367773)">50k / sharp-4b (200k)</text>
    </g>
    <g id="text_39">
     <text style="font-size: 7.6px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #257a7a" x="383.117024" y="321.839672" transform="rotate(-0 383.117024 321.839672)">Candidate-wise encoding → L2 → scalar head</text>
@@ -564,7 +564,7 @@ z
     <text style="font-size: 7.4px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #566371" x="383.117024" y="409.588379" transform="rotate(-0 383.117024 409.588379)">Dashed: method chosen on full development data</text>
    </g>
    <g id="text_45">
-    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="255.11811" y="434.459325" transform="rotate(-0 255.11811 434.459325)">Full-data system reference: FinL · full-data SFT → RLCD</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="255.11811" y="434.459325" transform="rotate(-0 255.11811 434.459325)">Full-data system reference: sharp-421m · SFT → RLCD</text>
    </g>
    <g id="text_46">
     <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'Helvetica', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #243344" x="255.11811" y="460.868985" transform="rotate(-0 255.11811 460.868985)">Common test: 240,458 records · 119 question versions · accuracy + question-macro F1</text>

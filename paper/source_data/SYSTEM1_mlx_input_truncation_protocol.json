@@ -2,7 +2,7 @@
   "N": 240458,
   "subset_N": 20000,
   "models": [
-    "Fin-Laya MLX 6-round / rlcd-2",
+    "sharp-421m-mlx 6-round / rlcd-2",
     "Base Laya MLX original-base"
   ],
   "max_len": 512,
@@ -11,7 +11,7 @@
   "elapsed_seconds": 72.06,
   "results": [
     {
-      "model": "Fin-Laya MLX",
+      "model": "sharp-421m-mlx",
       "scope": "shared-240458",
       "N": 240458,
       "max_len": 512,
@@ -26,7 +26,7 @@
       "method": "CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward"
     },
     {
-      "model": "Fin-Laya MLX",
+      "model": "sharp-421m-mlx",
       "scope": "q-stratified-20k/full-profile",
       "N": 20000,
       "max_len": 512,
@@ -71,7 +71,7 @@
       "method": "CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward"
     },
     {
-      "model": "Fin-Laya MLX",
+      "model": "sharp-421m-mlx",
       "scope": "q-stratified-20k/shuffled-profile",
       "N": 20000,
       "max_len": 512,
@@ -86,7 +86,7 @@
       "method": "CPU replay of evaluated MLX build_prefix and finish_sequence; no model forward"
     },
     {
-      "model": "Fin-Laya MLX",
+      "model": "sharp-421m-mlx",
       "scope": "q-stratified-20k/empty-profile",
       "N": 20000,
       "max_len": 512,

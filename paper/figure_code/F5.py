@@ -25,7 +25,7 @@ def main():
     axes={letter:fig.add_subplot(top[0,i]) for i,letter in enumerate(['a','b','c'])}
     lower=fig.add_gridspec(1,1,left=.32,right=.875,bottom=.16,top=.585)
     axes['d']=fig.add_subplot(lower[0,0])
-    titles={'a':('100 agents · 3 blocks','Fin-Laya · 3 T4 replicas'),'b':('1,000 agents · 2 blocks','Fin-Laya · 1 T4 replica'),'c':('1,000 agents · 2 blocks','Jev API')}
+    titles={'a':('100 agents · 3 blocks','sharp-421m · 3 T4 replicas'),'b':('1,000 agents · 2 blocks','sharp-421m · 1 T4 replica'),'c':('1,000 agents · 2 blocks','Jev API')}
     limits={'a':1.8,'b':9.5,'c':10.8}
     for letter in ['a','b','c']:
         ax=axes[letter];rs=panels[letter];ys=np.arange(len(rs))[::-1]

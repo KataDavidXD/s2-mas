@@ -1,7 +1,7 @@
 {
   "scenario": "T3",
   "language": "English",
-  "model": "Fin-Laya",
+  "model": "sharp-421m",
   "backend": "MLX CUDA",
   "dtype": "FP16",
   "baseline_purchase_need_cny": 20000.0,

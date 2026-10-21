@@ -93,7 +93,7 @@ def create_figure():
     a.text(0, 46.6, "a", fontsize=9, fontweight="bold", va="top", color=INK)
     text(a, 5, 44.7, "Six decision-model routes in the common benchmark", 9, "bold", ha="left")
     box(a, 0, 23, 55, 17.5, "Encoder option scoring", family="native", title_size=8.0,
-        subtitle="Base Laya · Fin-Laya · Laya-Finance\nVon 1.3 · OpenDecider Nano", sub_size=7.4)
+        subtitle="Base Laya · sharp-421m · Laya-Finance\nVon 1.3 · OpenDecider Nano", sub_size=7.4)
     box(a, 59.5, 23, 55, 17.5, "LM + learned decision head", family="qwen", title_size=8.0,
         subtitle="Kev-4B · LoRA + pointer / CE\nClef Flash 9B · joint schema head", sub_size=7.4)
     box(a, 119, 23, 55, 17.5, "Next-token decision SFT", family="qwen", title_size=8.0,
@@ -108,8 +108,8 @@ def create_figure():
     b.text(0, 110.7, "b", fontsize=9, fontweight="bold", va="top", color=INK)
     text(b, 5, 108.5, "Ten trained release versions in the common comparison", 9,
          "bold", ha="left")
-    text(b, 41, 100.8, "Laya · encoder adaptation", 8.5, "bold", color=NATIVE)
-    text(b, 132, 100.8, "Qwen · head, adaptation and scale", 8.5,
+    text(b, 41, 100.8, "sharp-421m · encoder adaptation", 8.5, "bold", color=NATIVE)
+    text(b, 132, 100.8, "sharp-4b / sharp-9b · head and scale", 8.5,
          "bold", color=QWEN)
 
     # Laya: two SFT parents, two RLCD continuations and one CE control.
@@ -143,7 +143,7 @@ def create_figure():
 
     # The full-data trained system and upstream native reference stay separate.
     box(b, 0, 11, 174, 9,
-        "Full-data system reference: Fin-Laya · full-data SFT → RLCD", family="neutral",
+        "Full-data system reference: sharp-421m · full-data SFT → RLCD", family="neutral",
         title_size=8.0)
     text(b, 87, 5.9, "Common test: 240,458 records · 119 question versions · accuracy + question-macro F1", 8.0, "bold")
     text(b, 87, 0.8, "Ten development-best release versions + original-Laya zero-new-training reference", 7.5, color=MUTED)

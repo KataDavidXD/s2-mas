@@ -7,7 +7,7 @@
     "control-fin-profile-free",
     "control-fin-shuffled-profile",
     "control-training-majority",
-    "fin-laya-mlx-6-round",
+    "sharp-421m-mlx",
     "gliner2.5-decide",
     "hravi-laya-finance",
     "jev-1.13",
@@ -132,7 +132,7 @@
       "estimated_cost_usd": ""
     },
     {
-      "model": "fin-laya-mlx-6-round",
+      "model": "sharp-421m-mlx",
       "checkpoint": "6-round / rlcd-2",
       "backend": "MLX CUDA",
       "precision": "FP16",

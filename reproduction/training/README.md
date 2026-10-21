@@ -1,13 +1,19 @@
 # Decision-model training and common-test evaluation
 
-This directory implements the ten training recipes reported in the paper:
-Qwen3.5-4B-Base Head-only and LoRA plus decision head at 50k/200k unique rows;
-the selected LoRA method on Qwen3.5-9B at 200k; native Laya SFT at 50k/200k;
-SFT-best followed by RLCD at 50k/200k; and the SFT200k-best followed by a further
-200k CE pass. The original Laya checkpoint is a separate reference with no
-additional downstream training.
+This directory implements the ten budget-matched sharp training versions reported
+in [arXiv:2610.27746](https://arxiv.org/abs/2610.27746), manuscript v52,
+21 October 2026. They cover six methods: 421M encoder SFT at 50k/200k unique
+rows, SFT → RLCD at both budgets, SFT200k → CE at 200k, frozen 4B backbone
+plus head at both budgets, 4B LoRA plus head at both budgets, and 9B LoRA plus
+head at 200k. The [model catalog](../../resources/MODEL_CATALOG.md) maps these
+methods to `sharp-421m-*`, `sharp-4b-*`, `sharp-4b` and `sharp-9b` releases.
+The original Laya checkpoint supplies the reference before additional training.
 
-For an exported Qwen package, the inference API does not require training or
+`sharp-421m` names the 421M encoder branch. The full-data six-round checkpoint
+and its MLX runtime are listed separately from these matched-budget versions;
+the bilingual 322M checkpoint is `sharp-322m`.
+
+For an exported sharp-4b or sharp-9b package, inference does not require training or
 optimizer files:
 
 ```python
@@ -72,9 +78,8 @@ the native 48-token cap is rejected.
 
 Model paths are local Hugging Face snapshots. The starting models are
 `Qwen/Qwen3.5-4B-Base`, `Qwen/Qwen3.5-9B` and `convaiinnovations/laya`. Project
-model cards identify the ten dev-best artifacts; project artifacts are currently
-private with restricted access. Future original versions may use separate controlled research-use
-terms; existing and upstream licenses remain effective. Qwen head/adapter packages need
+model cards identify the ten dev-best sharp releases and their controlled
+research-use terms. Existing upstream licenses remain effective. Qwen head/adapter packages need
 their named upstream backbone; native Laya packages include encoder, tokenizer
 and decision weights. Upstream checkpoint histories differ: the model comparison
 controls additional downstream rows, rather than claiming identical pretraining.
@@ -88,10 +93,10 @@ count changes the update geometry unless the batch/accumulation is adjusted.
 
 ```sh
 python run_recipe.py --list
-python run_recipe.py --recipe qwen4b_head_only_50000 --data prepared/qwen --model models/qwen4b-base --output runs/qwen4b_head_only_50000
-python run_recipe.py --recipe qwen4b_lora_50000 --data prepared/qwen --model models/qwen4b-base --output runs/qwen4b_lora_50000
-python run_recipe.py --recipe qwen4b_head_only_200000 --data prepared/qwen --model models/qwen4b-base --output runs/qwen4b_head_only_200000
-python run_recipe.py --recipe qwen4b_lora_200000 --data prepared/qwen --model models/qwen4b-base --output runs/qwen4b_lora_200000
+python run_recipe.py --recipe sharp-4b-head-50k --data prepared/qwen --model models/qwen4b-base --output runs/sharp-4b-head-50k
+python run_recipe.py --recipe sharp-4b-lora-50k --data prepared/qwen --model models/qwen4b-base --output runs/sharp-4b-lora-50k
+python run_recipe.py --recipe sharp-4b-head-200k --data prepared/qwen --model models/qwen4b-base --output runs/sharp-4b-head-200k
+python run_recipe.py --recipe sharp-4b --data prepared/qwen --model models/qwen4b-base --output runs/sharp-4b
 ```
 
 Qwen independently scores each candidate using the complete respondent state,
@@ -106,23 +111,23 @@ one pass. Unique rows and actual repeated exposures are reported separately.
 Evaluate the two 200k Qwen best checkpoints on **full dev** using the direct CLI:
 
 ```sh
-torchrun --standalone --nproc_per_node=8 train_qwen.py --model-path models/qwen4b-base --model-name Qwen3.5-4B-Base --method head_only --checkpoint runs/qwen4b_head_only_200000/best --evaluate-path prepared/qwen/dev.full.jsonl --output evaluations/head_full_dev --batch-size 512 --feature-batch-size 128
-torchrun --standalone --nproc_per_node=8 train_qwen.py --model-path models/qwen4b-base --model-name Qwen3.5-4B-Base --method lora --checkpoint runs/qwen4b_lora_200000/best --evaluate-path prepared/qwen/dev.full.jsonl --output evaluations/lora_full_dev --batch-size 2
+torchrun --standalone --nproc_per_node=8 train_qwen.py --model-path models/qwen4b-base --model-name Qwen3.5-4B-Base --method head_only --checkpoint runs/sharp-4b-head-200k/best --evaluate-path prepared/qwen/dev.full.jsonl --output evaluations/head_full_dev --batch-size 512 --feature-batch-size 128
+torchrun --standalone --nproc_per_node=8 train_qwen.py --model-path models/qwen4b-base --model-name Qwen3.5-4B-Base --method lora --checkpoint runs/sharp-4b/best --evaluate-path prepared/qwen/dev.full.jsonl --output evaluations/lora_full_dev --batch-size 2
 python select_method.py --head-evaluation evaluations/head_full_dev/evaluation.json --lora-evaluation evaluations/lora_full_dev/evaluation.json --output method_selection.json
 ```
 
 The method is selected by full-dev mean question macro-F1, then accuracy. The
-reported selected method is LoRA; run `qwen9b_lora_200000` with `models/qwen9b`.
+reported selected method is LoRA; run `sharp-9b` with `models/qwen9b`.
 Each model's saved best is selected on dev20k, with no test-based model choice.
 
 Train native SFT first, then continue the named SFT best:
 
 ```sh
-python run_recipe.py --recipe laya_original_sft_50000 --data prepared/laya --model models/laya-original --output runs/laya_original_sft_50000
-python run_recipe.py --recipe laya_original_sft_200000 --data prepared/laya --model models/laya-original --output runs/laya_original_sft_200000
-python run_recipe.py --recipe laya_original_sft_rlcd_50000 --data prepared/laya --model models/laya-original --parent runs/laya_original_sft_50000/best --output runs/laya_original_sft_rlcd_50000
-python run_recipe.py --recipe laya_original_sft_rlcd_200000 --data prepared/laya --model models/laya-original --parent runs/laya_original_sft_200000/best --output runs/laya_original_sft_rlcd_200000
-python run_recipe.py --recipe laya_original_sft_continued_200000 --data prepared/laya --model models/laya-original --parent runs/laya_original_sft_200000/best --output runs/laya_original_sft_continued_200000
+python run_recipe.py --recipe sharp-421m-sft-50k --data prepared/laya --model models/laya-original --output runs/sharp-421m-sft-50k
+python run_recipe.py --recipe sharp-421m-sft-200k --data prepared/laya --model models/laya-original --output runs/sharp-421m-sft-200k
+python run_recipe.py --recipe sharp-421m-rlcd-50k --data prepared/laya --model models/laya-original --parent runs/sharp-421m-sft-50k/best --output runs/sharp-421m-rlcd-50k
+python run_recipe.py --recipe sharp-421m-rlcd-200k --data prepared/laya --model models/laya-original --parent runs/sharp-421m-sft-200k/best --output runs/sharp-421m-rlcd-200k
+python run_recipe.py --recipe sharp-421m-ce-200k --data prepared/laya --model models/laya-original --parent runs/sharp-421m-sft-200k/best --output runs/sharp-421m-ce-200k
 ```
 
 The two 200k continuations start from the same SFT200k best, reset optimizer and
@@ -139,11 +144,11 @@ After development selection, evaluate every saved version on the same prepared
 shared test. Examples for Qwen and native Laya:
 
 ```sh
-torchrun --standalone --nproc_per_node=8 train_qwen.py --model-path models/qwen4b-base --model-name Qwen3.5-4B-Base --method lora --checkpoint runs/qwen4b_lora_200000/best --evaluate-path prepared/qwen/test.shared119.jsonl --output evaluations/qwen4b_lora_200000 --batch-size 2
-torchrun --standalone --nproc_per_node=8 train_laya.py --model-path models/laya-original --checkpoint runs/laya_original_sft_rlcd_200000/best --evaluate-path prepared/laya/test.shared119.jsonl --output evaluations/laya_rlcd200 --encoded-dir prepared/laya_test_tokens --eval-batch-size 64
-python merge_predictions.py --input-dir evaluations/qwen4b_lora_200000 --output evaluations/qwen4b_lora_200000/predictions.jsonl.gz
-python merge_predictions.py --input-dir evaluations/laya_rlcd200 --output evaluations/laya_rlcd200/predictions.jsonl.gz
-python paired_metrics.py --test data/native/en/test.jsonl.gz --baseline-predictions evaluations/qwen4b_lora_200000/predictions.jsonl.gz --model-predictions evaluations/laya_rlcd200/predictions.jsonl.gz --baseline-name qwen4b_lora_200000 --model-name laya_rlcd200 --output evaluations/paired.json
+torchrun --standalone --nproc_per_node=8 train_qwen.py --model-path models/qwen4b-base --model-name Qwen3.5-4B-Base --method lora --checkpoint runs/sharp-4b/best --evaluate-path prepared/qwen/test.shared119.jsonl --output evaluations/sharp-4b --batch-size 2
+torchrun --standalone --nproc_per_node=8 train_laya.py --model-path models/laya-original --checkpoint runs/sharp-421m-rlcd-200k/best --evaluate-path prepared/laya/test.shared119.jsonl --output evaluations/sharp-421m-rlcd-200k --encoded-dir prepared/laya_test_tokens --eval-batch-size 64
+python merge_predictions.py --input-dir evaluations/sharp-4b --output evaluations/sharp-4b/predictions.jsonl.gz
+python merge_predictions.py --input-dir evaluations/sharp-421m-rlcd-200k --output evaluations/sharp-421m-rlcd-200k/predictions.jsonl.gz
+python paired_metrics.py --test data/native/en/test.jsonl.gz --baseline-predictions evaluations/sharp-4b/predictions.jsonl.gz --model-predictions evaluations/sharp-421m-rlcd-200k/predictions.jsonl.gz --baseline-name sharp-4b --model-name sharp-421m-rlcd-200k --output evaluations/paired.json
 ```
 
 For original Laya's reference, use `--checkpoint models/laya-original`; it is an
@@ -167,5 +172,5 @@ CPU fixture checks:
 
 ```sh
 python -m unittest discover -s tests -p test_protocol.py -v
-python run_recipe.py --recipe qwen4b_lora_50000 --data prepared/qwen --model models/qwen4b-base --output runs/example --dry-run
+python run_recipe.py --recipe sharp-4b-lora-50k --data prepared/qwen --model models/qwen4b-base --output runs/example --dry-run
 ```

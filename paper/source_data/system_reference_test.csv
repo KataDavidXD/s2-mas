@@ -1,3 +1,3 @@
 reference,test_records,question_versions,accuracy,question_macro_F1,new_downstream_training_examples,precision
-fin-laya-mlx-6-round,240458,119,0.7455439203519949,0.3837457040485032,historical full-data system,MLX FP16
+sharp-421m-mlx,240458,119,0.7455439203519949,0.3837457040485032,historical full-data system,MLX FP16
 laya_original_zero,240458,119,0.6019720699664807,0.2959954231549104,0,BF16

@@ -1,4 +1,5 @@
-application,distinct_households,financial_parent_records,model_choices,model_episodes,horizon_months,models,languages
-original_one_shot,2000000,,4000000,4000000,16,1,1
-persistent_decisions,2000,,2048000,88000,16/24,2,1
-static_task_suite,,207,181892,,12,2,2
+application,distinct_households,financial_parent_records,logical_choices,model_episodes,horizon_months,models,languages,worlds,monthly_ledger_states,new_successful_model_requests,identical_input_reuse_choices,notes
+original_one_shot,2000000,,4000000,4000000,16,1,1,2,,,,One decision per household-condition; 16-month accounting follow-up; supporting application in Appendix S13.
+population_purchase_funding,12000000,,24000000,24000000,12,1,1,2,288000000,,,One decision per household-condition; twelve monthly ledger states per choice; no monthly re-selection.
+persistent_decisions,10000,,2880000,120000,24,1,1,12,2880000,2160000,720000,"Two goals and six routes, including one unshocked reference; 24 logical monthly choices per household-goal-route episode; logical choices include identical-input response reuse."
+static_task_suite,,207,181892,,12,2,2,,,,,Eight tasks in English and Chinese; 181888 paired choices and four supplemental T1 choices; twelve-month accounting horizon.

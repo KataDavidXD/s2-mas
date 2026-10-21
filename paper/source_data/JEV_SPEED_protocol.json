@@ -1,7 +1,7 @@
 {
   "date": "2026-10-11",
   "language": "Chinese",
-  "financial_model": "Bilingual Fin-Laya, multilingual-base financial adaptation",
+  "financial_model": "sharp-322m, multilingual-base financial adaptation",
   "original_base": "mmBERT-based multilingual Laya",
   "requested_api": "jev-latest",
   "returned_api": "jev-1.13.0",

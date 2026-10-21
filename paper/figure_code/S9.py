@@ -64,7 +64,7 @@ def main():
     y=base(c,names,'Peak RSS (MB)',1450,ticks=[0,500,1000])
     for yi,row in zip(y,dz):
         value=metric(row['framework'],'peak_rss');color=TEAL if row['framework']=='MAS' else GRAY;point(c,value,yi,color);label(c,value,yi,f'{value:,.0f}',color=color)
-    header(d,'d','Fin-Laya parallel adapters','fl5 · 100 agents · 3 T4 replicas · 3 blocks')
+    header(d,'d','sharp-421m parallel adapters','fl5 · 100 agents · 3 T4 replicas · 3 blocks')
     y=base(d,['MAS','MatrAIx: survey'],'Round time (s; log scale)',250,.32,True,[.5,1,10,100])
     for yi,row in zip(y,fl5):
         x=float(row['value']);color=TEAL if row['framework']=='MAS' else GRAY;point(d,x,yi,color);label(d,x,yi,f'{x:g}',offset=8,color=color)

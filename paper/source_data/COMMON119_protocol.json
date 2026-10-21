@@ -37,7 +37,7 @@
     "terminal_stage_row_exposures": "Rows processed by this stage at termination; this is not necessarily the published checkpoint."
   },
   "formal_model_count": 10,
-  "reference_scope": "Historical full-data Fin-Laya and upstream original Laya are separate system references; this table lists the 10 formal downstream-trained versions.",
+  "reference_scope": "Historical full-data sharp-421m and upstream original Laya are separate system references; this table lists the 10 formal downstream-trained versions.",
   "method_definitions": {
     "head_only": "Freeze the official backbone; train the shared linear decision head.",
     "lora": "LoRA-SFT of the backbone together with the same decision-head architecture.",

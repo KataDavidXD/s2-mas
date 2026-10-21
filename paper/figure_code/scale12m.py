@@ -33,7 +33,7 @@ def render(data_dir:Path,output_dir:Path,qa_dir:Path|None=None):
   top.text(x+15,78,value,ha='center',va='center',fontsize=20,fontweight='bold',color=TEAL)
   top.text(x+15,59,noun,ha='center',va='center',fontsize=8.25)
   if x<70: top.add_patch(FancyArrowPatch((x+31,72),(x+34,72),arrowstyle='-|>',color=TEAL,lw=1.1,mutation_scale=9))
- top.text(0,25,'Fin-Laya FP16 · paired purchase-funding conditions',fontsize=8.5,color=MUTED,va='center')
+ top.text(0,25,'sharp-421m FP16 · paired purchase-funding conditions',fontsize=8.5,color=MUTED,va='center')
  fig.text(.035,.592,'b',fontsize=11,fontweight='bold');fig.text(.073,.592,'Paired financial channels',fontsize=10.1,fontweight='bold')
  fig.text(.073,.557,'Intervention minus baseline',fontsize=8.4,color=MUTED)
  monetary=fin[:5];ys=list(range(4,-1,-1));values=[float(r['paired_mean_difference']) for r in monetary]

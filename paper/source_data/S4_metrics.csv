@@ -1,5 +1,5 @@
 model,model_version,backend,language,scope,qa_n,respondent_groups,accuracy_pct,question_macro_f1_pct
 Original Laya,original-base,MLX FP16,en,shared,240458,8275,60.18306731321063,29.575967953234073
-Fin-Laya · 3-round,rlcd-1,MLX FP16,en,shared,240458,8275,74.52860790657829,38.01209542393937
-Fin-Laya · 6-round,rlcd-2,MLX FP16,en,shared,240458,8275,74.55439203519948,38.374570404850324
-Fin-Laya · 6-round,rlcd-2,MLX FP16,en,expanded,418597,14398,67.27257959326035,27.895543188973466
+sharp-421m-3rounds,rlcd-1,MLX FP16,en,shared,240458,8275,74.52860790657829,38.01209542393937
+sharp-421m,rlcd-2,MLX FP16,en,shared,240458,8275,74.55439203519948,38.374570404850324
+sharp-421m,rlcd-2,MLX FP16,en,expanded,418597,14398,67.27257959326035,27.895543188973466

@@ -42,7 +42,7 @@ def main():
     arrow(a,(.50,.195),(.50,.155))
     box(b,.025,.825,.40,.115,'Client / SDK / server',color=BLUE,fill=PALE_BLUE)
     box(b,.575,.545,.40,.185,'Brain','Bounded partitions\nPooled model clients',TEAL,PALE_TEAL)
-    box(b,.575,.825,.40,.115,'Fin-Laya','One-pass option scores',TEAL,PALE_TEAL)
+    box(b,.575,.825,.40,.115,'sharp-421m','One-pass option scores',TEAL,PALE_TEAL)
     box(b,.025,.545,.40,.185,'World Core','Validate / resolve\nApply registered effects',BLUE,PALE_BLUE)
     arrow(b,(.225,.815),(.225,.745),BLUE)
     arrow(b,(.44,.685),(.56,.685),TEAL);text(b,.50,.725,'Batch',7.8,TEAL)
@@ -62,6 +62,11 @@ def main():
         for name,width,color,fill in segments:
             box(c,x,y-.105,width,.21,name,color=color,fill=fill,fontsize=8.1);x+=width+.015
     fig.canvas.draw()
+    from audit_panel_alignment import require_matplotlib_panel_alignment
+    qa=out/'qa';qa.mkdir(exist_ok=True)
+    require_matplotlib_panel_alignment(fig,axes=[a,b],panel_ids=['a','b'],
+        row_groups=[['a','b']],json_out=qa/'architecture.alignment.json',
+        overlay_svg=qa/'architecture.alignment.svg',strict=True)
     fig.savefig(out/'MAS_ARCHITECTURE.pdf')
     fig.savefig(out/'MAS_ARCHITECTURE.svg')
     fig.savefig(out/'MAS_ARCHITECTURE.png',dpi=600)

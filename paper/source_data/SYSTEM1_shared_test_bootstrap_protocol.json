@@ -4,7 +4,7 @@
   "draws": 1000,
   "seed": 20261014,
   "models": [
-    "fin-laya-mlx-6-round",
+    "sharp-421m-mlx",
     "jev-1.13",
     "opendecider-nano",
     "von-1.3",

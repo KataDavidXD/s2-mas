@@ -44,23 +44,23 @@ a.text(.035,1.09,'Three financial model releases',fontsize=11,weight='normal',tr
 def card(x,y,w,h,title,subtitle,color=TEAL):
     a.add_patch(FancyBboxPatch((x,y),w,h,boxstyle='round,pad=0.008,rounding_size=0.004',
         facecolor='white',edgecolor=color,linewidth=.8))
-    a.text(x+w/2,y+h*.69,title,ha='center',va='center',weight='normal',fontsize=9,color=color)
+    a.text(x+w/2,y+h*.69,title,ha='center',va='center',weight='normal',fontsize=8.3,color=color)
     a.text(x+w/2,y+h*.30,subtitle,ha='center',va='center',fontsize=8.1)
 card(.015,.51,.21,.39,'Laya','Original base',GRAY)
-card(.345,.51,.26,.39,'Fin-Laya · 3-round','Initial financial QA')
-card(.735,.51,.25,.39,'Fin-Laya · 6-round','Expanded financial QA')
+card(.345,.51,.26,.39,'sharp-421m-3rounds','Initial financial QA')
+card(.735,.51,.25,.39,'sharp-421m','Expanded financial QA')
 a.annotate('',xy=(.325,.705),xytext=(.242,.705),arrowprops={'arrowstyle':'->','color':GRAY,'lw':1})
 a.annotate('',xy=(.715,.705),xytext=(.624,.705),arrowprops={'arrowstyle':'->','color':GRAY,'lw':1})
 a.text(.282,.98,'2 SFT + RLCD',ha='center',fontsize=8)
 a.text(.668,.98,'SFT + RLCD',ha='center',fontsize=8)
 card(.015,.015,.21,.33,'Multilingual Laya','Original base',GRAY)
-card(.345,.015,.26,.33,'Bilingual Fin-Laya','Initial financial QA')
+card(.345,.015,.26,.33,'sharp-322m','Initial financial QA')
 a.annotate('',xy=(.325,.170),xytext=(.242,.170),arrowprops={'arrowstyle':'->','color':GRAY,'lw':1})
 a.text(.735,.17,'Continuation:\n2,925,263 train records / stage',ha='left',va='center',fontsize=8.2)
 
 b = fig.add_axes([.28,.17,.295,.36],label='b')
 c = fig.add_axes([.66,.17,.295,.36],label='c')
-labels=['3-round','6-round','Bilingual · Chinese']
+labels=['sharp-421m-3rounds','sharp-421m','sharp-322m · Chinese']
 pairs=[(0,1),(0,2),(3,4)]
 gain_rows=[]
 for ax,metric,lims,ticks,title,letter in [
@@ -89,8 +89,8 @@ for ax,metric,lims,ticks,title,letter in [
         gain_rows.append({'family':rows[trained]['model_family'],'release':rows[trained]['model_version'],
             'metric':metric,'difference_pp':round(diff,4)})
     ax.axhline(.5,color=PALE,lw=.6)
-fig.text(.035,.508,'421M family',weight='normal',fontsize=9)
-fig.text(.035,.258,'Multilingual family',weight='normal',fontsize=9)
+fig.text(.035,.508,'sharp-421m · 421M',weight='normal',fontsize=9)
+fig.text(.035,.258,'sharp-322m · 322M',weight='normal',fontsize=9)
 fig.text(.28,.035,'○  Corresponding base',color=GRAY,fontsize=9)
 fig.text(.59,.035,'●  Financially trained release',color=TEAL,fontsize=9)
 fig.canvas.draw()

@@ -155,7 +155,7 @@ def overview(output, schedule):
 
     tag(c, "c", "The same policy and state update run in every monthly world")
     box(c, (.008, .59), .285, .34, "Current household state", "Income, cash, contracts,\nremaining target and offer", fs=7.0)
-    box(c, (.357, .59), .285, .34, "Frozen Fin-Laya choice", "Full persona and all\nexecuted monthly history", fill="#EEF0F6", fs=7.0)
+    box(c, (.357, .59), .285, .34, "Frozen sharp-421m choice", "Full persona and all\nexecuted monthly history", fill="#EEF0F6", fs=7.0)
     box(c, (.706, .59), .285, .34, "Execute and update", "Consumption, repayment,\ncash and dated debt", fill="#EAF3F1", fs=7.0)
     arrow(c, (.293, .76), (.357, .76))
     arrow(c, (.642, .76), (.706, .76))

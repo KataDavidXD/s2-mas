@@ -75,33 +75,69 @@
     }
   ],
   "compared_model_taxonomy": [
-    {"model": "Base Laya", "family": "Encoder option scoring"},
-    {"model": "Fin-Laya 6-round", "family": "Encoder option scoring"},
-    {"model": "Laya-Finance (hravi)", "family": "Encoder option scoring"},
-    {"model": "Von 1.3", "family": "Encoder option scoring"},
-    {"model": "OpenDecider Nano", "family": "Encoder option scoring"},
-    {"model": "Kev 4B", "family": "Language model with learned decision head"},
-    {"model": "Clef Flash 9B", "family": "Language model with learned decision head"},
-    {"model": "Tev1 4B", "family": "Next-token decision SFT"},
-    {"model": "GLiNER2.5-Decide", "family": "Dynamic schema classification"},
-    {"model": "Liquid d1-omni-600M", "family": "Multimodal encoder decisions"},
-    {"model": "Jev 1.13", "family": "Provider decision interfaces"},
-    {"model": "GLM-5.3-Flash", "family": "Provider decision interfaces"}
+    {
+      "model": "Base Laya",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "sharp-421m-mlx",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "Laya-Finance (hravi)",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "Von 1.3",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "OpenDecider Nano",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "Kev 4B",
+      "family": "Language model with learned decision head"
+    },
+    {
+      "model": "Clef Flash 9B",
+      "family": "Language model with learned decision head"
+    },
+    {
+      "model": "Tev1 4B",
+      "family": "Next-token decision SFT"
+    },
+    {
+      "model": "GLiNER2.5-Decide",
+      "family": "Dynamic schema classification"
+    },
+    {
+      "model": "Liquid d1-omni-600M",
+      "family": "Multimodal encoder decisions"
+    },
+    {
+      "model": "Jev 1.13",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "GLM-5.3-Flash",
+      "family": "Provider decision interfaces"
+    }
   ],
   "trained_variants": [
-    "Laya SFT 50k",
-    "Laya SFT 200k",
-    "Laya SFT50 development-best to RLCD +50k pass",
-    "Laya SFT200 development-best to RLCD +200k pass",
-    "Laya SFT200 development-best to CE +200k pass",
-    "Qwen3.5-4B-Base Head-only 50k",
-    "Qwen3.5-4B-Base Head-only 200k",
-    "Qwen3.5-4B-Base LoRA and scalar head 50k",
-    "Qwen3.5-4B-Base LoRA and scalar head 200k",
-    "Qwen3.5-9B LoRA and scalar head 200k"
+    "sharp-421m-sft-50k",
+    "sharp-421m-sft-200k",
+    "sharp-421m-rlcd-50k: continue SFT50 development-best with a 50k RLCD pass",
+    "sharp-421m-rlcd-200k: continue SFT200 development-best with a 200k RLCD pass",
+    "sharp-421m-ce-200k: continue SFT200 development-best with a 200k CE pass",
+    "sharp-4b-head-50k",
+    "sharp-4b-head-200k",
+    "sharp-4b-lora-50k",
+    "sharp-4b: LoRA and scalar head, 200k",
+    "sharp-9b: LoRA and scalar head, 200k"
   ],
   "references": [
     "Original Laya with zero new downstream training",
-    "Historical full-data Fin-Laya SFT and RLCD system"
+    "Historical full-data sharp-421m SFT and RLCD system"
   ]
 }

@@ -1,3 +1,3 @@
 scope,display_scope,qa_n,respondent_groups,comparison,accuracy_gain_pp,ci95_low_pp,ci95_high_pp,bootstrap_repetitions,bootstrap_unit
-shared,Shared,240458,8275,6-round Fin-Laya minus Original Laya,14.37132472198887,14.168573504660756,14.571868178666318,2000,paired respondent/household group
-expanded,Expanded,418597,14398,6-round Fin-Laya minus Original Laya,19.496556353724465,19.276549902215198,19.707091749844448,2000,paired respondent/household group
+shared,Shared,240458,8275,sharp-421m minus Original Laya,14.37132472198887,14.168573504660756,14.571868178666318,2000,paired respondent/household group
+expanded,Expanded,418597,14398,sharp-421m minus Original Laya,19.496556353724465,19.276549902215198,19.707091749844448,2000,paired respondent/household group

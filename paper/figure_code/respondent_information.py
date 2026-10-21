@@ -1,6 +1,6 @@
 """Plot respondent-information controls from aggregate survey scores.
 
-Panel a shows full-profile Fin-Laya minus each comparator in question-macro F1
+Panel a shows full-profile sharp-421m minus each comparator in question-macro F1
 percentage points, with the supplied paired bootstrap intervals. Panel b shows
 full-profile and profile-free scores in the three financial question families.
 All scores and interval endpoints come from the bundled aggregate source data.
@@ -60,8 +60,8 @@ keys = [
 labels = [
     "Base Laya\n(full respondent profile)",
     "Most common training answer\n(for the same question)",
-    "Fin-Laya\n(no respondent information)",
-    "Fin-Laya\n(another respondent's profile;\nsame question)",
+    "sharp-421m\n(no respondent information)",
+    "sharp-421m\n(another respondent's profile;\nsame question)",
 ]
 
 ax = axs[0]
@@ -79,7 +79,7 @@ for i, key in enumerate(keys):
     ax.text(high + .23, i, f"+{delta:.2f}", fontsize=8, va="center", color="#37424D")
 
 ax.set(yticks=range(4), yticklabels=labels, xlim=(-.45, 11.3), ylim=(3.65, -.65), xticks=[0, 3, 6, 9])
-ax.set_xlabel("Question-macro F1 difference\nFull-profile Fin-Laya − comparator\n(percentage points)", labelpad=8, fontsize=7.8, linespacing=1.25)
+ax.set_xlabel("Question-macro F1 difference\nFull-profile sharp-421m − comparator\n(percentage points)", labelpad=8, fontsize=7.8, linespacing=1.25)
 ax.tick_params(axis="y", length=0, pad=7, labelsize=7.8)
 ax.set_axisbelow(True)
 ax.set_title("Gains over each control", loc="left", fontsize=9.1, pad=29)
@@ -115,6 +115,12 @@ for ax, label in zip(axs, ["a", "b"]):
     ax.annotate(label, xy=(0, 1), xycoords="axes fraction", xytext=(-20, 29), textcoords="offset points", fontsize=9, weight="bold", va="baseline")
 
 fig.canvas.draw()
+from audit_panel_alignment import require_matplotlib_panel_alignment
+qa = args.output_dir / 'qa'
+qa.mkdir(exist_ok=True)
+require_matplotlib_panel_alignment(fig, axes=list(axs), panel_ids=['a', 'b'],
+    row_groups=[['a', 'b']], json_out=qa / 'QA_PROFILE.alignment.json',
+    overlay_svg=qa / 'QA_PROFILE.alignment.svg', strict=True)
 
 metadata = {"Title": "Respondent information improves survey-answer prediction", "Author": "", "Subject": "Paired question-macro F1 differences and financial question families"}
 fig.savefig(args.output_dir / "QA_PROFILE.pdf", metadata=metadata)
