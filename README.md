@@ -11,7 +11,7 @@ sharp-421m uses the **largest disclosed SFT + RLCD training set among the financ
 
 [Latest manuscript](paper/S2_MAS_Paper.pdf) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
 
-Manuscript v55 · 22 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
+Manuscript v56 · 22 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
 
 | Resource | Entry point and scope |
 |---|---|
