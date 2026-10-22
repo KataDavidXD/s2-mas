@@ -1,0 +1,16 @@
+model,table_size,checkpoint_parameters_when_counted,basis,official_source,notes
+sharp-421m-mlx,421M,421293830,released checkpoint,https://huggingface.co/ya9919/sharp-421m-mlx,FP16 encoder and decision head
+Base Laya,421M,,released model size,https://github.com/LeonaDavinci/laya-system-one,Same original encoder decision interface
+GLM-5.3-Flash,320B,,provider architecture,https://docs.z.ai/guides/vlm/glm-5.3-flash,320B total; 18B active per token
+Jev 1.13,Not disclosed,,provider API documentation,https://docs.typesafe.ai/models,No parameter count found in official model documentation checked on 22 October 2026
+Kev 4B,4B,,published backbone class,https://huggingface.co/jaredpalmer/kev-4b,4B backbone class with LoRA and pointer head; published adapter has 33.8M parameters
+DeepSeek-V4.1-Flash,552B + 196B,,provider architecture,https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf,552B backbone plus 196B Engram conditional memory; active 8B prefill and 16B decode; tested 1017 update
+Clef Flash 9B,9B,,published backbone class,https://huggingface.co/Cloudflare/clef-flash,9B multimodal backbone class plus joint schema head
+GPT-6-Luna,Not disclosed,,provider API documentation,https://developers.openai.com/api/docs/models/gpt-6-luna,No parameter count found in official model documentation checked on 22 October 2026
+Laya-Finance (hravi),421M,421293830,released checkpoint,https://huggingface.co/hravi/laya-finance,Third public checkpoint; complete published safetensors parameter metadata
+Tev1 4B,4B,,published backbone class,https://huggingface.co/togethercomputer/Tev1-4B-experimental,Published 4B model class with standard next-token head
+Liquid d1-omni-600M,587M,587161089,released checkpoint,https://huggingface.co/LiquidAI/d1-omni-600M,Complete multimodal model size; text interface evaluated
+OpenDecider Nano,~400M,,published model size,https://huggingface.co/manjunathshiva/opendecider-nano,Published approximately 400M Ettin encoder plus decision head
+Von 1.3,395M,,published model size,https://huggingface.co/wfzyx/von,Official 395M model label
+GLiNER2.5-Decide,486M,486444053,complete released checkpoint,https://huggingface.co/fastino/GLiNER2.5-Decide,Complete safetensors tensor count; model card nominal label is 340M
+GPT-6-Astra,Not disclosed,,provider API documentation,https://developers.openai.com/api/docs/models/gpt-6-astra,No parameter count found in official model documentation checked on 22 October 2026

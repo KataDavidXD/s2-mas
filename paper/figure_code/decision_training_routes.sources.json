@@ -72,6 +72,21 @@
       "name": "GLM-5.3-Flash",
       "url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
       "scope": "Provider text-output API supporting structured JSON; the household benchmark maps generated answers to the fixed options"
+    },
+    {
+      "name": "DeepSeek-V4.1-Flash",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "scope": "Provider text-output API mapped to original decision options"
+    },
+    {
+      "name": "GPT-6-Luna",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "scope": "Provider text-output API mapped to original decision options"
+    },
+    {
+      "name": "GPT-6-Astra",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "scope": "Provider text-output API mapped to original decision options"
     }
   ],
   "compared_model_taxonomy": [
@@ -122,6 +137,18 @@
     {
       "model": "GLM-5.3-Flash",
       "family": "Provider decision interfaces"
+    },
+    {
+      "model": "DeepSeek-V4.1-Flash",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "GPT-6-Luna",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "GPT-6-Astra",
+      "family": "Provider decision interfaces"
     }
   ],
   "trained_variants": [
@@ -139,5 +166,10 @@
   "references": [
     "Original Laya with zero new downstream training",
     "Historical full-data sharp-421m SFT and RLCD system"
-  ]
+  ],
+  "evaluation_scope": {
+    "complete_test_models": 14,
+    "additional_fixed_sample_model": "GPT-6-Astra",
+    "fixed_sample_records": 14441
+  }
 }

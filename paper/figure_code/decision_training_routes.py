@@ -103,13 +103,13 @@ def create_figure():
     box(a, 59.5, 2, 55, 17.5, "Multimodal encoder decisions", family="native", title_size=8.0,
         subtitle="Liquid d1-omni-600M\nLFM encoder + decision head", sub_size=7.4)
     box(a, 119, 2, 55, 17.5, "Provider decision interfaces", family="neutral", title_size=8.0,
-        subtitle="Jev 1.13 · typed-output API\nGLM-5.3-Flash · text → option", sub_size=7.4)
+        subtitle="Jev 1.13 · typed-output API\nGLM / DeepSeek / GPT-6\nGenerated text → fixed options", sub_size=6.8)
 
     b.text(0, 110.7, "b", fontsize=9, fontweight="bold", va="top", color=INK)
     text(b, 5, 108.5, "Ten trained release versions in the common comparison", 9,
          "bold", ha="left")
     text(b, 41, 100.8, "sharp-421m · encoder adaptation", 8.5, "bold", color=NATIVE)
-    text(b, 132, 100.8, "sharp-4b / sharp-9b · head and scale", 8.5,
+    text(b, 132, 100.8, "sharp-4b / 9b · adaptation and scale", 8.5,
          "bold", color=QWEN)
 
     # Laya: two SFT parents, two RLCD continuations and one CE control.
@@ -132,7 +132,7 @@ def create_figure():
     arrow(b, [(132, 83), (132, 79), (110.5, 79), (110.5, 76)], color=QWEN)
     arrow(b, [(132, 79), (153.5, 79), (153.5, 76)], color=QWEN)
     box(b, 91, 62, 39, 14, "Head-only", "50k / 200k", family="qwen")
-    box(b, 134, 62, 39, 14, "LoRA + head", "50k / 200k", family="qwen")
+    box(b, 134, 62, 39, 14, "LoRA + head", "50k / sharp-4b (200k)", family="qwen")
     text(b, 132, 56.4, "Candidate-wise encoding → L2 → scalar head", 7.6, color=QWEN)
     box(b, 91, 33, 39, 14, "Qwen3.5-9B", "Post-trained backbone", family="qwen")
     box(b, 134, 33, 39, 14, "LoRA + head", "200k", family="qwen")
@@ -143,7 +143,7 @@ def create_figure():
 
     # The full-data trained system and upstream native reference stay separate.
     box(b, 0, 11, 174, 9,
-        "Full-data system reference: sharp-421m · full-data SFT → RLCD", family="neutral",
+        "Full-data system reference: sharp-421m · SFT → RLCD", family="neutral",
         title_size=8.0)
     text(b, 87, 5.9, "Common test: 240,458 records · 119 question versions · accuracy + question-macro F1", 8.0, "bold")
     text(b, 87, 0.8, "Ten development-best release versions + original-Laya zero-new-training reference", 7.5, color=MUTED)

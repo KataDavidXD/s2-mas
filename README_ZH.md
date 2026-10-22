@@ -11,7 +11,7 @@
 
 [最新论文](paper/S2_MAS_Paper.pdf) · [LaTeX 与论文图](paper/) · [已报告聚合结果](paper/source_data/) · [English](README.md)
 
-论文 v56 · 2026 年 10 月 22 日 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746)。
+论文 v57 · 2026 年 10 月 22 日 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746)。
 
 | 资源 | 入口与范围 |
 |---|---|

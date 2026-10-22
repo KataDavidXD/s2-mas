@@ -1,6 +1,6 @@
 # Model releases and interfaces
 
-Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v56 · 22 October 2026.
+Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v57 · 22 October 2026.
 
 The comparison combines the public decision-model releases evaluated from 14 October 2026 with the hosted API comparisons reported through 22 October 2026. The [sharp model catalog](../../resources/MODEL_CATALOG.md) lists project releases and their controlled research terms. Upstream resources follow their own licenses and access conditions.
 
@@ -20,4 +20,6 @@ The comparison combines the public decision-model releases evaluated from 14 Oct
 
 The hosted API rows include GLM-5.3-Flash, GPT-6-Luna and DeepSeek-V4.1-Flash on the full 240,458-record test, and GPT-6-Astra on the fixed 14,441-record sample. Their backend and scoring scope are reported in Table 4 and Supplementary Methods M5.
 
-The paper's Tables S11-S12 list related decision interfaces and financial adaptation resources. Backend and arithmetic labels in the result table describe the evaluated runtime separately from model architecture.
+The paper's Tables S7-S8 list related decision interfaces and financial adaptation resources. Backend and arithmetic labels in the result table describe the evaluated runtime separately from model architecture.
+
+Parameter entries were checked against official documentation and public checkpoint metadata on 22 October 2026. [Model sizes and their reporting basis](../../paper/source_data/SYSTEM1_model_parameters.csv) distinguish complete checkpoint totals, nominal backbone classes and MoE components. GLM-5.3-Flash reports 320B total / 18B active. DeepSeek-V4.1-Flash reports a 552B backbone plus 196B Engram parameters, with 8B active during prefill and 16B during decode. Laya-Finance contains 421,293,830 parameters. GLiNER2.5-Decide contains 486,444,053 parameters in its complete checkpoint; its card uses the 340M nominal label. The official Jev and GPT-6 model documentation checked here does not provide parameter counts.
