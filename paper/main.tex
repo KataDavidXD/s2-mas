@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% Manuscript version: v57, 22 October 2026
+% Manuscript version: v58, 22 October 2026
 \documentclass[10pt]{article}
 \usepackage[a4paper,left=17mm,right=17mm,top=21mm,bottom=22mm]{geometry}
 \usepackage{fontspec}
@@ -8,7 +8,7 @@
 \usepackage{graphicx,booktabs,tabularx,caption,hyperref,xcolor,placeins}
 \definecolor{ink}{HTML}{172A3A}
 \definecolor{linkink}{HTML}{12685E}
-\hypersetup{colorlinks=true,linkcolor=linkink,urlcolor=linkink,pdftitle={S²-MAS: A Society-Scale Multi-Agent Simulation Framework with 500 Million Household Persona Agents},pdfauthor={Yang Li, Yike Wang, Di Wan, Chujun He, Zongsi Xu, Yitao Yu, Xiyu Chen, Sheng Zhong, Deng Binjie, Yichen Guo, Zhenwei Guo, Hou Jun, Kunhan Guo, Weihao Lin, Tuo Zhou, Hai Liu, Chenwei Wu, Jianyuan Zhong, Xilin Dai, Ye Luo}}
+\hypersetup{colorlinks=true,linkcolor=linkink,urlcolor=linkink,pdftitle={S²-MAS: A Society-Scale Multi-Agent Simulation Framework with 500 Million Household Persona Agents},pdfauthor={Yang Li, Yike Wang, Di Wan, Chujun He, Zongsi Xu, Yitao Yu, Quanfeng Lu, Xiyu Chen, Sheng Zhong, Deng Binjie, Yichen Guo, Zhenwei Guo, Hou Jun, Kunhan Guo, Weihao Lin, Tuo Zhou, Hai Liu, Chenwei Wu, Jianyuan Zhong, Xilin Dai, Ye Luo}}
 \setlength{\columnsep}{6.5mm}
 \setlength{\parindent}{1em}
 \setlength{\parskip}{0pt}
@@ -44,9 +44,9 @@
 {\LARGE S\textsuperscript{2}-MAS: A Society-Scale Multi-Agent Simulation\\Framework with 500 Million Household Persona Agents\par}
 \vspace{7pt}
 {\fontsize{10.5}{13}\selectfont
-Yang~Li\textsuperscript{1,*}, Yike~Wang\textsuperscript{1,*}, Di~Wan\textsuperscript{1}, Chujun~He\textsuperscript{2}, Zongsi~Xu\textsuperscript{1}, Yitao~Yu\textsuperscript{1}, Xiyu~Chen\textsuperscript{1}, Sheng~Zhong\textsuperscript{3}\par
-Deng~Binjie, Yichen~Guo\textsuperscript{7}, Zhenwei~Guo\textsuperscript{4}, Hou~Jun\textsuperscript{1}, Kunhan~Guo\textsuperscript{5}, Weihao~Lin\textsuperscript{2}, Tuo~Zhou\textsuperscript{1}, Hai~Liu\textsuperscript{6}\par
-Chenwei~Wu\textsuperscript{8}, Jianyuan~Zhong\textsuperscript{9}, Xilin~Dai\textsuperscript{9}, Ye~Luo\textsuperscript{1,\textdagger}\par
+Yang~Li\textsuperscript{1,*}, Yike~Wang\textsuperscript{1,*}, Di~Wan\textsuperscript{1}, Chujun~He\textsuperscript{2}, Zongsi~Xu\textsuperscript{1}, Yitao~Yu\textsuperscript{1}, Quanfeng~Lu\textsuperscript{1}\par
+Xiyu~Chen\textsuperscript{1}, Sheng~Zhong\textsuperscript{3}, Deng~Binjie, Yichen~Guo\textsuperscript{7}, Zhenwei~Guo\textsuperscript{4}, Hou~Jun\textsuperscript{1}, Kunhan~Guo\textsuperscript{5}\par
+Weihao~Lin\textsuperscript{2}, Tuo~Zhou\textsuperscript{1}, Hai~Liu\textsuperscript{6}, Chenwei~Wu\textsuperscript{8}, Jianyuan~Zhong\textsuperscript{9}, Xilin~Dai\textsuperscript{9}, Ye~Luo\textsuperscript{1,\textdagger}\par
 }\vspace{5pt}
 {\fontsize{8.4}{10.2}\selectfont
 \textsuperscript{1}The University of Hong Kong\par
@@ -238,14 +238,14 @@ Rendered-persona evaluation finds high field coverage and uneven sensitivity to 
 
 \centering
 
-\includegraphics[width=\textwidth,height=.66\textheight,keepaspectratio]{figures/F4.pdf}
+\includegraphics[width=.90\textwidth,trim=0pt 10pt 0pt 8pt,clip,keepaspectratio]{figures/F4.pdf}
 
 \par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright Figure 4 | Human persona fidelity, judge bias and known-error detection. a, Six raters score five dimensions for 100 processed survey-derived personas rendered from 44 processed fields, producing 600 ratings per dimension and 3,000 in total. Points show mean human scores on the five-point scale; pooled mean is 4.570. M2 measures avoidance of unsupported inference, so a higher score indicates fewer unsupported inferences. b, Mean AI score minus the six-rater mean for each dimension, based on 100 persona-level comparisons per judge. Both judges agree within one point on 470/500 comparisons (94.0\%), while giving higher M2 and M5 scores. c, The proportion of valid original–perturbed pairs with a target-dimension decline of at least one score point after a known error is injected. Labels give detected/valid pairs; valid denominators vary from 23 to 25 per judge and error type. DeepSeek detects 2/24 omitted targets, compared with 24/24 for GLM. Supplementary Figure S3 shows the full human-score distributions and Table S16 reports scoring thresholds and non-target specificity.\par}
 
 \end{minipage}
 
 \end{figure}
-\FloatBarrier
+
 
 \subsection*{5.2. Persona information and policy adaptation}
 
@@ -256,14 +256,14 @@ Financial supervision improves shared-question prediction in the sharp family (F
 
 \centering
 
-\includegraphics[width=\textwidth,height=.66\textheight,keepaspectratio]{figures/F3.pdf}
+\includegraphics[width=.90\textwidth,trim=0pt 4pt 0pt 2pt,clip,keepaspectratio]{figures/F3.pdf}
 
 \par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright Figure 5 | Financial training improves shared-question prediction in the sharp family. a, The sharp-421m-3rounds policy uses financial-question supervision; full-data sharp-421m adds expanded financial supervision through another SFT and RLCD stage. sharp-322m derives from multilingual Laya and remains an initial-supervision adaptation. b, Accuracy gains over the corresponding base are 14.33 and 14.35 percentage points for the native variants and 21.61 points for sharp-322m evaluated in Chinese. c, Question-macro F1 rises by 8.46, 8.84 and 10.60 points. Comparisons use 240,458 shared financial-question QA observations, 119 question versions and PyTorch BF16. Connectors pair adaptations with their corresponding base; labels show scores and percentage-point differences. Accuracy weights observations equally; F1 averages candidate-class F1 within version, then weights supported versions equally.\par}
 
 \end{minipage}
 
 \end{figure}
-\FloatBarrier
+
 
 Respondent information also improves prediction when the trained policy and questions remain fixed (Figure 6; Table 3). On the matched 20,000-QA panel, full profiles add 6.2475 question-macro F1 points over empty profiles (95\% interval 5.4958--6.7267) and 3.6047 points over another respondent's profile for the same question (2.7977--4.3155). Full profiles outperform both the question-only and training-majority controls, showing that household attributes contribute information beyond the question's answer distribution. The gain appears in financial knowledge, risk and investment attitudes, and saving and credit products.
 
@@ -273,7 +273,7 @@ Respondent information also improves prediction when the trained policy and ques
 
 \centering
 
-\includegraphics[width=\textwidth,height=.66\textheight,keepaspectratio]{figures/QA_PROFILE.pdf}
+\includegraphics[width=\textwidth,trim=0pt 12pt 0pt 20pt,clip,keepaspectratio]{figures/QA_PROFILE.pdf}
 
 \par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright Figure 6 | Respondent information improves survey-answer prediction.
 a, Question-macro F1 of full-profile sharp-421m minus each labelled comparator, in percentage points; zero indicates equal scores and positive values favour full-profile sharp-421m. Points show paired differences on 20,000 QA; lines show 95\% bootstrap intervals from 2,000 resamples of 6,752 household/respondent groups. The wrong-profile control supplies another respondent's information for the same question.
@@ -282,7 +282,7 @@ b, sharp-421m scores with full profiles (teal) and no respondent information (gr
 \end{minipage}
 
 \end{figure}
-\FloatBarrier
+
 
 The adaptation controls distinguish the training choices supported by the common interface (Tables 2 and 5). sharp-4b is the selected 200k 4B LoRA-plus-head route; updating the backbone is more effective than training only its head. The evaluated sharp-4b and sharp-9b routes reach similar accuracy under the common downstream protocol. Native Laya controls show that supervised adaptation supplies most of the encoder's predictive gain. Additional RLCD raises accuracy slightly over SFT, whereas CE continuation yields higher question-macro F1 than RLCD. Table 2 retains every fixed-budget version, and Appendix S10 reports development selection, repeated exposures, training cost and paired intervals.
 

@@ -2,7 +2,7 @@
 
 [arXiv](https://arxiv.org/abs/2610.27746) · [Latest manuscript PDF](S2_MAS_Paper.pdf) · [LaTeX](main.tex) · [Figures](figures/) · [Reported aggregates](source_data/) · [Plotting scripts](figure_code/)
 
-Version v57 contains 59 pages, 13 main figures and 7 supplementary figures. S²-MAS links 500 million household personas, trainable decision models and a stateful execution engine to consumption, cash and repayment paths. sharp-4b and sharp-421m are the principal decision policies; sharp-421m-mlx executes the reported household applications.
+Version v58 contains 58 pages, 13 main figures and 7 supplementary figures. S²-MAS links 500 million household personas, trainable decision models and a stateful execution engine to consumption, cash and repayment paths. sharp-4b and sharp-421m are the principal decision policies; sharp-421m-mlx executes the reported household applications.
 
 Table 4 unifies the one-shot consumer financial-choice prediction benchmark: panel a reports fourteen models and the question-majority baseline on 240,458 records; panel b compares sharp-421m-mlx with GPT-6-Astra on the same 14,441 records from 500 groups. The benchmark measures recorded-answer and coded-target prediction. Model sizes, the added API configurations and the paired Astra interval are reported in [source data](source_data/). The large application demonstrates one-shot scalability through the policy-to-ledger runner.
 
