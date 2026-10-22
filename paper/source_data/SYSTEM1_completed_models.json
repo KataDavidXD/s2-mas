@@ -7,16 +7,19 @@
     "control-fin-profile-free",
     "control-fin-shuffled-profile",
     "control-training-majority",
-    "sharp-421m-mlx",
     "gliner2.5-decide",
+    "GLM-5.3-Flash",
     "hravi-laya-finance",
     "jev-1.13",
     "kev-4b",
     "liquid-d1-omni-600m",
     "opendecider-nano",
+    "sharp-421m-mlx",
     "tev1-4b",
     "training-question-majority",
-    "von-1.3"
+    "von-1.3",
+    "DeepSeek-V4.1-Flash",
+    "GPT-6-Luna"
   ],
   "models": [
     {
@@ -132,22 +135,6 @@
       "estimated_cost_usd": ""
     },
     {
-      "model": "sharp-421m-mlx",
-      "checkpoint": "6-round / rlcd-2",
-      "backend": "MLX CUDA",
-      "precision": "FP16",
-      "scope": "shared-240458",
-      "N": 240458,
-      "valid": 240458,
-      "invalid": 0,
-      "Accuracy": 0.7455439203519949,
-      "question_macro_F1": 0.3837457040485032,
-      "question_versions": 119,
-      "coverage": 1.0,
-      "input_tokens": "",
-      "estimated_cost_usd": ""
-    },
-    {
       "model": "gliner2.5-decide",
       "checkpoint": "public main 2026-10-14",
       "backend": "PyTorch CUDA, official gliner2 2.1.0",
@@ -158,6 +145,22 @@
       "invalid": 0,
       "Accuracy": 0.30881484500411716,
       "question_macro_F1": 0.19637074156334705,
+      "question_versions": 119,
+      "coverage": 1.0,
+      "input_tokens": "",
+      "estimated_cost_usd": ""
+    },
+    {
+      "model": "GLM-5.3-Flash",
+      "checkpoint": "glm-5.3-flash",
+      "backend": "Zhipu API",
+      "precision": "Provider managed",
+      "scope": "shared-240458",
+      "N": 240458,
+      "valid": 240360,
+      "invalid": 98,
+      "Accuracy": 0.6887564564289813,
+      "question_macro_F1": 0.3799913441493609,
       "question_versions": 119,
       "coverage": 1.0,
       "input_tokens": "",
@@ -244,6 +247,22 @@
       "estimated_cost_usd": ""
     },
     {
+      "model": "sharp-421m-mlx",
+      "checkpoint": "6-round / rlcd-2",
+      "backend": "MLX CUDA",
+      "precision": "FP16",
+      "scope": "shared-240458",
+      "N": 240458,
+      "valid": 240458,
+      "invalid": 0,
+      "Accuracy": 0.7455439203519949,
+      "question_macro_F1": 0.3837457040485032,
+      "question_versions": 119,
+      "coverage": 1.0,
+      "input_tokens": "",
+      "estimated_cost_usd": ""
+    },
+    {
       "model": "tev1-4b",
       "checkpoint": "Tev1-4B-experimental public main 2026-10-14",
       "backend": "PyTorch CUDA, official prompt and candidate logits",
@@ -290,6 +309,97 @@
       "coverage": 1.0,
       "input_tokens": "",
       "estimated_cost_usd": ""
+    },
+    {
+      "model": "DeepSeek-V4.1-Flash",
+      "checkpoint": "DeepSeek-V4.1-Flash",
+      "backend": "Provider API",
+      "precision": "Provider managed",
+      "scope": "shared-240458",
+      "N": 240458,
+      "valid": 240400,
+      "invalid": 58,
+      "Accuracy": 0.6375458500029111,
+      "question_macro_F1": 0.37939997238417167,
+      "question_versions": 119,
+      "coverage": 1.0,
+      "input_tokens": "",
+      "estimated_cost_usd": ""
+    },
+    {
+      "model": "GPT-6-Luna",
+      "checkpoint": "GPT-6-Luna",
+      "backend": "Provider API",
+      "precision": "Provider managed",
+      "scope": "shared-240458",
+      "N": 240458,
+      "valid": 240458,
+      "invalid": 0,
+      "Accuracy": 0.6210481664157566,
+      "question_macro_F1": 0.3574123061829869,
+      "question_versions": 119,
+      "coverage": 1.0,
+      "input_tokens": "",
+      "estimated_cost_usd": ""
     }
-  ]
+  ],
+  "fixed_group_sample": [
+    {
+      "model": "sharp-421m-mlx",
+      "checkpoint": "6-round / rlcd-2",
+      "backend": "MLX CUDA",
+      "precision": "FP16",
+      "scope": "fixed-500-group-sample",
+      "N": 14441,
+      "valid": 14441,
+      "invalid": 0,
+      "Accuracy": 0.747316667820788,
+      "question_macro_F1": 0.37302603044586724,
+      "question_versions": 119,
+      "coverage": 0.06005622603531594,
+      "input_tokens": "",
+      "estimated_cost_usd": ""
+    },
+    {
+      "model": "GPT-6-Astra",
+      "checkpoint": "GPT-6-Astra",
+      "backend": "Provider API",
+      "precision": "Provider managed",
+      "scope": "fixed-500-group-sample",
+      "N": 14441,
+      "valid": 14441,
+      "invalid": 0,
+      "Accuracy": 0.6934422823904162,
+      "question_macro_F1": 0.3623660249230335,
+      "question_versions": 119,
+      "coverage": 0.06005622603531594,
+      "input_tokens": "",
+      "estimated_cost_usd": ""
+    }
+  ],
+  "benchmark_scope": {
+    "benchmark": "one-shot consumer financial-choice simulation",
+    "full_test": {
+      "models": 14,
+      "additional_baseline": "question-majority",
+      "records": 240458,
+      "question_versions": 119,
+      "groups": 8275
+    },
+    "fixed_group_sample": {
+      "models": [
+        "sharp-421m-mlx",
+        "GPT-6-Astra"
+      ],
+      "records": 14441,
+      "question_versions": 119,
+      "groups": 500
+    },
+    "distinct_models": 15,
+    "invalid_responses": {
+      "GLM-5.3-Flash": 98,
+      "DeepSeek-V4.1-Flash": 58
+    },
+    "score_units": "fractions in CSV; percentages in manuscript"
+  }
 }

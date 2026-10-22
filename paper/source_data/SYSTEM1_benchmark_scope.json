@@ -1,0 +1,25 @@
+{
+  "benchmark": "one-shot consumer financial-choice simulation",
+  "full_test": {
+    "models": 14,
+    "additional_baseline": "question-majority",
+    "records": 240458,
+    "question_versions": 119,
+    "groups": 8275
+  },
+  "fixed_group_sample": {
+    "models": [
+      "sharp-421m-mlx",
+      "GPT-6-Astra"
+    ],
+    "records": 14441,
+    "question_versions": 119,
+    "groups": 500
+  },
+  "distinct_models": 15,
+  "invalid_responses": {
+    "GLM-5.3-Flash": 98,
+    "DeepSeek-V4.1-Flash": 58
+  },
+  "score_units": "fractions in CSV; percentages in manuscript"
+}

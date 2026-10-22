@@ -1,6 +1,6 @@
 # S²-MAS: A Society-Scale Multi-Agent Simulation Framework with 500 Million Household Persona Agents
 
-**500 million household personas, 36 fields, six decision-model routes, ten trained release versions and twelve benchmarked models or systems.** S²-MAS connects reusable household decisions with monthly financial state evolution.
+**500 million household personas, 36 fields, six decision-model routes, ten trained release versions and fifteen benchmarked models.** S²-MAS connects reusable household decisions with monthly financial state evolution. Fourteen models complete the full one-shot test; GPT-6-Astra is compared on a matched fixed-group sample.
 
 sharp-421m uses the **largest disclosed SFT + RLCD training set among the financial decision models compared in the paper: 2,925,263 training examples**. S²-MAS completes paired-condition simulation of **12,000,000 distinct synthetic household agents—the largest model-inferred MAS population among the completed studies compared in the paper**.
 
@@ -11,7 +11,7 @@ sharp-421m uses the **largest disclosed SFT + RLCD training set among the financ
 
 [Latest manuscript](paper/S2_MAS_Paper.pdf) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
 
-Manuscript v54 · 22 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
+Manuscript v55 · 22 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
 
 | Resource | Entry point and scope |
 |---|---|

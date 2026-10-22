@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% Manuscript version: v54, 22 October 2026
+% Manuscript version: v55, 22 October 2026
 \documentclass[10pt]{article}
 \usepackage[a4paper,left=17mm,right=17mm,top=21mm,bottom=22mm]{geometry}
 \usepackage{fontspec}
@@ -69,7 +69,7 @@ Yichen~Guo\textsuperscript{7}, Chenwei~Wu\textsuperscript{8}, Jianyuan~Zhong\tex
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \begin{minipage}{\textwidth}\small
-Simulating economic responses at society scale requires agents whose decisions reflect household circumstances and the effects of earlier actions. We introduce S\textsuperscript{2}-MAS, a society-scale multi-agent simulation framework built on 500 million synthetic household personas grounded in real-survey data. Its Genese engine separates decisions from state updates, while reusable financial scenarios and application ledgers track consumption, cash, debt and payments. sharp-421m-mlx, a compact decision model trained with SFT + RLCD on 2.93 million examples, achieves 74.55\% accuracy and 38.37\% question-macro F1 in consumer financial-choice scenarios, outperforming Jev 1.13 and GLM-5.3-Flash on both measures. We evaluate eight financial task families and simulate 12 million distinct household agents in paired purchase-funding conditions. Jointly raising purchase goals and approved credit limits increases consumption, with responses differing across age and income groups. Education, employment and household-size differences persist after age--income standardization and mainly reflect transitions from deferral to purchase. Asset and debt groups differ in cash drawdown, repayment and closing debt. A 24-month panel varies purchase goals under a common credit product, with repayment and arrears updating subsequent offers. S\textsuperscript{2}-MAS links heterogeneous household decisions to evolving consumption, cash and repayment paths, supporting economic experiments across household groups, population scales and time horizons.
+Simulating economic responses at society scale requires agents whose decisions reflect household circumstances and the effects of earlier actions. We introduce S\textsuperscript{2}-MAS, a society-scale multi-agent simulation framework built on 500 million synthetic household personas grounded in real-survey data. Its Genese engine separates decisions from state updates, while reusable financial scenarios and application ledgers track consumption, cash, debt and payments. Trained with SFT + RLCD on 2.93 million examples, sharp-421m-mlx achieves 74.55\% accuracy and 38.37\% question-macro F1 in one-shot consumer financial-choice scenarios. Its accuracy exceeds GLM-5.3-Flash, Jev 1.13, DeepSeek-V4.1-Flash and GPT-6-Luna on the full benchmark and GPT-6-Astra on a matched fixed-group sample. We evaluate eight financial task families and simulate 12 million distinct household agents in paired purchase-funding conditions. Jointly raising purchase goals and approved credit limits increases consumption, with responses differing across age and income groups. Education, employment and household-size differences persist after age--income standardization and mainly reflect transitions from deferral to purchase. Asset and debt groups differ in cash drawdown, repayment and closing debt. A 24-month panel varies purchase goals under a common credit product, with repayment and arrears updating subsequent offers. S\textsuperscript{2}-MAS links heterogeneous household decisions to evolving consumption, cash and repayment paths, supporting economic experiments across household groups, population scales and time horizons.
 \end{minipage}
 \endgroup
 \par\vspace{10pt}
@@ -84,7 +84,7 @@ Household finance provides observed responses for decision learning and budget r
 
 S\textsuperscript{2}-MAS combines 500 million synthetic household personas grounded in real-survey data, domain-adapted decision models, reusable financial tasks and the Genese execution engine. sharp-421m and sharp-4b implement encoder and decoder decision policies, respectively. sharp-421m uses 2,925,263 examples for SFT + RLCD; sharp-421m-mlx is its runtime used in the completed financial applications. Genese separates decision proposals from state updates, while independent application ledgers calculate consumption, cash, debt payments and shortfalls. Paired experiments retain the same households and accounting rules across conditions. Monthly experiments carry realized resources, obligations and payment histories into subsequent decisions.
 
-Component evaluation measures the contribution of household information, policy substitution and execution efficiency. In consumer financial-choice scenarios, sharp-421m-mlx achieves 74.55\% accuracy and 38.37\% question-macro F1. Its accuracy exceeds Jev 1.13 by 9.30 percentage points and GLM-5.3-Flash by 5.68 points. In a controlled 1,000-agent benchmark with the same model allocation, Genese completes accepted decisions and state writeback faster than OneSim and OASIS (Section 5.5).
+Component evaluation measures the contribution of household information, policy substitution and execution efficiency. On the one-shot consumer financial-choice benchmark, sharp-421m-mlx achieves 74.55\% accuracy and 38.37\% question-macro F1. Its accuracy exceeds GLM-5.3-Flash, Jev 1.13, DeepSeek-V4.1-Flash and GPT-6-Luna on the complete test, and GPT-6-Astra on the same fixed-group sample. In a controlled 1,000-agent benchmark with the same model allocation, Genese completes accepted decisions and state writeback faster than OneSim and OASIS (Section 5.5).
 
 sharp-421m-mlx runs eight financial task families. A paired one-shot purchase-funding experiment with 12 million distinct synthetic households shows that jointly raising purchase goals and approved limits increases consumption. Responses differ by age and income; education, employment and household-size differences persist after standardization to a common age--income distribution. Much of this variation reflects transitions from deferral to purchase. Asset and debt groups differ in cash drawdown, repayment and closing debt. A 24-month extension follows the same 10,000-household panel across five shock paths and an unshocked reference, comparing higher and lower purchase goals under the same credit product and offer rules. Repayment and arrears update subsequent credit offers. Persistent income loss erodes cash buffers and narrows the consumption gap between the goals, while sustained income gains widen it.
 
@@ -336,28 +336,35 @@ Training-question majority & 20000 & 71.71 & 32.09 \\
 
 
 \FloatBarrier
-\subsection*{5.3. Substituting decision models on common questions}
+\subsection*{5.3. Comparing models on one-shot consumer choices}
 
-Twelve decision models and a question-majority baseline receive the same 240,458 test records and semantic alternatives (Table 4). sharp-421m-mlx has the highest accuracy, 74.5544\%, and question-macro F1 of 38.3746\%. Compared with Jev 1.13, its accuracy improves by 9.2960 percentage points (95\% interval 9.0637--9.5174) and F1 by 0.8953 points (0.5448--1.2834). These paired intervals resample 8,275 household/respondent groups jointly across models.
+Fourteen models and a question-majority baseline are evaluated on the same 240,458 one-shot consumer financial-choice records and 119 question versions (Table 4a). sharp-421m-mlx achieves the highest accuracy, 74.55\%, with question-macro F1 of 38.37\%. Its accuracy exceeds GLM-5.3-Flash (68.88\%), Jev 1.13 (65.26\%), DeepSeek-V4.1-Flash (63.75\%) and GPT-6-Luna (62.10\%). Their question-macro F1 scores are 38.00\%, 37.48\%, 37.94\% and 35.74\%, respectively.
+
+GPT-6-Astra is evaluated on a fixed 500-group sample containing 14,441 records and all 119 question versions. Restricting sharp-421m-mlx to those same records gives 74.73\% accuracy and 37.30\% question-macro F1, compared with GPT-6-Astra's 69.34\% and 36.24\% (Table 4b). The matched accuracy difference is 5.39 percentage points.
+
+The paired sharp-421m-mlx--Jev accuracy gain is 9.2960 percentage points (95\% interval 9.0637--9.5174), and its F1 gain is 0.8953 points (0.5448--1.2834). Against GLM-5.3-Flash \href{https://docs.z.ai/guides/vlm/glm-5.3-flash}{[41]}, the paired accuracy gain is 5.6787 points (5.5090--5.8459), and the F1 gain is 0.3754 points (0.0398--0.7234). These intervals use 1,000 joint resamples of 8,275 household/respondent groups.
 
 Clef Flash 9B has the highest F1, 38.5193\%; the paired sharp-421m-mlx--Clef difference is -0.1447 percentage points (95\% interval -0.6208 to 0.4380). At 421M parameters, sharp-421m reaches a similar measured F1 to the 9B comparator through this runtime, while scoring higher in accuracy. Relative to the question-majority baseline, its F1 increases by 6.2058 points.
 
-sharp-421m-mlx also exceeds GLM-5.3-Flash \href{https://docs.z.ai/guides/vlm/glm-5.3-flash}{[41]} on the same complete financial-question test: 74.5544\% versus 68.8756\% accuracy, a paired gain of 5.6787 percentage points (95\% interval 5.5090--5.8459). Its question-macro F1 is 38.3746\% versus 37.9991\%, a gain of 0.3754 points (0.0398--0.7234).
 \begin{table}[!htbp]
 \begin{minipage}{\textwidth}
 \fontsize{8}{9.7}\selectfont
-Table 4 | Decision models on the common household-survey benchmark
+Table 4 | One-shot consumer financial-choice simulation benchmark
 \par\vspace{4pt}
+a, Complete test: 240,458 records; 119 question versions; 8,275 household/respondent groups
+\par\vspace{3pt}
 \begin{tabularx}{\textwidth}{@{}>{\hsize=1.45\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.65\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.00\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.25\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.75\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.90\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
 \toprule
 Model & Parameters & Backend & QA / valid & Accuracy (\%) & Question-macro F1 (\%) \\
 \midrule
 sharp-421m-mlx & 421M & MLX CUDA FP16 & 240,458 / 240,458 & 74.5544 & 38.3746 \\
 Question-majority baseline & — & CPU; training labels & 240,458 / 240,458 & 71.7710 & 32.1688 \\
-GLM-5.3-Flash & Provider API & API; provider precision & 240,458 / 240,360 & 68.8756 & 37.9991 \\
+GLM-5.3-Flash & Not disclosed & API; provider precision & 240,458 / 240,360 & 68.8756 & 37.9991 \\
 Jev 1.13 & Not disclosed & API; provider precision & 240,458 / 240,458 & 65.2584 & 37.4793 \\
 Kev 4B & 4B & CUDA BF16 & 240,458 / 240,458 & 64.9120 & 36.0435 \\
+DeepSeek-V4.1-Flash & Not disclosed & Provider API & 240,458 / 240,400 & 63.7546 & 37.9400 \\
 Clef Flash 9B & 9B & CUDA BF16 & 240,458 / 240,458 & 63.6490 & 38.5193 \\
+GPT-6-Luna & Not disclosed & Provider API & 240,458 / 240,458 & 62.1048 & 35.7412 \\
 Base Laya & 421M & MLX CUDA FP16 & 240,458 / 240,458 & 60.1831 & 29.5760 \\
 Laya-Finance (hravi) & Not disclosed & CUDA FP32 & 240,458 / 240,458 & 59.8317 & 28.7871 \\
 Tev1 4B & 4B & CUDA BF16 & 240,458 / 240,458 & 58.8909 & 35.4105 \\
@@ -367,7 +374,18 @@ Von 1.3 & 395M & CUDA FP32 & 240,458 / 240,458 & 42.4873 & 26.8372 \\
 GLiNER2.5-Decide & 340M & CUDA FP32 & 240,458 / 240,458 & 30.8815 & 19.6371 \\
 \bottomrule
 \end{tabularx}
-\par\vspace{3pt}{\fontsize{7.7}{9.3}\selectfont All rows use the same 240,458 held-out QA records and 119 question versions. QA / valid gives total records and legal decisions; invalid responses count as incorrect. GLM has 98 invalid responses, and the other rows have none. Sizes are reported model sizes; the majority baseline uses training labels. sharp-421m and base Laya use MLX CUDA FP16 here; Table 2 reports the controlled BF16 adaptations. Supplementary Methods M5 describes adapters and input settings.}
+\par\vspace{7pt}
+b, Matched fixed sample: 14,441 records; 119 question versions; 500 groups
+\par\vspace{3pt}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=1.45\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.65\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.00\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.25\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.75\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.90\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
+\toprule
+Model & Parameters & Backend & QA / valid & Accuracy (\%) & Question-macro F1 (\%) \\
+\midrule
+sharp-421m-mlx & 421M & MLX CUDA FP16 & 14,441 / 14,441 & 74.7317 & 37.3026 \\
+GPT-6-Astra & Not disclosed & Provider API & 14,441 / 14,441 & 69.3442 & 36.2366 \\
+\bottomrule
+\end{tabularx}
+\par\vspace{3pt}{\fontsize{7.7}{9.3}\selectfont Panel a uses the complete 240,458-record test across 119 question versions. Panel b uses the same fixed 500-group sample of 14,441 records for sharp-421m-mlx and GPT-6-Astra, covering all 119 versions. QA / valid gives total records and legal decisions; invalid responses count as incorrect. GLM-5.3-Flash has 98 invalid responses and DeepSeek-V4.1-Flash has 58; the remaining rows have none. Sizes are reported model sizes; the majority baseline uses training labels. sharp-421m and base Laya use MLX CUDA FP16 here; Table 2 reports the controlled BF16 adaptations. Supplementary Methods M5 describes adapters and input settings.}
 \end{minipage}
 \end{table}
 
@@ -644,7 +662,7 @@ The CNY 50,000--100,000 annual-income group accounts for 52.35\%/52.95\% of the 
 \FloatBarrier
 \section*{7. Discussion and future work}
 
-In S\textsuperscript{2}-MAS, personas provide decision information and household states, tasks specify alternatives and consequences, and policy adapters let different models use the same accounting rules. The applications cover task families, a population-scale paired comparison and repeated monthly choices.
+In S\textsuperscript{2}-MAS, personas provide decision information and household states, tasks specify alternatives and consequences, and policy adapters let different models use the same accounting rules. In the one-shot consumer financial-choice benchmark, sharp-421m-mlx predicts recorded choices more accurately than the evaluated comparison models. S\textsuperscript{2}-MAS combines this policy with Genese to execute 24 million paired-condition choices for 12 million distinct household agents. The evidence supports in-scenario choice fidelity and one-shot scalability; it does not establish generalization to other decision domains.
 
 \subsection*{Purchase choices and financial channels}
 
@@ -660,7 +678,7 @@ Under the assigned accounting order, purchases and routine spending use resource
 
 \subsection*{Trainable policies and framework extension}
 
-sharp-4b and sharp-421m demonstrate two trainable policy routes within the shared interface. sharp-4b uses LoRA and a decision head on Qwen3.5-4B-Base; sharp-421m uses full-data encoder adaptation and is deployed through sharp-421m-mlx in the completed financial applications. The matched controls show the value of LoRA over head-only adaptation and of supervised adaptation for native Laya; the evaluated 4B and 9B routes reach similar accuracy. Full-data sharp-421m-mlx exceeds GLM-5.3-Flash in accuracy and question-macro F1 on the common financial questions. Task-level financial responses also vary by model and input language (Appendix S11).
+sharp-4b and sharp-421m demonstrate two trainable policy routes within the shared interface. sharp-4b uses LoRA and a decision head on Qwen3.5-4B-Base; sharp-421m uses full-data encoder adaptation and is deployed through sharp-421m-mlx in the completed financial applications. The matched controls show the value of LoRA over head-only adaptation and of supervised adaptation for native Laya; the evaluated 4B and 9B routes reach similar accuracy. Task-level financial responses also vary by model and input language (Appendix S11).
 
 Controlled Genese benchmarks time decision execution and writeback; the large applications measure policy-to-ledger workloads. The monthly application adds state histories and a synchronization point for aggregate bank feedback. Further applications could add asset repricing through changes in holding values and liquidation proceeds, and represent employment transitions and transfers as additional resource channels.
 \section*{8. Conclusion}
@@ -851,9 +869,9 @@ Risk and investment attitudes & 17,923 & 7 & 7.79 & 7.36 to 8.18 \\
 \end{minipage}
 \end{center}
 
-\section*{Supplementary Methods M5. External decision-model comparison}
+\section*{Supplementary Methods M5. One-shot consumer financial-choice benchmark}
 
-Decision models, including GLM-5.3-Flash, receive the same financial-test questions, respondent states and semantic alternatives. Official model adapters map their returned choices back to the original candidate IDs. Table 4 reports all models, backends, valid-decision counts and scores. Paired differences use 1,000 whole-group bootstrap resamples across 8,275 household/respondent groups, carrying all question records from a selected group together. GLM's 98 invalid responses remain in the full denominator. Table 2 gives the controlled BF16 adaptations, and Figure 5 gives the native full-data predictions.
+All evaluated models receive the same financial-test questions, respondent states and semantic alternatives. Model-specific adapters map returned choices to the original candidate IDs. Table 4a reports fourteen models and the question-majority baseline on 240,458 records from 8,275 household/respondent groups. Table 4b compares GPT-6-Astra and sharp-421m-mlx on the same fixed 500-group sample of 14,441 records; both panels cover all 119 question versions. The sharp predictions in panel b are restricted to the exact records evaluated by GPT-6-Astra. Invalid responses count as incorrect: GLM-5.3-Flash has 98 and DeepSeek-V4.1-Flash has 58. Question-macro F1 averages class-macro F1 over the original alternatives within each question version, then gives the 119 versions equal weight. Reported full-test paired intervals use 1,000 whole-group bootstrap resamples of the 8,275 groups, retaining all records from each sampled group. Table 2 gives the controlled BF16 adaptations, and Figure 5 gives the native full-data predictions.
 
 QA caps are 512 input and 256 head tokens for Fin/base MLX, 512/192 for Laya-Finance, and 2,048 input tokens for OpenDecider. Decoder adapters preserve their released longer windows. CPU replay of the evaluated MLX input preparation finds no profile truncation on the full test or any matched information-control condition; full-profile inputs average 159.75 tokens and reach at most 230. The supplementary training procedure specifies the separate complete-context budgets used for financial deployment.
 

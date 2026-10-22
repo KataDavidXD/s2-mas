@@ -1,8 +1,8 @@
 # Model releases and interfaces
 
-Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v52 · 21 October 2026.
+Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v55 · 22 October 2026.
 
-The comparison uses public releases available on 2026-10-14 and the explicitly requested Jev 1.13 hosted model. The [sharp model catalog](../../resources/MODEL_CATALOG.md) lists project releases and their controlled research terms. Upstream resources follow their own licenses and access conditions.
+The comparison combines the public decision-model releases evaluated from 14 October 2026 with the hosted API comparisons reported through 22 October 2026. The [sharp model catalog](../../resources/MODEL_CATALOG.md) lists project releases and their controlled research terms. Upstream resources follow their own licenses and access conditions.
 
 | Benchmark name | Official release | Backbone / interface | Evaluated release |
 |---|---|---|---|
@@ -17,5 +17,7 @@ The comparison uses public releases available on 2026-10-14 and the explicitly r
 | Tev1-4B | [togethercomputer/Tev1-4B-experimental](https://huggingface.co/togethercomputer/Tev1-4B-experimental), [official recipe](https://github.com/togethercomputer/tev1) | Qwen3.5-4B decision SFT, standard next-token head and option-letter interface | Public main, experimental release |
 | Laya-Finance | [hravi/laya-finance](https://huggingface.co/hravi/laya-finance) | ModernBERT-large Laya fine-tuned for financial text decisions | Third public checkpoint |
 | Jev | [TypeSafe SystemOne](https://typesafe.ai/) | Hosted typed-choice decision API | Explicit `jev-1.13.0` request |
+
+The hosted API rows include GLM-5.3-Flash, GPT-6-Luna and DeepSeek-V4.1-Flash on the full 240,458-record test, and GPT-6-Astra on the fixed 14,441-record sample. Their backend and scoring scope are reported in Table 4 and Supplementary Methods M5.
 
 The paper's Tables S11-S12 list related decision interfaces and financial adaptation resources. Backend and arithmetic labels in the result table describe the evaluated runtime separately from model architecture.

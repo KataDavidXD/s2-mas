@@ -4,6 +4,8 @@ Each input supplies its candidate IDs and one expected candidate. The evaluator 
 
 Accuracy is the number of correct choices divided by all evaluation rows. For each question, macro F1 averages over its complete legal candidate set with zero division assigned zero. Question-macro F1 then gives each question equal weight. A paired comparison uses the same rows, candidate sets and grouping units for both models.
 
+The full benchmark contains 240,458 records across 119 question versions and 8,275 household/respondent groups. The GPT-6-Astra comparison uses a fixed 500-group sample of 14,441 records, covering all 119 versions; sharp-421m-mlx is rescored on those same records. GLM-5.3-Flash has 98 invalid responses and DeepSeek-V4.1-Flash has 58, all retained in the denominator.
+
 Checkpoint and method selection use development data. The final test evaluates the fixed selected versions. Unique training inputs and repeated row exposures describe different budgets and are recorded separately in the reported model aggregates.
 
 [Scientific evaluation tools](../../reproduction/training/README.md) accept generic task and question IDs. [Model releases and attribution](MODEL_SOURCES.md) preserve the upstream implementation and checkpoint identities.

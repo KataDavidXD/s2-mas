@@ -17,3 +17,5 @@ sharp-421m-mlx,6-round / rlcd-2,MLX CUDA,FP16,shared-240458,240458,240458,0,0.74
 tev1-4b,Tev1-4B-experimental public main 2026-10-14,"PyTorch CUDA, official prompt and candidate logits",BF16,shared-240458,240458,240458,0,0.5889094977085395,0.35410533652659926,119,1.0,,
 training-question-majority,shared common training-label counts,CPU empirical per-question majority,Integer counts,shared-240458,240458,240458,0,0.7177095376323516,0.3216881237521442,119,1.0,,
 von-1.3,von-1.3.0,"PyTorch CUDA, official von-sdk 1.3.7",FP32,shared-240458,240458,240458,0,0.4248725349125419,0.2683721266919362,119,1.0,,
+DeepSeek-V4.1-Flash,DeepSeek-V4.1-Flash,Provider API,Provider managed,shared-240458,240458,240400,58,0.6375458500029111,0.37939997238417167,119,1.0,,
+GPT-6-Luna,GPT-6-Luna,Provider API,Provider managed,shared-240458,240458,240458,0,0.6210481664157566,0.3574123061829869,119,1.0,,

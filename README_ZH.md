@@ -1,6 +1,6 @@
 # S²-MAS: A Society-Scale Multi-Agent Simulation Framework with 500 Million Household Persona Agents
 
-**5 亿家庭 persona、36 个字段，6 条决策模型路线、10 个训练发布版本、12 个模型或系统的共同测试。** S²-MAS 把可复用的家庭选择任务接入月度金融状态演化。
+**5 亿家庭 persona、36 个字段，6 条决策模型路线、10 个训练发布版本、15 个模型的场景内共同测试。** S²-MAS 把可复用的家庭选择任务接入月度金融状态演化。14 个模型完成 one-shot 全量测试，GPT-6-Astra 在同一固定分组样本上配对比较。
 
 在本文比较且披露训练规模的金融决策模型中，sharp-421m 使用**规模最大的SFT + RLCD 训练集：2,925,263 条训练样本**。S²-MAS 完成了 **1,200 万个不同合成家庭 agent 的配对条件模拟，是本文比较的已完成模型驱动 MAS 模拟中参与 agent 数量最多的一项**。
 
@@ -11,7 +11,7 @@
 
 [最新论文](paper/S2_MAS_Paper.pdf) · [LaTeX 与论文图](paper/) · [已报告聚合结果](paper/source_data/) · [English](README.md)
 
-论文 v54 · 2026 年 10 月 22 日 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746)。
+论文 v55 · 2026 年 10 月 22 日 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746)。
 
 | 资源 | 入口与范围 |
 |---|---|
