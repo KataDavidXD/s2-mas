@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% Manuscript version: v59, 23 October 2026
+% Manuscript version: v60, 23 October 2026
 \documentclass[10pt]{article}
 \usepackage[a4paper,left=17mm,right=17mm,top=21mm,bottom=22mm]{geometry}
 \usepackage{fontspec}
@@ -673,7 +673,24 @@ Supplementary Methods M3 defines the descriptive bank and the 12M execution coho
 
 PCA evaluates standardized ordinal attributes in the completed constructed records. In the 10M bank, 7,227,206 rows have all 14 fields known. The analysis forms their correlation matrix, extracts its eigenvectors and orients PC1 toward positive total spending. PC1 explains 32.8904\% of variance and PC2 11.5234\%.
 
-The separate 500M resource has approximately 4.626 million complete records per shard for the same analysis. Its shard-mean PC1 explains 32.62\% of variance, with across-shard loading standard deviations at most 0.0003 (Table S15). The independent companion contains 2M separately constructed synthetic personas with assigned household and financial states. Figure S1 summarizes its full distributions. Figure S4 applies PCA to household size and seven financial variables after log transformation of CNY amounts and standardization. All 2M records are complete for these variables; PC1 and PC2 explain 45.6450\% and 18.0043\% of variance. The companion's schema and generation code accompany the resource entry.
+The separate 500M resource has approximately 4.626 million complete records per shard for the same analysis. Its shard-mean PC1 explains 32.62\% of variance, with across-shard loading standard deviations at most 0.0003 (Table S15). The independent companion contains 2M separately constructed synthetic personas with assigned household and financial states. Household size and cash-to-income multiples use discrete uniform draws with the settings below. Figure S1 summarizes the assigned income and debt distributions. Figure S4 applies PCA to household size and seven financial variables after log transformation of CNY amounts and standardization. All 2M records are complete for these variables; PC1 and PC2 explain 45.6450\% and 18.0043\% of variance. The companion's schema and generation code accompany the resource entry.
+
+\begin{center}
+\begin{minipage}{.91\textwidth}
+\centering
+{\small\textbf{Assigned generation settings for the independent synthetic companion}\par}
+\vspace{4pt}
+{\small
+\begin{tabularx}{\textwidth}{@{}lXc@{}}
+\toprule
+Variable & Assigned values & Probability per value \\
+\midrule
+Household members & 1, 2, 3, 4, 5 & $1/5$ \\
+Opening cash / monthly income & 0, 1, 2, 3, 4, 5, 6 & $1/7$ \\
+\bottomrule
+\end{tabularx}}
+\end{minipage}
+\end{center}
 
 \begin{center}
 
@@ -683,7 +700,7 @@ The separate 500M resource has approximately 4.626 million complete records per 
 
 \includegraphics[width=\textwidth,height=.66\textheight,keepaspectratio]{figures/F2.pdf}
 
-\par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright Supplementary Figure S1 | Composition of the independent synthetic persona companion. All 2,000,000 constructed households contribute to each distribution. a, Assigned household size. b, Monthly household income in CNY; k denotes thousands, and finite income intervals include their lower endpoint and exclude their upper endpoint. c, Opening cash divided by monthly income. d, Opening debt principal divided by monthly income. Heights and labels give the percentage of households; the ratio panels group the assigned integer income multiples. The companion provides reusable scenario inputs, separate from the 12M purchase-funding execution cohort.\par}
+\par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright Supplementary Figure S1 | Assigned income and debt distributions in the independent synthetic companion. All 2,000,000 constructed households contribute to each distribution. a, Monthly household income in CNY; k denotes thousands, and finite income intervals include their lower endpoint and exclude their upper endpoint. b, Opening debt principal divided by monthly income, grouped by the assigned integer income multiples. Heights and labels give the percentage of households. The companion provides reusable scenario inputs, separate from the 12M purchase-funding execution cohort.\par}
 
 \end{minipage}
 

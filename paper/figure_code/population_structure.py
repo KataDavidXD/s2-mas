@@ -38,27 +38,24 @@ def main():
  dist=read(a.data_dir,'synthetic_persona_distributions.csv')
  info=json.loads((a.data_dir/'synthetic_persona_statistics.json').read_text(encoding='utf-8'))
  assert info['n']==2000000 and info['complete_records']==2000000
- fig=plt.figure(figsize=(180/25.4,147/25.4))
- fig.text(.06,.962,'Composition of the synthetic persona companion',fontsize=11.6,fontweight='bold')
- fig.text(.06,.919,'2,000,000 households · complete-population descriptive statistics',fontsize=8.5,color=MUTED)
- axes=[fig.add_axes([x,y,.365,.28]) for y in [.545,.13] for x in [.10,.595]]
- specs=[('Household size','Household members',24,[0,10,20]),
-        ('Monthly income','Monthly household income (CNY)',35,[0,10,20,30]),
-        ('Cash buffer','Cash / monthly income (months)',19,[0,5,10,15]),
+ fig=plt.figure(figsize=(180/25.4,87/25.4))
+ fig.text(.06,.940,'Assigned income and debt in the synthetic companion',fontsize=11.6,fontweight='bold')
+ fig.text(.06,.885,'2,000,000 independently constructed households',fontsize=8.5,color=MUTED)
+ axes=[fig.add_axes([x,.25,.365,.46]) for x in [.10,.595]]
+ specs=[('Monthly income','Monthly household income (CNY)',35,[0,10,20,30]),
         ('Debt exposure','Debt / monthly income (months)',29,[0,10,20])]
  for i,(ax,(metric,xlabel,upper,ticks)) in enumerate(zip(axes,specs)):
   rows=[r for r in dist if r['metric']==metric];v=[float(r['share_pct']) for r in rows]
   assert sum(int(r['count']) for r in rows)==2000000
   xs=np.arange(len(rows));ax.bar(xs,v,color=TEAL,width=.64,zorder=2)
   ax.set(xticks=xs,xticklabels=[r['category'] for r in rows],ylim=(0,upper),yticks=ticks,xlabel=xlabel,ylabel='Households (%)')
-  ax.tick_params(axis='x',length=0,labelsize=7.4 if i==1 else 8)
+  ax.tick_params(axis='x',length=0,labelsize=7.4 if i==0 else 8)
   ax.tick_params(axis='y',labelsize=7.8);ax.set_xlabel(xlabel,fontsize=8.1,labelpad=6)
   for x,y in zip(xs,v):ax.text(x,y+.55,f'{y:.2f}',ha='center',va='bottom',fontsize=7.6)
   ax.text(-.14,1.14,chr(97+i),transform=ax.transAxes,fontsize=11,fontweight='bold')
   ax.text(0,1.14,metric,transform=ax.transAxes,fontsize=9.8,fontweight='bold')
- fig.text(.06,.025,'Counts describe the independently constructed companion; all financial amounts are assigned states.',fontsize=8,color=MUTED)
- alignment(fig,axes,list('abcd'),a.qa_dir,'synthetic_composition',[['a','b'],['c','d']])
- export(fig,a.output_dir,'F2','Composition of two million synthetic companion personas')
+ alignment(fig,axes,list('ab'),a.qa_dir,'synthetic_composition',[['a','b']])
+ export(fig,a.output_dir,'F2','Assigned income and debt in two million synthetic companion personas')
 
  load=read(a.data_dir,'synthetic_persona_loadings.csv');pca=read(a.data_dir,'synthetic_persona_pca.csv')
  fig=plt.figure(figsize=(180/25.4,123/25.4))
