@@ -4,4 +4,3 @@ Decision-model benchmark,"240,458 shared records; 119 question versions; 8,275 p
 Persona representation,36 coded attributes; PCA over 14 ordered attributes,Bank-only structural summaries
 Financial task designs,Eight authored task families,"Questions, semantic options, interventions, contracts and integer-cent ledger rules"
 Completed one-shot workload,"12,000,000 households;24,000,000 choices;12-month ledgers","Purchase funding, consumption, cash and payments at population scale"
-Stateful shock extension,"10,000 matched households;2,880,000 monthly choices;24 months;five shocks plus R0",Purchase goals with evolving household state and lagged bank feedback

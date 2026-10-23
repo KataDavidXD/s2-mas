@@ -11,7 +11,7 @@
 
 [最新论文](paper/S2_MAS_Paper.pdf) · [LaTeX 与论文图](paper/) · [已报告聚合结果](paper/source_data/) · [English](README.md)
 
-论文 v58 · 2026 年 10 月 22 日 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746)。
+论文 v59 · 2026 年 10 月 23 日 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746)。
 
 | 资源 | 入口与范围 |
 |---|---|
@@ -21,15 +21,13 @@
 | Wikidata 组件 | [实际 CC0 知识文件](resources/wikidata/README.md)：38 个实体、66 条父级／类型关系，用于赋值语境 |
 
 
-下图展示框架、决策模型训练路线及条件冲击应用。
+下图展示框架及决策模型训练路线。
 
 ![S2-MAS框架](paper/figures/F1.png)
 
 ![决策模型训练路线](paper/figures/DECISION_TRAINING_ROUTES.png)
 
-![条件冲击应用](paper/figures/SHOCK_OVERVIEW.png)
-
-合成配套与 Wiki 语境独立于论文的 1,200 万执行 cohort 及其五冲击月度扩展，也没有用于既有模型训练。标题的 5 亿指框架的 persona 资源规模。
+合成配套与 Wiki 语境独立于论文的 1,200 万执行 cohort ，也没有用于既有模型训练。标题的 5 亿指框架的 persona 资源规模。
 
 公开的科研绘图、训练与评测脚本采用 [Apache-2.0](LICENSE)。**GENESE 引擎实现保持私有。**配套记录采用[研究用途数据条款](resources/public_companion/LICENSE-DATA.md)；Wikidata 知识保持 [CC0](resources/wikidata/LICENSE-CC0.md)，已有原创任务设计保持 CC BY 4.0。项目模型贡献采用[受控科研条款](resources/models/LICENSE-CONTROLLED-RESEARCH.md)：非商用、禁止再分发和未经授权的逆向。
 

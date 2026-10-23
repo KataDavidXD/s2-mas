@@ -34,7 +34,7 @@ These methods produce 2 + 2 + 1 + 2 + 2 + 1 = 10 selected training versions. The
 
 ## Full-data checkpoints, runtimes and compatibility
 
-The full-data `sharp-421m` checkpoint completes six SFT + RLCD rounds using 2,925,263 training examples. Its `sharp-421m-mlx` runtime is used in the reported 12M-agent and monthly applications. The 322M bilingual checkpoint and its runtime form a separate size branch.
+The full-data `sharp-421m` checkpoint completes six SFT + RLCD rounds using 2,925,263 training examples. Its `sharp-421m-mlx` runtime is used in the reported 12M-agent applications. The 322M bilingual checkpoint and its runtime form a separate size branch.
 
 | Repository | Parameters and role |
 |---|---|

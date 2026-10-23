@@ -1,6 +1,6 @@
 # Model releases and interfaces
 
-Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v58 · 22 October 2026.
+Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v59 · 22 October 2026.
 
 The comparison combines the public decision-model releases evaluated from 14 October 2026 with the hosted API comparisons reported through 22 October 2026. The [sharp model catalog](../../resources/MODEL_CATALOG.md) lists project releases and their controlled research terms. Upstream resources follow their own licenses and access conditions.
 

@@ -11,7 +11,7 @@ sharp-421m uses the **largest disclosed SFT + RLCD training set among the financ
 
 [Latest manuscript](paper/S2_MAS_Paper.pdf) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
 
-Manuscript v58 · 22 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
+Manuscript v59 · 23 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
 
 | Resource | Entry point and scope |
 |---|---|
@@ -21,15 +21,13 @@ Manuscript v58 · 22 October 2026 · [arXiv:2610.27746](https://arxiv.org/abs/26
 | Wikidata component | [Actual CC0 knowledge files](resources/wikidata/README.md): 38 entities and 66 parent/type relations for assigned contexts |
 
 
-The framework, decision-model routes and conditional shock applications are illustrated below.
+The framework and decision-model routes are illustrated below.
 
 ![S2-MAS framework](paper/figures/F1.png)
 
 ![Decision-model training routes](paper/figures/DECISION_TRAINING_ROUTES.png)
 
-![Conditional shock applications](paper/figures/SHOCK_OVERVIEW.png)
-
-The synthetic companion and Wiki context are separate from the paper's 12M execution cohort and its five-shock monthly extension and from existing model training. The 500M headline describes the framework's persona resource.
+The synthetic companion and Wiki context are separate from the paper's 12M execution cohort and from existing model training. The 500M headline describes the framework's persona resource.
 
 Public scientific plotting, training and evaluation scripts use [Apache-2.0](LICENSE). **GENESE engine implementation remains private.** Companion records use [research-use data terms](resources/public_companion/LICENSE-DATA.md); Wikidata facts remain [CC0](resources/wikidata/LICENSE-CC0.md), and the existing authored task designs retain CC BY 4.0. Project model contributions use [controlled research terms](resources/models/LICENSE-CONTROLLED-RESEARCH.md): noncommercial use, no redistribution and no unauthorized reverse engineering.
 

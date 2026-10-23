@@ -23,13 +23,12 @@ def main():
     rows=[
       ("a","Population resources",TEAL,[("Financial observations","Cleaning and translation\nStatistical construction"),
        ("500M persona resource","Household state attributes\nIncome, spending, assets, debt"),
-       ("Execution populations","12M one-shot cohort\n10k matched monthly households")]),
+       ("Execution populations","12M one-shot cohort")]),
       ("b","Decision and state interfaces",PURPLE,[("Recorded-choice supervision","4.17M underlying QA\nGrouped training and evaluation"),
        ("Decision policies","Ten trained release versions\nSFT/RLCD, head-only and LoRA"),
        ("Genese World / Brain","State → alternatives → intent\nRegistered effect → next state")]),
       ("c","Connected applications",TEAL,[("Eight financial task families","Authored alternatives\nExplicit action-to-ledger rules"),
-       ("12M-agent application","24M one-shot choices\n12 accounting months per choice"),
-       ("Monthly shock worlds","10k households · R0 + five shocks\n24 months · 2.88M logical choices")])]
+       ("12M-agent application","24M one-shot choices\n12 accounting months per choice")])]
     for ax,(letter,title,col,boxes) in zip(axes,rows):
         ax.set(xlim=(0,1),ylim=(0,1)); ax.axis("off")
         ax.annotate(letter,(0,1),xycoords="axes fraction",xytext=(0,6),textcoords="offset points",fontsize=9,weight="bold",color=col,va="bottom")
