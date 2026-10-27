@@ -1,0 +1,7 @@
+metric,sign,households,share_full_panel_pct
+delta_consumption_shock_cents,positive,101548,5.0774
+delta_consumption_shock_cents,zero,1672746,83.63730000000001
+delta_consumption_shock_cents,negative,225706,11.2853
+delta_consumption_total_cents,positive,101455,5.07275
+delta_consumption_total_cents,zero,1674896,83.7448
+delta_consumption_total_cents,negative,223649,11.18245

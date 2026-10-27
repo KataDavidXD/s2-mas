@@ -1,0 +1,5 @@
+group,households,share_full_panel_pct,mean_shock_consumption_delta_cny,mean_total_consumption_delta_cny,mean_final_cash_delta_cny,mean_final_old_debt_delta_cny,avoided_cash_zero_n,added_cash_zero_n,available_fully_paid_n,available_cash_zero_n,borrow_selected_n,classification
+self_financed_consumption_protection,90667,4.5333499999999995,2023.6893559950147,2401.49257954934,-2401.49257954934,0.0,0,0,90667,0,0,realized_outcome_subset
+fully_paid_cash_preservation,220427,11.02135,-3588.3760317021056,-4335.409547378497,4331.2453811012265,-4.164166277270933,62326,0,220427,0,0,realized_outcome_subset
+avoided_cash_zero_subset,62326,3.1163,-2104.640735166704,-3260.6886097294864,3245.9612940025027,-14.727315726983923,62326,0,62326,0,0,realized_outcome_subset
+full_panel,2000000,100.0,-258.042991335,-293.75849399,311.495127095,17.736633105,62326,10217,1734230,265770,0,full_panel

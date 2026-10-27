@@ -1,0 +1,26 @@
+{
+  "version": "system-timing-v3",
+  "phase": "complete",
+  "planned_measured_rounds": 280,
+  "selected_valid_measured_rounds": 280,
+  "attempts_including_warmup_and_failure": 294,
+  "invalid_attempts": 0,
+  "missing": [],
+  "sampling": "20interleavedrandomizedblocksplusonewarmup per100/1000-choice matrix; seed20261014",
+  "storage": "memory-backed isolated comparison directory; configured native store behavior retained",
+  "hardware": "two Intel Xeon Platinum8268;96 logicalCPUthreads",
+  "resources": "Equal framework CPU allocation; separate fixed backend allocation; no GPU forward.",
+  "backend": "immediate legal-choice response; accepted-answerwriteback timed; initialization separate",
+  "selection": "First valid chronological attempt per declared choices/arm/block; all attempts, including warmup, are retained in TIMING_attempts.csv.",
+  "uncertainty": "individual observed block values and IQR; no inference from incomplete matrices",
+  "configuration_count": 7,
+  "reported_configuration_scope": [
+    "mas-def",
+    "mas-pp",
+    "onesim",
+    "oasis",
+    "mirofish",
+    "agentsociety",
+    "matraix"
+  ]
+}

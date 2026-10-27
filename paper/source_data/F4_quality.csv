@@ -1,0 +1,7 @@
+dimension,label,mean_score,n_personas,n_human_raters,n_ratings,score1,score2,score3,score4,score5
+M1,Accuracy,4.685,100,6,600,0,4,43,91,462
+M2,No overinference,4.285,100,6,600,0,6,119,173,302
+M3,Coverage,4.985,100,6,600,0,0,0,9,591
+M4,Consistency,4.670,100,6,600,13,23,28,21,515
+M5,Overall fidelity,4.225,100,6,600,11,23,96,160,310
+Overall,Pooled,4.570,100,6,3000,24,56,286,454,2180

@@ -1,0 +1,25 @@
+metric,category,count,share_pct
+Household size,1,400546,20.0273
+Household size,2,399812,19.9906
+Household size,3,399327,19.96635
+Household size,4,400296,20.0148
+Household size,5,400019,20.00095
+Monthly income,<2.5k,285490,14.274500000000002
+Monthly income,2.5–5k,354133,17.70665
+Monthly income,5–10k,502270,25.1135
+Monthly income,10–15k,346482,17.3241
+Monthly income,15–20k,242760,12.138
+Monthly income,20–30k,227540,11.376999999999999
+Monthly income,≥30k,41325,2.06625
+Cash buffer,0,285495,14.27475
+Cash buffer,1,285746,14.2873
+Cash buffer,2,285958,14.2979
+Cash buffer,3,285789,14.28945
+Cash buffer,4,286020,14.301
+Cash buffer,5,285394,14.269699999999998
+Cash buffer,6,285598,14.279900000000001
+Debt exposure,0,80566,4.0283
+Debt exposure,1–6,480012,24.0006
+Debt exposure,7–12,478423,23.92115
+Debt exposure,13–18,479803,23.99015
+Debt exposure,19–24,481196,24.0598

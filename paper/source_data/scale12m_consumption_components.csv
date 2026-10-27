@@ -1,0 +1,4 @@
+component,households,unit,baseline_mean,intervention_mean,paired_difference,evidence
+executed_initial_purchase,12000000,CNY/household,595.5941666666666666666666667,3486.56875,2890.974583333333333333333333,Derived from frozen choice counts and fixed T3 option amounts
+routine_consumption,12000000,CNY/household,68364.73938258083333333333333,68360.9476716475,-3.791710933333333,Total consumption less executed initial purchase
+total_consumption,12000000,CNY/household,68960.3335492475,71847.5164216475,2887.1828723999997,Completed fixed-panel ledger aggregate

@@ -1,0 +1,3 @@
+comparison,metric,difference_pp,lower_95_pp,upper_95_pp,records,groups,bootstrap_draws,bootstrap_seed,sampling_seed
+sharp-421m-mlx minus GPT-6-Astra,accuracy,5.387438543037182,4.75942992091389,6.101588824837015,14441,500,1000,20261018,20261020
+sharp-421m-mlx minus GPT-6-Astra,question_macro_F1,1.0660005522833749,0.36718229572082844,1.8532983267499124,14441,500,1000,20261018,20261020

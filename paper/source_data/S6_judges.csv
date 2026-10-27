@@ -1,0 +1,11 @@
+dimension,judge,model_name,persona_n,dimension_score_n,judge_mean,human_mean,mean_bias_points
+M1,DeepSeek,deepseek-flash,100,100,4.99,4.685,0.305
+M2,DeepSeek,deepseek-flash,100,100,4.99,4.285,0.705
+M3,DeepSeek,deepseek-flash,100,100,5.0,4.985,0.015
+M4,DeepSeek,deepseek-flash,100,100,5.0,4.67,0.33
+M5,DeepSeek,deepseek-flash,100,100,5.0,4.225,0.775
+M1,GLM,glm-5.3-flash,100,100,5.0,4.685,0.315
+M2,GLM,glm-5.3-flash,100,100,5.0,4.285,0.715
+M3,GLM,glm-5.3-flash,100,100,5.0,4.985,0.015
+M4,GLM,glm-5.3-flash,100,100,5.0,4.67,0.33
+M5,GLM,glm-5.3-flash,100,100,5.0,4.225,0.775

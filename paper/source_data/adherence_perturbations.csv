@@ -1,0 +1,9 @@
+dimension,error_type,judge,valid_personas,target_score_at_most_3_pct,target_score_drop_pct,nontarget_specificity_pct
+M1,Changed fact,DeepSeek Flash,25,64,72,98.7
+M1,Changed fact,GLM Flash,23,91.3,100,89.9
+M2,Unsupported addition,DeepSeek Flash,25,0,44,100
+M2,Unsupported addition,GLM Flash,24,79.2,95.8,97.2
+M3,Omitted target,DeepSeek Flash,24,0,8.3,100
+M3,Omitted target,GLM Flash,24,100,100,100
+M4,Contradiction,DeepSeek Flash,25,44,76,100
+M4,Contradiction,GLM Flash,25,96,96,58

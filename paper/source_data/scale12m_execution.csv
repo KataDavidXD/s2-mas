@@ -1,0 +1,13 @@
+metric,value,unit
+synthetic_households,12000000,households
+completed_logical_choices,24000000,choices
+monthly_ledger_states,288000000,states
+common_end_to_end_wall_seconds,14356.977502822876,seconds
+logical_choices_per_second,1671.6610439266278,choices/second
+input_tokens,12719522472,tokens
+input_tokens_per_second,885947.0922413218,tokens/second
+private_trace_bytes,67664771925,bytes
+gpu_count,14,GPUs
+gpu_pool_a,8,GPUs
+gpu_pool_b,6,GPUs
+autoregressive_output_tokens,0,tokens

@@ -1,0 +1,31 @@
+{
+  "population": "independent synthetic companion",
+  "n": 2000000,
+  "shards_read": 40,
+  "features": [
+    "Household size",
+    "Monthly income",
+    "Essential spending",
+    "Adjustable spending",
+    "Opening cash",
+    "Other assets",
+    "Opening debt",
+    "Monthly debt payment"
+  ],
+  "complete_records": 2000000,
+  "pca_transform": "log1p(CNY) for seven financial fields; household size untransformed; all eight standardized",
+  "pca_weight_definition": "unit-length eigenvectors of the correlation matrix; PC1 and PC2 oriented toward positive income",
+  "pca_variance_pct": [
+    45.64502819953336,
+    18.004279151397178,
+    11.783099134057148,
+    11.091913143200518,
+    7.666042270451149,
+    4.722567569975968,
+    0.756971827995782,
+    0.3300987033889073
+  ],
+  "monthly_spending_exceeds_income_n": 103936,
+  "monthly_spending_and_dues_exceeds_income_n": 1403896,
+  "statistical_scope": "descriptive complete-population summaries"
+}

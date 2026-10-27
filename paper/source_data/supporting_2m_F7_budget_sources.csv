@@ -1,0 +1,4 @@
+group,households,consumption_reduction_cny,old_principal_payment_reduction_cny,old_interest_payment_reduction_cny,final_cash_gain_cny,final_old_debt_delta_cny,cash_net_of_old_debt_delta_cny
+full_panel,2000000,293.75849399,11.758712645000001,5.97792046,311.495127095,17.736633105,293.75849399
+self_financed_consumption_protection,90667,-2401.49257954934,-0.0,-0.0,-2401.49257954934,0.0,-2401.49257954934
+fully_paid_cash_preservation,220427,4335.409547378497,-2.758595997767969,-1.4055702795029645,4331.2453811012265,-4.164166277270933,4335.409547378497

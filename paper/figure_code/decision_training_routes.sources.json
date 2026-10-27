@@ -1,0 +1,175 @@
+{
+  "figure": "Compared decision-model families and training routes",
+  "type": "scientific schematic",
+  "quantitative_performance_panel": false,
+  "sources": [
+    {
+      "name": "Jev / System One",
+      "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+      "scope": "Official typed-output interface and advertised RLCD training route"
+    },
+    {
+      "name": "Laya",
+      "url": "https://github.com/NandhaKishorM/laya",
+      "scope": "Encoder-based typed option scoring and native CE / noisy-logit RLCD"
+    },
+    {
+      "name": "Kev-4B",
+      "url": "https://github.com/jaredpalmer/kev/blob/main/docs/model-cards/kev-4b.md",
+      "scope": "Frozen Qwen backbone, rank-16 LoRA and option/decide pointer trained by CE"
+    },
+    {
+      "name": "LoRA",
+      "url": "https://arxiv.org/abs/2106.09685",
+      "scope": "Low-rank adaptation method"
+    },
+    {
+      "name": "Proper scoring rules",
+      "url": "https://doi.org/10.1198/016214506000001437",
+      "scope": "Statistical motivation for proper-score rewards"
+    },
+    {
+      "name": "Tev1-4B",
+      "url": "https://github.com/togethercomputer/tev1",
+      "scope": "Qwen3.5-4B adapted with LoRA supervised fine-tuning and the existing language-model output head; answer-letter interface"
+    },
+    {
+      "name": "Clef Flash 9B",
+      "url": "https://huggingface.co/Cloudflare/clef-flash",
+      "scope": "Qwen3.5-9B backbone and learned joint schema head; one logit for each permitted option"
+    },
+    {
+      "name": "Clef training announcement",
+      "url": "https://blog.cloudflare.com/clef-decision-models/",
+      "scope": "Author describes frozen Qwen backbone, rank-256 LoRA, label-smoothed CE plus Brier loss, and a separate RLCD secondary target; this is not the native Laya RLCD objective"
+    },
+    {
+      "name": "OpenDecider Nano",
+      "url": "https://github.com/manjunathshiva/opendecider",
+      "scope": "Ettin-encoder-400m with an option-marker MLP and per-question softmax"
+    },
+    {
+      "name": "Von 1.3",
+      "url": "https://huggingface.co/wfzyx/von",
+      "scope": "ModernBERT-large and option-marker scoring head; author card describes listwise CE plus Brier fine-tuning"
+    },
+    {
+      "name": "GLiNER2.5-Decide",
+      "url": "https://huggingface.co/fastino/GLiNER2.5-Decide",
+      "scope": "GLiNER2.5 classification model scores caller-supplied label sets in one forward pass"
+    },
+    {
+      "name": "Liquid d1-omni-600M",
+      "url": "https://huggingface.co/LiquidAI/d1-omni-600M",
+      "scope": "LFM2.5-Encoder-based multimodal decision model with typed option probabilities; only text inputs are evaluated in the household comparison"
+    },
+    {
+      "name": "Laya-Finance",
+      "url": "https://huggingface.co/hravi/laya-finance",
+      "scope": "Laya / ModernBERT-large fine-tune for financial text classification; training objective is not inferred from family membership"
+    },
+    {
+      "name": "GLM-5.3-Flash",
+      "url": "https://docs.z.ai/guides/vlm/glm-5.3-flash",
+      "scope": "Provider text-output API supporting structured JSON; the household benchmark maps generated answers to the fixed options"
+    },
+    {
+      "name": "DeepSeek-V4.1-Flash",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "scope": "Provider text-output API mapped to original decision options"
+    },
+    {
+      "name": "GPT-6-Luna",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "scope": "Provider text-output API mapped to original decision options"
+    },
+    {
+      "name": "GPT-6-Astra",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "scope": "Provider text-output API mapped to original decision options"
+    }
+  ],
+  "compared_model_taxonomy": [
+    {
+      "model": "Base Laya",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "sharp-421m-mlx",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "Laya-Finance (hravi)",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "Von 1.3",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "OpenDecider Nano",
+      "family": "Encoder option scoring"
+    },
+    {
+      "model": "Kev 4B",
+      "family": "Language model with learned decision head"
+    },
+    {
+      "model": "Clef Flash 9B",
+      "family": "Language model with learned decision head"
+    },
+    {
+      "model": "Tev1 4B",
+      "family": "Next-token decision SFT"
+    },
+    {
+      "model": "GLiNER2.5-Decide",
+      "family": "Dynamic schema classification"
+    },
+    {
+      "model": "Liquid d1-omni-600M",
+      "family": "Multimodal encoder decisions"
+    },
+    {
+      "model": "Jev 1.13",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "GLM-5.3-Flash",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "DeepSeek-V4.1-Flash",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "GPT-6-Luna",
+      "family": "Provider decision interfaces"
+    },
+    {
+      "model": "GPT-6-Astra",
+      "family": "Provider decision interfaces"
+    }
+  ],
+  "trained_variants": [
+    "sharp-421m-sft-50k",
+    "sharp-421m-sft-200k",
+    "sharp-421m-rlcd-50k: continue SFT50 development-best with a 50k RLCD pass",
+    "sharp-421m-rlcd-200k: continue SFT200 development-best with a 200k RLCD pass",
+    "sharp-421m-ce-200k: continue SFT200 development-best with a 200k CE pass",
+    "sharp-4b-head-50k",
+    "sharp-4b-head-200k",
+    "sharp-4b-lora-50k",
+    "sharp-4b: LoRA and scalar head, 200k",
+    "sharp-9b: LoRA and scalar head, 200k"
+  ],
+  "references": [
+    "Original Laya with zero new downstream training",
+    "Historical full-data sharp-421m SFT and RLCD system"
+  ],
+  "evaluation_scope": {
+    "complete_test_models": 14,
+    "additional_fixed_sample_model": "GPT-6-Astra",
+    "fixed_sample_records": 14441
+  }
+}

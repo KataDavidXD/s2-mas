@@ -1,0 +1,114 @@
+{
+  "sharp-4b-head-50k": {
+    "backend": "qwen",
+    "model_name": "Qwen3.5-4B-Base",
+    "method": "head_only",
+    "unique_train_rows": 50000,
+    "feature_batch_size": 128,
+    "batch_size": 512,
+    "gradient_accumulation": 1,
+    "epochs": 20,
+    "learning_rate": 0.003,
+    "head_learning_rate": 0.003,
+    "seed": 20261018
+  },
+  "sharp-4b-head-200k": {
+    "backend": "qwen",
+    "model_name": "Qwen3.5-4B-Base",
+    "method": "head_only",
+    "unique_train_rows": 200000,
+    "feature_batch_size": 128,
+    "batch_size": 512,
+    "gradient_accumulation": 1,
+    "epochs": 20,
+    "learning_rate": 0.003,
+    "head_learning_rate": 0.003,
+    "seed": 20261018
+  },
+  "sharp-4b-lora-50k": {
+    "backend": "qwen",
+    "model_name": "Qwen3.5-4B-Base",
+    "method": "lora",
+    "unique_train_rows": 50000,
+    "feature_batch_size": 128,
+    "batch_size": 1,
+    "gradient_accumulation": 4,
+    "epochs": 1,
+    "learning_rate": 0.0001,
+    "head_learning_rate": 0.001,
+    "seed": 20261018,
+    "eval_every_samples": 10000
+  },
+  "sharp-4b": {
+    "backend": "qwen",
+    "model_name": "Qwen3.5-4B-Base",
+    "method": "lora",
+    "unique_train_rows": 200000,
+    "feature_batch_size": 128,
+    "batch_size": 1,
+    "gradient_accumulation": 4,
+    "epochs": 1,
+    "learning_rate": 0.0001,
+    "head_learning_rate": 0.001,
+    "seed": 20261018,
+    "eval_every_samples": 50000
+  },
+  "sharp-9b": {
+    "backend": "qwen",
+    "model_name": "Qwen3.5-9B",
+    "method": "lora",
+    "unique_train_rows": 200000,
+    "feature_batch_size": 64,
+    "batch_size": 1,
+    "gradient_accumulation": 4,
+    "epochs": 1,
+    "learning_rate": 0.0001,
+    "head_learning_rate": 0.001,
+    "seed": 20261018,
+    "eval_every_samples": 50000,
+    "method_selection": "4B full-dev question macro F1, accuracy secondary"
+  },
+  "sharp-421m-sft-50k": {
+    "backend": "native_laya",
+    "objective": "sft",
+    "unique_train_rows": 50000,
+    "encoder_learning_rate": 2.5e-05,
+    "head_learning_rate": 0.0001,
+    "seed": 20261018
+  },
+  "sharp-421m-sft-200k": {
+    "backend": "native_laya",
+    "objective": "sft",
+    "unique_train_rows": 200000,
+    "encoder_learning_rate": 2.5e-05,
+    "head_learning_rate": 0.0001,
+    "seed": 20261018
+  },
+  "sharp-421m-rlcd-50k": {
+    "backend": "native_laya",
+    "objective": "rlcd",
+    "unique_train_rows": 50000,
+    "parent": "sharp-421m-sft-50k/best",
+    "encoder_learning_rate": 5e-06,
+    "head_learning_rate": 2e-05,
+    "seed": 20261018
+  },
+  "sharp-421m-rlcd-200k": {
+    "backend": "native_laya",
+    "objective": "rlcd",
+    "unique_train_rows": 200000,
+    "parent": "sharp-421m-sft-200k/best",
+    "encoder_learning_rate": 5e-06,
+    "head_learning_rate": 2e-05,
+    "seed": 20261018
+  },
+  "sharp-421m-ce-200k": {
+    "backend": "native_laya",
+    "objective": "sft",
+    "unique_train_rows": 200000,
+    "parent": "sharp-421m-sft-200k/best",
+    "encoder_learning_rate": 5e-06,
+    "head_learning_rate": 2e-05,
+    "seed": 20261018
+  }
+}

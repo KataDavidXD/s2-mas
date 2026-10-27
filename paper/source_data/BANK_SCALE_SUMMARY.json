@@ -1,0 +1,58 @@
+{
+  "sampling_seed": 20261014,
+  "sampling_design": "One fixed random permutation of the delivered bank; prefixes are nested SRS without replacement.",
+  "sample_sizes": [
+    100000,
+    1000000,
+    2000000,
+    5000000,
+    10000000
+  ],
+  "bank_records": 10000000,
+  "financial_state_fields": [
+    "income.household_income_bracket",
+    "consumption.total",
+    "extended.financial_asset_bracket",
+    "extended.debt_amount_bracket"
+  ],
+  "financial_state_known_records": 9499649,
+  "low_frequency_denominator": "9,499,649 bank records with all four financial state fields known.",
+  "financial_state_groups": [
+    {
+      "group": "all_nonempty_known_states",
+      "frequency_threshold_among_known": null,
+      "nonempty_states": 1026,
+      "bank_records": 9499649,
+      "record_share_among_known": 1.0,
+      "record_share_among_all": 0.9499649,
+      "expected_records_srs_2m": 1899929.8,
+      "expected_states_observed_srs_2m": 980.5752639128759,
+      "expected_state_coverage_srs_2m": 0.9557263780827251
+    },
+    {
+      "group": "frequency_le_1e-4",
+      "frequency_threshold_among_known": 0.0001,
+      "nonempty_states": 574,
+      "bank_records": 122655,
+      "record_share_among_known": 0.012911529678622862,
+      "record_share_among_all": 0.0122655,
+      "expected_records_srs_2m": 24531.0,
+      "expected_states_observed_srs_2m": 528.5752639128759,
+      "expected_state_coverage_srs_2m": 0.9208628291165086
+    },
+    {
+      "group": "frequency_le_1e-5",
+      "frequency_threshold_among_known": 1e-05,
+      "nonempty_states": 271,
+      "bank_records": 8160,
+      "record_share_among_known": 0.0008589791054385272,
+      "record_share_among_all": 0.000816,
+      "expected_records_srs_2m": 1632.0,
+      "expected_states_observed_srs_2m": 225.57526391779254,
+      "expected_state_coverage_srs_2m": 0.8323810476671312
+    }
+  ],
+  "expected_2m_coverage": "SRS2M from fixed10M: inclusion probability for a state containing c records is 1-C(10M-c,2M)/C(10M,2M); sum these probabilities across states.",
+  "execution_fraction": 0.2,
+  "diagnostic_samples": "Nested diagnostic samples are separate from the completed main panel."
+}

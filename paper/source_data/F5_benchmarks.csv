@@ -1,0 +1,18 @@
+matrix,framework,choices,round_s,blocks,replicas
+fl4,MAS,100,0.517,3,3
+fl4,OneSim,100,0.683,3,3
+fl4,OASIS,100,1.14,3,3
+fl4,MiroFish,100,1.403,3,3
+fl3,MAS,1000,6.17,2,1
+fl3,OASIS,1000,7.45,2,1
+fl3,OneSim,1000,7.7,2,1
+j3,MAS,1000,5.97,2,
+j3,OASIS,1000,8.21,2,
+j3,OneSim,1000,,2,
+timing20_1000,MAS default,1000,2.7877,20,0
+timing20_1000,MAS parallel partitions,1000,2.7431,20,0
+timing20_1000,onesim,1000,6.22255,20,0
+timing20_1000,oasis,1000,7.385999999999999,20,0
+timing20_1000,mirofish,1000,11.25545,20,0
+timing20_1000,agentsociety,1000,5.81795,20,0
+timing20_1000,matraix,1000,1062.15345,20,0

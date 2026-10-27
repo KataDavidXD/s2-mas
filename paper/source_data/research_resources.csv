@@ -1,0 +1,6 @@
+Component,Content and scale,Research role
+Trained model releases,Ten development-selected trained versions,Native SFT/RLCD/continued-SFT and Qwen head/LoRA comparisons
+Decision-model benchmark,"240,458 shared records; 119 question versions; 8,275 paired groups","Accuracy, candidate-complete question-macro F1 and paired confidence intervals"
+Persona representation,36 coded attributes; PCA over 14 ordered attributes,Bank-only structural summaries
+Financial task designs,Eight authored task families,"Questions, semantic options, interventions, contracts and integer-cent ledger rules"
+Completed one-shot workload,"12,000,000 households;24,000,000 choices;12-month ledgers","Purchase funding, consumption, cash and payments at population scale"

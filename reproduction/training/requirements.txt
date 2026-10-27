@@ -1,0 +1,8 @@
+torch==2.12.1
+transformers==5.19.0
+peft==0.21.2
+accelerate==1.14.0
+laya==0.4.2
+numpy>=1.26
+safetensors>=0.4
+huggingface-hub>=0.20

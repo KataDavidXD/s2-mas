@@ -1,0 +1,298 @@
+{
+  "design_version": "authored_eight_scenarios_v1",
+  "record_type": "original_synthetic_scenario_design",
+  "language": "en",
+  "currency": "CNY",
+  "money_unit": "integer_cent",
+  "horizon_months": 12,
+  "conditions": [
+    "baseline",
+    "intervention"
+  ],
+  "selected_options_per_request": 1,
+  "parameter_interpretation": "All ranges, rates, interventions, contract terms and investment probabilities are designer-controlled example settings.",
+  "contract_quotation": {
+    "annual_rate_type": "nominal_annual_bps",
+    "monthly_rate": "annual_bps / 120000",
+    "level_payment_formula": "principal * monthly_rate / (1 - (1 + monthly_rate) ** (-term_months)); principal / term_months for zero rate",
+    "rounding": "Nearest integer cent, half up; final quoted payment clears the contract's remaining balance.",
+    "fee_payment": "Upfront from available cash; not capitalized."
+  },
+  "tasks": [
+    {
+      "task_id": "T1",
+      "name": "Consumption plans under a changed monthly income",
+      "question_en": "Choose the monthly discretionary-spending plan to use with the budget shown here.",
+      "baseline": {
+        "monthly_income_multiplier": 1.0
+      },
+      "intervention": {
+        "monthly_income_multiplier": 0.7
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "retain_discretionary_spending",
+          "fraction": 1.0
+        },
+        {
+          "option_id": "B",
+          "action": "reduce_discretionary_spending",
+          "fraction": 0.5
+        },
+        {
+          "option_id": "C",
+          "action": "pause_discretionary_spending",
+          "fraction": 0.0
+        }
+      ],
+      "ledger_mapping": "Apply the assigned income path and chosen discretionary fraction; keep necessities and contract dues explicit.",
+      "execution_rules": [
+        "Apply the stated income multiplier during months 1–12.",
+        "Use the selected discretionary fraction; keep essential spending and opening debt dues explicit.",
+        "Pay only from available cash and income; record unpaid obligations instead of allowing negative cash."
+      ]
+    },
+    {
+      "task_id": "T2",
+      "name": "An unexpected household bill",
+      "question_en": "Select a payment plan for the one-time bill shown in this budget.",
+      "baseline": {
+        "bill_income_months": 1,
+        "assigned_credit_annual_bps": 800
+      },
+      "intervention": {
+        "bill_income_months": 2,
+        "assigned_credit_annual_bps": 800
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "cash_only_record_any_unpaid_bill"
+        },
+        {
+          "option_id": "B",
+          "action": "cash_plus_gap_loan",
+          "term_months": 12
+        },
+        {
+          "option_id": "C",
+          "action": "cash_plus_gap_loan",
+          "term_months": 24
+        }
+      ],
+      "ledger_mapping": "Charge the stated bill once. Borrowed principal equals the positive funding gap under the chosen contract. Preserve unpaid needs when the cash-only option cannot fully pay.",
+      "execution_rules": [
+        "Charge the one-time bill at month 0 exactly once.",
+        "Apply opening cash first. For B or C, disburse principal equal to the remaining positive bill gap once.",
+        "Use the quoted amortizing contract. Under A, retain any unpaid bill as a shortfall."
+      ]
+    },
+    {
+      "task_id": "T3",
+      "name": "The size of an available credit draw",
+      "question_en": "Choose how much of the stated credit line to draw for the planned expense.",
+      "baseline": {
+        "line_income_months": 1,
+        "planned_expense_income_months": 1
+      },
+      "intervention": {
+        "line_income_months": 2,
+        "planned_expense_income_months": 1
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "draw_zero"
+        },
+        {
+          "option_id": "B",
+          "action": "draw_positive_expense_gap_capped_at_line"
+        },
+        {
+          "option_id": "C",
+          "action": "draw_full_line"
+        }
+      ],
+      "ledger_mapping": "Add the chosen principal once, apply a disclosed 12-month assigned contract, and separate spending financed now from the remaining cash buffer.",
+      "execution_rules": [
+        "Disburse the selected principal once at month 0, never above the credit limit.",
+        "Fund the planned expense from available opening cash and the draw; retain excess cash as liquidity.",
+        "Keep any unpaid expense separate from contractual loan payments."
+      ]
+    },
+    {
+      "task_id": "T4",
+      "name": "Repayment horizon and borrowing price",
+      "question_en": "Select one of the fully specified contracts for the same requested principal.",
+      "baseline": {
+        "short_contract_annual_bps": 400,
+        "long_contract_annual_bps": 800
+      },
+      "intervention": {
+        "short_contract_annual_bps": 800,
+        "long_contract_annual_bps": 800
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "decline_credit"
+        },
+        {
+          "option_id": "B",
+          "action": "accept_short_contract",
+          "term_months": 12
+        },
+        {
+          "option_id": "C",
+          "action": "accept_long_contract",
+          "term_months": 24
+        }
+      ],
+      "ledger_mapping": "Calculate rounded amortizing payments and total repayment from the displayed principal, term, annual rate and fee; do not use a market-price assumption.",
+      "execution_rules": [
+        "Declining adds no new principal or payments.",
+        "Accepting disburses the stated principal once and activates only the selected quoted contract.",
+        "Treat regular payments and the rounding-adjusted final payment as contractual dues, not observed payments."
+      ]
+    },
+    {
+      "task_id": "T5",
+      "name": "A liquid reserve and a risky allocation",
+      "question_en": "Choose the share of available cash to move into the displayed investment, after the stated protected bills.",
+      "baseline": {
+        "protected_bill_income_months": 0,
+        "investment_gain_fraction": 0.1,
+        "investment_loss_fraction": 0.1
+      },
+      "intervention": {
+        "protected_bill_income_months": 1,
+        "investment_gain_fraction": 0.1,
+        "investment_loss_fraction": 0.1
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "invest_available_cash_fraction",
+          "fraction": 0.0
+        },
+        {
+          "option_id": "B",
+          "action": "invest_available_cash_fraction",
+          "fraction": 0.1
+        },
+        {
+          "option_id": "C",
+          "action": "invest_available_cash_fraction",
+          "fraction": 0.25
+        }
+      ],
+      "ledger_mapping": "Debit only available liquid cash. Store the independently assigned gain/loss realization in execution state, outside the decision input; report cash and final assets separately.",
+      "execution_rules": [
+        "Protect the stated bill amount before calculating investable cash.",
+        "Deduct the selected allocation only from available cash; keep the rest liquid.",
+        "A future executor may draw the stated gain/loss once at month 12. This dataset does not draw a realization or execute a ledger."
+      ]
+    },
+    {
+      "task_id": "T6",
+      "name": "Competing debt payments",
+      "question_en": "Choose how to distribute the stated repayment budget across the two disclosed debts.",
+      "baseline": {
+        "repayment_budget_due_fraction": 1.0
+      },
+      "intervention": {
+        "repayment_budget_due_fraction": 0.6
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "allocate_proportional_to_due"
+        },
+        {
+          "option_id": "B",
+          "action": "allocate_higher_rate_debt_first"
+        },
+        {
+          "option_id": "C",
+          "action": "allocate_earlier_due_debt_first"
+        }
+      ],
+      "ledger_mapping": "Construct both debts from explicitly assigned contracts. Cap total payment at the given cash budget; track each unpaid due separately without creating negative cash.",
+      "execution_rules": [
+        "Use the two assigned task debts and assigned cash pool for this allocation exercise.",
+        "Cap total cash payments at the displayed repayment budget and each debt payment at its current due.",
+        "For proportional allocation, round the lower-rate allocation down to cents and assign the remaining budget to the higher-rate debt, capped at its due. Record any unpaid due for each debt."
+      ]
+    },
+    {
+      "task_id": "T7",
+      "name": "A revised repayment schedule",
+      "question_en": "Choose the repayment schedule to follow after the disclosed change in cash flow.",
+      "baseline": {
+        "extension_fee_cents": 0,
+        "extended_remaining_term_months": 24
+      },
+      "intervention": {
+        "extension_fee_cents": 20000,
+        "extended_remaining_term_months": 24
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "retain_current_schedule"
+        },
+        {
+          "option_id": "B",
+          "action": "accept_disclosed_extension"
+        },
+        {
+          "option_id": "C",
+          "action": "make_feasible_partial_prepayment_then_requote",
+          "spare_cash_fraction": 0.5
+        }
+      ],
+      "ledger_mapping": "Preserve outstanding principal, charge any stated fee once, and regenerate contractual dues after a selected extension or prepayment.",
+      "execution_rules": [
+        "Use the assigned remaining contract for this schedule exercise.",
+        "Under an extension, charge the stated fee once from opening cash. If the fee cannot be paid, retain the current schedule; never capitalize the fee silently.",
+        "A partial prepayment uses half of cash above one protected income-month, capped at principal; requote only the remaining principal."
+      ]
+    },
+    {
+      "task_id": "T8",
+      "name": "Cash from an asset or from refinancing",
+      "question_en": "Choose a funding route for the dated payment, using the listed sale and refinancing terms.",
+      "baseline": {
+        "asset_sale_fraction_of_book_value": 0.95,
+        "asset_settlement_days": 1
+      },
+      "intervention": {
+        "asset_sale_fraction_of_book_value": 0.85,
+        "asset_settlement_days": 7
+      },
+      "options": [
+        {
+          "option_id": "A",
+          "action": "retain_asset_use_cash_and_record_any_shortfall"
+        },
+        {
+          "option_id": "B",
+          "action": "sell_assigned_asset"
+        },
+        {
+          "option_id": "C",
+          "action": "refinance_disclosed_gap",
+          "annual_bps": 800,
+          "term_months": 12
+        }
+      ],
+      "ledger_mapping": "Respect payment and settlement dates. Record sale proceeds or refinancing as distinct cash flows and preserve any unpaid bill.",
+      "execution_rules": [
+        "The payment is due on day 3; opening cash is available from day 0.",
+        "Sale proceeds arrive only on the quoted settlement day. A day-7 sale cannot fund a day-3 payment.",
+        "Refinancing is disbursed on day 1 for the positive gap only. Record actual funding routes and any unpaid due separately."
+      ]
+    }
+  ]
+}

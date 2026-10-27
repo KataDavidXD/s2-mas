@@ -1,0 +1,13 @@
+comparison,metric,bootstrap_CI95_low,bootstrap_CI95_high,paired_QA,resampling_household_respondent_groups,bootstrap_draws,seed,resampling_unit
+Fin full vs control-base-full,Accuracy_raw_20k,0.13599682211575417,0.1489304978822672,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-base-full,Accuracy_full_test_question_weights,0.13652737933241324,0.1483653549733563,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-base-full,question_macro_F1,0.0761339373718257,0.09260995197051837,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-fin-profile-free,Accuracy_raw_20k,0.02735678939612105,0.03623975165351126,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-fin-profile-free,Accuracy_full_test_question_weights,0.027336296737233864,0.0361381550029587,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-fin-profile-free,question_macro_F1,0.05495843071489061,0.0672669693194241,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-fin-shuffled-profile,Accuracy_raw_20k,0.043612297752064745,0.053170460032979386,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-fin-shuffled-profile,Accuracy_full_test_question_weights,0.04362587043038879,0.05326570579302606,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-fin-shuffled-profile,question_macro_F1,0.02797661702373489,0.043154748305890236,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-training-majority,Accuracy_raw_20k,0.022512199525998523,0.031085755954541903,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-training-majority,Accuracy_full_test_question_weights,0.022632421292547437,0.031033675227321134,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models
+Fin full vs control-training-majority,question_macro_F1,0.0499466464220899,0.06439450506180358,20000,6752,2000,20261014,paired respondent/household group; common draws across compared models

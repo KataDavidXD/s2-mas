@@ -1,0 +1,8 @@
+{
+  "paired_QA": 20000,
+  "groups": 6752,
+  "draws": 2000,
+  "seed": 20261014,
+  "resampling": "Paired nonparametric bootstrap of original held-out household/respondent group IDs; all selected QA belonging to a sampled group carry its multiplicity. Recompute candidate-class and question-macro F1 each draw. Accuracy with full-test question weights uses the fixed original 240,458-row question distribution.",
+  "elapsed_seconds": 8.883
+}

@@ -1,0 +1,8 @@
+metric,label,households,baseline_mean,intervention_mean,paired_mean_difference,unit
+total_consumption_cents,"Total consumption
+(purchase + routine)",12000000,68960.3335492475,71847.5164216475,2887.1828723999997,CNY/household
+final_cash_cents,Closing cash,12000000,97805.82857704001,96877.06693848666,-928.7616385533333,CNY/household
+final_debt_cents,Closing debt,12000000,84569.06288585084,86641.5125819225,2072.4496960716665,CNY/household
+total_interest_accrued_cents,Interest accrued,12000000,5238.032699936667,5352.061162161666,114.028462225,CNY/household
+unfunded_household_needs_cents,Unfunded needs,12000000,10517.569679749166,10521.361390682501,3.7917109333333334,CNY/household
+default_within_12_months,12-month default,12000000,17.348533333333332,19.01481666666667,1.6662833333333336,percentage_points

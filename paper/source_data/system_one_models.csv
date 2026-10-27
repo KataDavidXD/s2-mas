@@ -1,0 +1,11 @@
+Model,Backbone / declared size,Decision readout
+Laya,ModernBERT-large / 421M,Bidirectional option scoring
+Von 1.3,ModernBERT-large / 395M,Option-marker head
+OpenDecider Nano,Ettin encoder / ~400M,Encoder scoring
+GLiNER2.5-Decide,DeBERTa-v3-large / 340M,Schema label scoring
+d1-omni-600M,LFM2.5 encoder; multimodal / 587M,Shared-trunk option probabilities
+Kev,Qwen3.5 / Qwen3.8; 0.8B–27B,Pointer decision head
+Clef / Clef-Flash,Qwen3.8-27B / Qwen3.5-9B,Decision head; option probabilities
+Nimble,Qwen3.5 / 9B,Candidate-token logits
+Tev1,Qwen3.5 / 4B,Answer-letter output
+Jev,Hosted service; undisclosed size,Structured decision API

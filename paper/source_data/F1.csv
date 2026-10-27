@@ -1,0 +1,7 @@
+component,role,count,unit
+Persona resource,Constructed population representations,500000000,personas
+Population execution,Two T3 conditions,12000000,synthetic households
+One-shot choices,Two conditions per household,24000000,choices
+Ledger states,12months per condition,288000000,months
+Decision supervision,Underlying observed-answer QA,4172421,QA observations
+Trained release versions,Fixed-budget adaptations,10,versions

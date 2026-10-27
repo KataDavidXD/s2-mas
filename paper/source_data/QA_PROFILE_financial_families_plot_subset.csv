@@ -1,0 +1,7 @@
+model,family,N,valid,Accuracy,Accuracy_full_test_question_weights_within_family,question_macro_F1,question_versions
+control-fin-full,risk_and_investment_attitudes,1490,1490,0.5953020134228187,0.5952294038569581,0.2811465465886544,7
+control-fin-full,financial_product_saving_and_credit_behavior,10325,10325,0.8927845036319613,0.8928055953725309,0.5069785689830684,56
+control-fin-full,financial_knowledge,2428,2428,0.6144975288303131,0.6144895430662534,0.30012366027627985,11
+control-fin-profile-free,risk_and_investment_attitudes,1490,1490,0.5624161073825503,0.5623261132316203,0.20238270277771958,7
+control-fin-profile-free,financial_product_saving_and_credit_behavior,10325,10325,0.8774818401937046,0.8775032012656095,0.4562574225932541,56
+control-fin-profile-free,financial_knowledge,2428,2428,0.507001647446458,0.5069235311994774,0.18135662062564462,11

@@ -1,0 +1,135 @@
+{
+  "complete": true,
+  "original_and_additional_full_runs": 3,
+  "new_runs": 2,
+  "unique_train_QA_each_pass": 2925263,
+  "total_new_training_examples_seen": 11701056,
+  "test_N_each_run": 240458,
+  "question_versions": 119,
+  "primary_release_stage": "rlcd",
+  "selection": "All three declared seed pairs reported; no seed chosen using test results",
+  "variability_scope": "Full-data continuation seeds conditional on the same earlier-stage initialization and frozen preparation/splits.",
+  "rows": [
+    {
+      "run": "original",
+      "stage": "sft",
+      "sft_seed": 202610120,
+      "rlcd_seed": 202610121,
+      "training_QA": 2925263,
+      "N": 240458,
+      "question_versions": 119,
+      "Accuracy": 0.7453151901787423,
+      "question_macro_F1": 0.37877455708233115,
+      "backend": "Original Torch2.5.1 CUDA BF16",
+      "complete_full_training": true
+    },
+    {
+      "run": "original",
+      "stage": "rlcd",
+      "sft_seed": 202610120,
+      "rlcd_seed": 202610121,
+      "training_QA": 2925263,
+      "N": 240458,
+      "question_versions": 119,
+      "Accuracy": 0.7455855076562227,
+      "question_macro_F1": 0.38398550838191864,
+      "backend": "Original Torch2.5.1 CUDA BF16",
+      "complete_full_training": true
+    },
+    {
+      "run": "seed_202610140",
+      "stage": "sft",
+      "sft_seed": 202610140,
+      "rlcd_seed": 202610141,
+      "training_QA": 2925263,
+      "N": 240458,
+      "question_versions": 119,
+      "Accuracy": 0.7455189679694583,
+      "question_macro_F1": 0.37977657379389496,
+      "backend": "Original Torch2.5.1 CUDA BF16",
+      "complete_full_training": true,
+      "train_elapsed_seconds": 7797.3
+    },
+    {
+      "run": "seed_202610140",
+      "stage": "rlcd",
+      "sft_seed": 202610140,
+      "rlcd_seed": 202610141,
+      "training_QA": 2925263,
+      "N": 240458,
+      "question_versions": 119,
+      "Accuracy": 0.745635412421296,
+      "question_macro_F1": 0.3840163796158127,
+      "backend": "Original Torch2.5.1 CUDA BF16",
+      "complete_full_training": true,
+      "train_elapsed_seconds": 7842.7
+    },
+    {
+      "run": "seed_202610150",
+      "stage": "sft",
+      "sft_seed": 202610150,
+      "rlcd_seed": 202610151,
+      "training_QA": 2925263,
+      "N": 240458,
+      "question_versions": 119,
+      "Accuracy": 0.7457393806818654,
+      "question_macro_F1": 0.3783311335502064,
+      "backend": "Original Torch2.5.1 CUDA BF16",
+      "complete_full_training": true,
+      "train_elapsed_seconds": 7805.8
+    },
+    {
+      "run": "seed_202610150",
+      "stage": "rlcd",
+      "sft_seed": 202610150,
+      "rlcd_seed": 202610151,
+      "training_QA": 2925263,
+      "N": 240458,
+      "question_versions": 119,
+      "Accuracy": 0.7457185870297516,
+      "question_macro_F1": 0.3818285972826229,
+      "backend": "Original Torch2.5.1 CUDA BF16",
+      "complete_full_training": true,
+      "train_elapsed_seconds": 7838.2
+    }
+  ],
+  "variability": [
+    {
+      "stage": "sft",
+      "metric": "Accuracy",
+      "training_runs": 3,
+      "mean": 0.7455245129433553,
+      "sample_SD": 0.00021214960708567418,
+      "minimum": 0.7453151901787423,
+      "maximum": 0.7457393806818654
+    },
+    {
+      "stage": "sft",
+      "metric": "question_macro_F1",
+      "training_runs": 3,
+      "mean": 0.3789607548088108,
+      "sample_SD": 0.0007404907626218211,
+      "minimum": 0.3783311335502064,
+      "maximum": 0.37977657379389496
+    },
+    {
+      "stage": "rlcd",
+      "metric": "Accuracy",
+      "training_runs": 3,
+      "mean": 0.7456465023690901,
+      "sample_SD": 6.722923561418686e-05,
+      "minimum": 0.7455855076562227,
+      "maximum": 0.7457185870297516
+    },
+    {
+      "stage": "rlcd",
+      "metric": "question_macro_F1",
+      "training_runs": 3,
+      "mean": 0.38327682842678473,
+      "sample_SD": 0.001254299941585248,
+      "minimum": 0.3818285972826229,
+      "maximum": 0.3840163796158127
+    }
+  ],
+  "uncertainty": "Across-seed SD/range describe these three complete runs. Original respondent bootstrap remains a different conditional uncertainty measure."
+}

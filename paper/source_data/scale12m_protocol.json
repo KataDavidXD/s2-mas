@@ -1,0 +1,17 @@
+{
+  "scenario": "T3",
+  "language": "English",
+  "model": "sharp-421m",
+  "backend": "MLX CUDA",
+  "dtype": "FP16",
+  "baseline_purchase_need_cny": 20000.0,
+  "intervention_purchase_need_cny": 30000.0,
+  "annual_rate_percent": 5.0,
+  "loan_term_months": 24,
+  "ledger_horizon_months": 12,
+  "decisions_per_household": 2,
+  "financial_effect": "Intervention minus baseline on the fixed synthetic-agent panel",
+  "default_rule": "Cumulative material unpaid dues more than 90 calendar days old; default persists after cure",
+  "trace_size_unit": "decimal GB (1,000,000,000 bytes)",
+  "runtime_scope": "Common end-to-end wall interval, including preparation, inference, ledger and persistence"
+}

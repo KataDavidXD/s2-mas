@@ -1,0 +1,15 @@
+{
+  "name": "q-stratified-20k-20261014",
+  "language": "en",
+  "population_records": 240458,
+  "records": 20000,
+  "seed": 20261014,
+  "sampling": "Allocate proportionally by question version with minimum one row; largest-remainder correction to 20,000. Seeded SRS without replacement within each question version.",
+  "shuffle": "Rotate the complete held-out rows within each question version by a seed-selected nonzero offset; use a different same-question profile while preserving original question, candidates and gold response.",
+  "profile_free": "Replace only state with an empty JSON object; question, candidates and original gold unchanged.",
+  "singleton_full_test_versions": 0,
+  "model_max_len": 512,
+  "head_max_len": 256,
+  "model_backend": "MLX CUDA FP16",
+  "selection_declared_before_control_inference": true
+}

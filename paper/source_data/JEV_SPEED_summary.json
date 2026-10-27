@@ -1,0 +1,186 @@
+{
+  "summary": [
+    {
+      "label": "Laya multilingual · PyTorch A100",
+      "n": 60,
+      "shared_input_tokens": 20180,
+      "elapsed_seconds": 1.3106359504163265,
+      "mean_ms": 21.843932506938774,
+      "choices_per_second": 45.779302773543534,
+      "shared_input_tokens_per_second": 15397.105499501808,
+      "p50_ms": 21.86902053654194,
+      "p95_ms": 22.012269496917725
+    },
+    {
+      "label": "sharp-322m · PyTorch A100",
+      "n": 60,
+      "shared_input_tokens": 20180,
+      "elapsed_seconds": 1.323509369045496,
+      "mean_ms": 22.058489484091602,
+      "choices_per_second": 45.33401984397852,
+      "shared_input_tokens_per_second": 15247.342007524774,
+      "p50_ms": 22.070033475756645,
+      "p95_ms": 22.222757898271084
+    },
+    {
+      "label": "sharp-322m-mlx · MLX CUDA A100",
+      "n": 60,
+      "shared_input_tokens": 20180,
+      "elapsed_seconds": 0.5460625551640987,
+      "mean_ms": 9.101042586068312,
+      "choices_per_second": 109.87752123375176,
+      "shared_input_tokens_per_second": 36955.472974951845,
+      "p50_ms": 8.412603288888931,
+      "p95_ms": 10.655205696821213
+    },
+    {
+      "label": "Jev 1.13 · API",
+      "n": 60,
+      "shared_input_tokens": 20180,
+      "elapsed_seconds": 12.405993141233921,
+      "mean_ms": 206.76655235389867,
+      "choices_per_second": 4.8363721724605355,
+      "shared_input_tokens_per_second": 1626.6331740042267,
+      "p50_ms": 204.89189960062504,
+      "p95_ms": 240.3001997619867
+    }
+  ],
+  "per_case": [
+    {
+      "model": "Laya multilingual · PyTorch A100",
+      "case": "DEMO-T1-INCOME-25",
+      "n": 20,
+      "p50_ms": 21.67903631925583,
+      "p95_ms": 21.792591363191605,
+      "mean_ms": 21.685870923101902,
+      "decisions_per_second": 46.11297390572876,
+      "shared_input_tokens_mean": 218,
+      "shared_input_tokens_per_second": 10052.628311448869
+    },
+    {
+      "model": "Laya multilingual · PyTorch A100",
+      "case": "DEMO-T7-PLAN",
+      "n": 20,
+      "p50_ms": 21.909750998020172,
+      "p95_ms": 22.015081346035004,
+      "mean_ms": 21.92227803170681,
+      "decisions_per_second": 45.61569735379105,
+      "shared_input_tokens_mean": 393,
+      "shared_input_tokens_per_second": 17926.969060039883
+    },
+    {
+      "model": "Laya multilingual · PyTorch A100",
+      "case": "DEMO-T4-PRODUCT",
+      "n": 20,
+      "p50_ms": 21.927597001194954,
+      "p95_ms": 22.010749578475952,
+      "mean_ms": 21.923648566007614,
+      "decisions_per_second": 45.61284573547167,
+      "shared_input_tokens_mean": 398,
+      "shared_input_tokens_per_second": 18153.912602717726
+    },
+    {
+      "model": "sharp-322m · PyTorch A100",
+      "case": "DEMO-T1-INCOME-25",
+      "n": 20,
+      "p50_ms": 21.942943334579468,
+      "p95_ms": 22.177354618906975,
+      "mean_ms": 21.963904984295368,
+      "decisions_per_second": 45.529244490677776,
+      "shared_input_tokens_mean": 218,
+      "shared_input_tokens_per_second": 9925.375298967754
+    },
+    {
+      "model": "sharp-322m · PyTorch A100",
+      "case": "DEMO-T7-PLAN",
+      "n": 20,
+      "p50_ms": 22.082477807998657,
+      "p95_ms": 22.210077568888664,
+      "mean_ms": 22.097366489470005,
+      "decisions_per_second": 45.25426142868776,
+      "shared_input_tokens_mean": 393,
+      "shared_input_tokens_per_second": 17784.924741474293
+    },
+    {
+      "model": "sharp-322m · PyTorch A100",
+      "case": "DEMO-T4-PRODUCT",
+      "n": 20,
+      "p50_ms": 22.096527740359306,
+      "p95_ms": 22.22346980124712,
+      "mean_ms": 22.114196978509426,
+      "decisions_per_second": 45.21981969192912,
+      "shared_input_tokens_mean": 398,
+      "shared_input_tokens_per_second": 17997.488237387788
+    },
+    {
+      "model": "sharp-322m-mlx · MLX CUDA A100",
+      "case": "DEMO-T1-INCOME-25",
+      "n": 20,
+      "p50_ms": 8.298719301819801,
+      "p95_ms": 8.439171873033047,
+      "mean_ms": 8.327862247824669,
+      "decisions_per_second": 120.07883538914338,
+      "shared_input_tokens_mean": 218,
+      "shared_input_tokens_per_second": 26177.186114833257
+    },
+    {
+      "model": "sharp-322m-mlx · MLX CUDA A100",
+      "case": "DEMO-T7-PLAN",
+      "n": 20,
+      "p50_ms": 10.50763949751854,
+      "p95_ms": 10.76918300241232,
+      "mean_ms": 10.478309355676174,
+      "decisions_per_second": 95.435243039307,
+      "shared_input_tokens_mean": 393,
+      "shared_input_tokens_per_second": 37506.05051444765
+    },
+    {
+      "model": "sharp-322m-mlx · MLX CUDA A100",
+      "case": "DEMO-T4-PRODUCT",
+      "n": 20,
+      "p50_ms": 8.394597098231316,
+      "p95_ms": 8.733227476477625,
+      "mean_ms": 8.496956154704094,
+      "decisions_per_second": 117.68920326208567,
+      "shared_input_tokens_mean": 398,
+      "shared_input_tokens_per_second": 46840.302898310096
+    },
+    {
+      "model": "Jev 1.13 · API",
+      "case": "DEMO-T1-INCOME-25",
+      "n": 20,
+      "p50_ms": 204.3534703552723,
+      "p95_ms": 239.11806661635637,
+      "mean_ms": 207.438550516963,
+      "decisions_per_second": 4.820704721990555,
+      "shared_input_tokens_mean": 218,
+      "shared_input_tokens_per_second": 1050.9136293939412
+    },
+    {
+      "model": "Jev 1.13 · API",
+      "case": "DEMO-T7-PLAN",
+      "n": 20,
+      "p50_ms": 205.4644450545311,
+      "p95_ms": 243.15572567284107,
+      "mean_ms": 208.16231463104486,
+      "decisions_per_second": 4.803943508086176,
+      "shared_input_tokens_mean": 393,
+      "shared_input_tokens_per_second": 1887.9497986778672
+    },
+    {
+      "model": "Jev 1.13 · API",
+      "case": "DEMO-T4-PRODUCT",
+      "n": 20,
+      "p50_ms": 203.29553447663784,
+      "p95_ms": 231.31631389260292,
+      "mean_ms": 204.69879191368818,
+      "decisions_per_second": 4.885226681853856,
+      "shared_input_tokens_mean": 398,
+      "shared_input_tokens_per_second": 1944.320219377835
+    }
+  ],
+  "ratios": {
+    "mlx_to_jev": 22.71899624669515,
+    "mlx_to_pytorch_same_checkpoint": 2.423732146672765
+  }
+}

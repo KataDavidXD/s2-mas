@@ -1,0 +1,9 @@
+{
+  "N": 240458,
+  "groups": 8275,
+  "question_versions": 119,
+  "draws": 1000,
+  "seed": 20261014,
+  "resampling": "Joint bootstrap of original meta.group IDs, preserving all original QA in every selected respondent or household. Candidate F1 is recomputed each draw. Sample-weighted version F1 retains fixed original version frequencies.",
+  "conditioned_on": "Fixed evaluated checkpoints and prepared financial test; training-seed variability is reported in separate full continuation replications."
+}

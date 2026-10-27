@@ -1,0 +1,31 @@
+{
+  "benchmark": "one-shot consumer financial-choice prediction",
+  "full_test": {
+    "models": 14,
+    "additional_baseline": "question-majority",
+    "records": 240458,
+    "question_versions": 119,
+    "groups": 8275
+  },
+  "fixed_group_sample": {
+    "models": [
+      "sharp-421m-mlx",
+      "GPT-6-Astra"
+    ],
+    "records": 14441,
+    "question_versions": 119,
+    "groups": 500,
+    "sampling": "random complete groups selected before the added model outputs; every record in each selected group retained",
+    "sampling_seed": 20261020,
+    "paired_interval_source": "SYSTEM1_astra_paired_interval.csv"
+  },
+  "distinct_models": 15,
+  "invalid_responses": {
+    "GLM-5.3-Flash": 98,
+    "DeepSeek-V4.1-Flash": 58
+  },
+  "score_units": "fractions in CSV; percentages in manuscript",
+  "prediction_targets": "recorded questionnaire answers and coded respondent attributes",
+  "parameter_source": "SYSTEM1_model_parameters.csv",
+  "added_api_settings_source": "SYSTEM1_added_api_settings.csv"
+}

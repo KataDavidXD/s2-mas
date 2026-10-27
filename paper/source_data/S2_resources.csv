@@ -1,0 +1,4 @@
+resource,field_count,count_definition
+Observed QA inputs,27,Canonical active dimensions after merging aliases
+Coded main bank,36,Coded categorical fields in delivered 10M bank
+Quality-evaluation panel,44,Processed fields for the fixed 100-persona quality panel

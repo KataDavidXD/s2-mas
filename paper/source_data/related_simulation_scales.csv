@@ -1,0 +1,9 @@
+Framework,Simulated population,Cited study / cohort
+S²-MAS,"12,000,000 synthetic households",Completed T3 application;24M paired-condition choices and12 ledger months
+OASIS [18],"1,000,000 users",Social-media population; inference follows user activation
+OneSim [17],"Approximately 100,000 agents",2025 v1 cultural-dissemination study; three rounds
+AgentSociety [19],"30,000 agents",Published LLM-agent scaling test; ten rounds
+MatrAIx [1],"Approximately 1,000 personas","Per study and model in Survey, Chatbot and Web evaluations"
+Generative Agents [20],25 agents,Smallville deployment; two game days
+MiroFish [21],Not specified,Primary project documentation gives no exact completed-run population
+TwinMarket [22],"1,000 agents",Selected scaling study; social participation with daily trading
