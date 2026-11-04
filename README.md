@@ -1,5 +1,10 @@
 # S²-MAS: A Society-Scale Multi-Agent Simulation Framework with a 500-Million-Persona Resource
 
+[![arXiv Paper](https://img.shields.io/badge/arXiv-2610.27746-b31b1b?logo=arxiv)](https://arxiv.org/abs/2610.27746)
+[![Hugging Face Models](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/collections/ya9919/s-mas-models-sharp)
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)
+[![GitHub Stars](https://img.shields.io/github/stars/KataDavidXD/s2-mas?style=flat&logo=github)](https://github.com/KataDavidXD/s2-mas/stargazers)
+
 S²-MAS combines a reusable population resource, learned decision policies and explicit financial accounting. The **YN family** comprises YN-mini, YN-Lite-4B and YN-master-9B, with suffixes identifying training variants and execution formats.
 
 - **500M synthetic household personas** form the population resource.
