@@ -1,5 +1,10 @@
 # S²-MAS：面向社会规模模拟的多智能体框架与五亿家庭画像资源
 
+[![arXiv Paper](https://img.shields.io/badge/arXiv-2610.27746-b31b1b?logo=arxiv)](https://arxiv.org/abs/2610.27746)
+[![Hugging Face Models](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/collections/ya9919/s-mas-models-sharp)
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)
+[![GitHub Stars](https://img.shields.io/github/stars/KataDavidXD/s2-mas?style=flat&logo=github)](https://github.com/KataDavidXD/s2-mas/stargazers)
+
 S²-MAS 将家庭画像、学习型决策模型与金融账本连接起来。模型统一使用 **YN 系列**名称：YN-mini、YN-Lite-4B、YN-master-9B；后缀区分训练变体和运行格式。
 
 - **5 亿合成家庭画像**构成人口资源。
@@ -15,7 +20,7 @@ S²-MAS 将家庭画像、学习型决策模型与金融账本连接起来。模
 
 ![家庭消费实验](paper/figures/household_scenario.png)
 
-资源入口：[模型目录](resources/MODEL_CATALOG.md)、[科研绘图](paper/figure_code/)、[模型训练与评测](reproduction/training/README.md)、[独立合成配套数据](resources/public_companion/README.md)、[Wikidata 组件](resources/wikidata/README.md)。既有模型仓库链接继续有效。
+资源入口：[HF 模型合集](https://huggingface.co/collections/ya9919/s-mas-models-sharp)、[HF 合成配套数据](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)、[模型目录](resources/MODEL_CATALOG.md)、[科研绘图](paper/figure_code/)、[模型训练与评测](reproduction/training/README.md)、[独立合成配套数据](resources/public_companion/README.md)、[Wikidata 组件](resources/wikidata/README.md)。既有模型仓库链接继续有效。
 
 5 亿资源、1,200 万执行队列与公开合成配套数据用途不同。受控状态写回实验最高测试 1,000 个 agent；大规模实验测试输入准备、推理和独立账本流水线。决策吞吐量统计处理的输入 token。
 
