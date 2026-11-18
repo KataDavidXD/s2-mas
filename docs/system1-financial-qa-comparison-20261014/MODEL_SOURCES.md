@@ -2,12 +2,12 @@
 
 Paper: [arXiv:2610.27746](https://arxiv.org/abs/2610.27746) · manuscript v60 · 22 October 2026.
 
-The comparison combines the public decision-model releases evaluated from 14 October 2026 with the hosted API comparisons reported through 22 October 2026. The [sharp model catalog](../../resources/MODEL_CATALOG.md) lists project releases and their controlled research terms. Upstream resources follow their own licenses and access conditions.
+The comparison combines the public decision-model releases evaluated from 14 October 2026 with the hosted API comparisons reported through 22 October 2026. The [YN model catalog](../../resources/MODEL_CATALOG.md) lists project releases and their controlled research terms. Upstream resources follow their own licenses and access conditions.
 
 | Benchmark name | Official release | Backbone / interface | Evaluated release |
 |---|---|---|---|
 | Base Laya | [Laya System One](https://github.com/LeonaDavinci/laya-system-one) | ModernBERT-large with a typed-choice decision head | Original base, published MLX conversion |
-| sharp-421m-mlx | [sharp-421m-mlx](https://huggingface.co/ya9919/sharp-421m-mlx) | Financially adapted Laya decision head and encoder | rlcd-2, MLX |
+| YN-421m-mlx | [YN-421m-mlx](https://huggingface.co/ya9919/YN-421m-mlx) | Financially adapted Laya decision head and encoder | rlcd-2, MLX |
 | OpenDecider Nano | [manjunathshiva/opendecider-nano](https://huggingface.co/manjunathshiva/opendecider-nano), [official interface](https://github.com/manjunathshiva/opendecider) | Ettin encoder and independent option scoring | Public main, OpenDecider 0.8.1 |
 | Von | [wfzyx/von](https://huggingface.co/wfzyx/von) | ModernBERT-based option decision model | von-1.3.0, von-sdk 1.3.7 |
 | Liquid d1 | [LiquidAI/d1-omni-600M](https://huggingface.co/LiquidAI/d1-omni-600M) | Released multimodal structured-decision model, text interface | Public main |

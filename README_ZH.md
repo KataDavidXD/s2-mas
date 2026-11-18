@@ -1,16 +1,16 @@
 # S²-MAS：面向社会规模模拟的多智能体框架与五亿家庭画像资源
 
 [![arXiv Paper](https://img.shields.io/badge/arXiv-2610.27746-b31b1b?logo=arxiv)](https://arxiv.org/abs/2610.27746)
-[![Hugging Face Models](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/collections/ya9919/s-mas-models-sharp)
+[![Hugging Face Models](https://img.shields.io/badge/Hugging%20Face-YN%20Models-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/collections/ya9919/s-mas-models-yn)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)
 [![Synced (机器之心) Coverage](https://img.shields.io/badge/Synced%20%28%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83%29-Coverage-0078D4)](https://mp.weixin.qq.com/s/7aATIcTRhA2hkn5qyFNOJg)
 [![GitHub Stars](https://img.shields.io/github/stars/KataDavidXD/s2-mas?style=flat&logo=github)](https://github.com/KataDavidXD/s2-mas/stargazers)
 
-S²-MAS 将家庭画像、学习型决策模型与金融账本连接起来。模型统一使用 **YN 系列**名称：YN-mini、YN-Lite-4B、YN-master-9B；后缀区分训练变体和运行格式。
+S²-MAS 将家庭画像、学习型决策模型与金融账本连接起来。模型统一使用 **YN 系列**名称：YN-322m、YN-421m、YN-4b、YN-9b；后缀区分训练变体和运行格式。
 
 - **5 亿合成家庭画像**构成人口资源。
 - **1,200 万个不同家庭**完成配对购买决策实验：2,400 万次一次性选择、2.88 亿个月度账本状态，14 张 GPU 用时 3 小时 59 分 17 秒。
-- **YN-mini-MLX 准确率 74.55%、题目宏平均 F1 38.37%**，共同测试包含 240,458 条记录。
+- **YN-421m-mlx 准确率 74.55%、题目宏平均 F1 38.37%**，共同测试包含 240,458 条记录。
 - **1,060 户家庭消费实验**集中呈现 4B/9B 独立决策、完全理性基准、带建议变体、分组 MAE、未来信息输入测试及消费—现金配对变化。独立 9B 的全年 MAE 比确定性理性基准低 3.42%，预测总体均值同时比观测值低 19.7%。
 
 [最新完整论文](paper/S2_MAS_Paper.pdf) · [LaTeX 与论文图](paper/) · [聚合结果](paper/source_data/) · [English](README.md)
@@ -21,7 +21,7 @@ S²-MAS 将家庭画像、学习型决策模型与金融账本连接起来。模
 
 ![家庭消费实验](paper/figures/household_scenario.png)
 
-资源入口：[HF 模型合集](https://huggingface.co/collections/ya9919/s-mas-models-sharp)、[HF 合成配套数据](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)、[模型目录](resources/MODEL_CATALOG.md)、[科研绘图](paper/figure_code/)、[模型训练与评测](reproduction/training/README.md)、[独立合成配套数据](resources/public_companion/README.md)、[Wikidata 组件](resources/wikidata/README.md)。既有模型仓库链接继续有效。
+资源入口：[HF 模型合集](https://huggingface.co/collections/ya9919/s-mas-models-yn)、[HF 合成配套数据](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)、[模型目录](resources/MODEL_CATALOG.md)、[科研绘图](paper/figure_code/)、[模型训练与评测](reproduction/training/README.md)、[独立合成配套数据](resources/public_companion/README.md)、[Wikidata 组件](resources/wikidata/README.md)。既有模型仓库链接继续有效。
 
 5 亿资源、1,200 万执行队列与公开合成配套数据用途不同。受控状态写回实验最高测试 1,000 个 agent；大规模实验测试输入准备、推理和独立账本流水线。决策吞吐量统计处理的输入 token。
 

@@ -1,19 +1,19 @@
 # Decision-model training and common-test evaluation
 
-This directory implements the ten budget-matched sharp training versions reported
+This directory implements the ten budget-matched YN training versions reported
 in [arXiv:2610.27746](https://arxiv.org/abs/2610.27746), manuscript v52,
 21 October 2026. They cover six methods: 421M encoder SFT at 50k/200k unique
 rows, SFT → RLCD at both budgets, SFT200k → CE at 200k, frozen 4B backbone
 plus head at both budgets, 4B LoRA plus head at both budgets, and 9B LoRA plus
 head at 200k. The [model catalog](../../resources/MODEL_CATALOG.md) maps these
-methods to `sharp-421m-*`, `sharp-4b-*`, `sharp-4b` and `sharp-9b` releases.
+methods to `YN-421m-*`, `YN-4b-*`, `YN-4b` and `YN-9b` releases.
 The original Laya checkpoint supplies the reference before additional training.
 
-`sharp-421m` names the 421M encoder branch. The full-data six-round checkpoint
+`YN-421m` names the 421M encoder branch. The full-data six-round checkpoint
 and its MLX runtime are listed separately from these matched-budget versions;
-the bilingual 322M checkpoint is `sharp-322m`.
+the bilingual 322M checkpoint is `YN-322m`.
 
-For an exported sharp-4b or sharp-9b package, inference does not require training or
+For an exported YN-4b or YN-9b package, inference does not require training or
 optimizer files:
 
 ```python
@@ -42,6 +42,8 @@ Transformers Qwen3.5 text backbone and PEFT. Optional Flash Linear Attention and
 causal-conv1d kernels affect throughput; the training scripts do not download
 custom kernels. Training requires CUDA; data preparation, prediction merging,
 method selection and paired statistics run on CPU.
+
+The published Hub repositories now use the `YN-` prefix. Existing `sharp-*` recipe IDs and local run paths in the commands below remain supported and unchanged. See the [model catalog](../../resources/MODEL_CATALOG.md) for current Hub links.
 
 ## Data and models
 

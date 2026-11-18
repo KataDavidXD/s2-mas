@@ -1,16 +1,16 @@
 # S²-MAS: A Society-Scale Multi-Agent Simulation Framework with a 500-Million-Persona Resource
 
 [![arXiv Paper](https://img.shields.io/badge/arXiv-2610.27746-b31b1b?logo=arxiv)](https://arxiv.org/abs/2610.27746)
-[![Hugging Face Models](https://img.shields.io/badge/Hugging%20Face-Models-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/collections/ya9919/s-mas-models-sharp)
+[![Hugging Face Models](https://img.shields.io/badge/Hugging%20Face-YN%20Models-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/collections/ya9919/s-mas-models-yn)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Dataset-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion)
 [![Synced (机器之心) Coverage](https://img.shields.io/badge/Synced%20%28%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83%29-Coverage-0078D4)](https://mp.weixin.qq.com/s/7aATIcTRhA2hkn5qyFNOJg)
 [![GitHub Stars](https://img.shields.io/github/stars/KataDavidXD/s2-mas?style=flat&logo=github)](https://github.com/KataDavidXD/s2-mas/stargazers)
 
-S²-MAS combines a reusable population resource, learned decision policies and explicit financial accounting. The **YN family** comprises YN-mini, YN-Lite-4B and YN-master-9B, with suffixes identifying training variants and execution formats.
+S²-MAS combines a reusable population resource, learned decision policies and explicit financial accounting. The **YN family** comprises YN-322m, YN-421m, YN-4b and YN-9b, with suffixes identifying training variants and execution formats.
 
 - **500M synthetic household personas** form the population resource.
 - **12M distinct households** completed a paired purchase-funding application: 24M one-shot choices and 288M monthly ledger states in 3 h 59 min 17 s on 14 GPUs (8 H100 and 6 A100).
-- **74.55% accuracy and 38.37% question-macro F1** for YN-mini-MLX on the 240,458-record common consumer-choice test.
+- **74.55% accuracy and 38.37% question-macro F1** for YN-421m-mlx on the 240,458-record common consumer-choice test.
 - **1,060-household consumption experiment:** standalone 4B/9B policies, fully rational benchmarks, advice variants, group MAE, information-timing interventions and paired consumption–cash responses. Standalone 9B's annual MAE is 3.42% lower than the deterministic rational benchmark's, while its population mean is 19.7% below observed consumption.
 
 [Latest paper](paper/S2_MAS_Paper.pdf) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
@@ -24,7 +24,7 @@ Manuscript v67 · 28 October 2026 · 56 pages · 13 main figures and 8 supplemen
 | Resource | Entry point and scope |
 |---|---|
 | Paper and scientific scripts | [Paper resources](paper/README.md), [aggregate figure code](paper/figure_code/) and [decision-model training and evaluation](reproduction/training/README.md) |
-| Decision models | [Model catalog](resources/MODEL_CATALOG.md) and [YN model collection](https://huggingface.co/collections/ya9919/s-mas-models-sharp); existing repository slugs remain valid |
+| Decision models | [Model catalog](resources/MODEL_CATALOG.md) and [YN model collection](https://huggingface.co/collections/ya9919/s-mas-models-yn); formerly `sharp-*`; old repository URLs redirect to the current `YN-*` entries |
 | Synthetic companion | [Generation code, schema and terms](resources/public_companion/README.md); 2M independently constructed financial personas and 32k unlabelled inputs; [dataset](https://huggingface.co/datasets/ya9919/s2-mas-synthetic-household-companion) |
 | Wikidata component | [CC0 knowledge files](resources/wikidata/README.md): 38 entities and 66 parent/type relations |
 
