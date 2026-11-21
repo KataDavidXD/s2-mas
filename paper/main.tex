@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-% Manuscript version: v67, 28 October 2026
+% Manuscript revision, 21 November 2026
 \RequirePackage{fix-cm}
 \documentclass[10pt]{article}
 \usepackage[a4paper,left=17mm,right=17mm,top=21mm,bottom=22mm]{geometry}
@@ -68,7 +68,7 @@ Hai~Liu\textsuperscript{6}, Chenwei~Wu\textsuperscript{8}, Jianyuan~Zhong\textsu
 Research contact: \href{mailto:yl9919@connect.hku.hk}{\nolinkurl{yl9919@connect.hku.hk}}\par
 }\vspace{5pt}
 \vspace{7pt}
-{\small 28 October 2026\par}
+{\small 21 November 2026\par}
 \end{center}
 \vspace{3pt}
 \begin{center}{\normalsize Abstract}\end{center}
@@ -76,7 +76,7 @@ Research contact: \href{mailto:yl9919@connect.hku.hk}{\nolinkurl{yl9919@connect.
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \begin{minipage}{\textwidth}\small
-Simulating economic responses at society scale requires decision rules that respond to household circumstances and accounting rules that track their consequences. We introduce S\textsuperscript{2}-MAS, a multi-agent simulation framework with a resource of 500 million synthetic household personas. It combines trainable candidate-scoring policies, reusable financial scenarios and explicit state transitions. Trained with SFT + RLCD on 2.93 million examples, YN-mini-MLX achieves 74.55\% accuracy and 38.37\% question-macro F1 on held-out consumer financial-choice tasks, improving on the training-question majority baseline by 2.78 and 6.21 percentage points. A completed application evaluates 12 million distinct households in two purchase-funding conditions: 24 million one-shot choices feed 288 million monthly ledger states in 3 h 59 min on 14 GPUs. Jointly increasing purchase goals and approved limits produces heterogeneous consumption, cash and repayment paths, with much of the consumption variation arising from transitions between deferral and purchase. In a separate 1,060-household retrospective consumption experiment, standalone YN-master-9B has 3.42\% lower annual MAE than the deterministic fully rational benchmark, alongside a 19.7\% lower predicted population mean than observed. Information-timing tests show how year labels and later outcome information change decisions. Together, these experiments establish an executable alternative for studying heterogeneous household behavior with learned policies and explicit financial accounting.
+Simulating economic responses at society scale requires decision rules that respond to household circumstances and accounting rules that track the consequences. We introduce S\textsuperscript{2}-MAS, a multi-agent simulation framework that combines 500 million synthetic household personas with trainable decision policies, reusable financial scenarios and explicit state transitions. After training on 2.93 million financial examples, YN-mini achieves 74.554\% accuracy and 38.375\% question-macro F1 in its MLX implementation on held-out consumer financial choices. These scores exceed the question-specific majority baseline by 2.783 and 6.206 percentage points, respectively. In a purchase-funding simulation, 12 million households each make a choice under two conditions. The 24 million choices generate 288 million monthly ledger states in 3~h 59~min on 14 GPUs. Jointly increasing purchase goals and approved credit limits produces heterogeneous changes in consumption, cash and repayments. Much of the variation in consumption arises from households switching between deferral and purchase. In a separate retrospective study of 1,060 households, standalone YN-master-9B reduces the mean absolute error in annual consumption by 3.42\% relative to the deterministic fully rational benchmark. Its mean forecast is 19.7\% below observed mean consumption. Further tests measure how year labels and information about later outcomes affect decisions. Together, these experiments establish an executable alternative for studying heterogeneous household behavior with learned policies and explicit financial accounting.
 \end{minipage}
 \endgroup
 \par\vspace{10pt}
@@ -89,9 +89,9 @@ Survey-conditioned agents allow predictions to be evaluated against recorded hum
 
 Household finance provides observed responses for decision learning and budget rules for calculating the consequences of selected plans. After an income loss, a household may draw on reserves to sustain consumption, reduce spending to preserve cash, or leave payments unmet. Buffer-stock saving, consumption commitments and heterogeneous-household models explain why resources and obligations matter for these adjustments \href{https://academic.oup.com/qje/article-abstract/112/1/1/1870884}{[22]}, \href{https://academic.oup.com/qje/article-abstract/122/2/831/1942152}{[23]}, \href{https://www.aeaweb.org/articles?id=10.1257/aer.20160042}{[31]}. Consumption, cash reserves and payment histories therefore reveal how the same financial condition affects households with different starting positions.
 
-YN-mini and YN-Lite-4B implement encoder and decoder decision policies, respectively. YN-mini uses 2,925,263 examples for SFT + RLCD; YN-mini-MLX is its runtime used in the completed financial applications. Genese separates decision proposals from state updates, while independent application ledgers calculate consumption, cash, debt payments and shortfalls. Paired experiments retain the same households and accounting rules across conditions.
+YN-mini and YN-Lite-4B implement encoder and decoder decision policies, respectively. We train YN-mini on 2,925,263 examples using supervised fine-tuning (SFT) and reinforcement learning for calibrated decisions (RLCD). The financial applications run this policy in MLX (YN-mini-MLX). Genese separates decision proposals from state updates. An independent ledger calculates consumption, cash balances, debt payments and shortfalls for the same households under each condition.
 
-On the one-shot consumer financial-choice benchmark, YN-mini-MLX predicts recorded answers and coded respondent targets, improving on training-question majority by 2.78 accuracy points and 6.21 question-macro F1 points. Matched information controls measure the contribution of household profiles, and the common benchmark compares complete decision interfaces (Section 5.3). In a controlled 1,000-agent benchmark with the same model allocation, Genese completes accepted decisions and state writeback faster than OneSim and OASIS (Section 5.5).
+On held-out consumer financial questions, YN-mini-MLX predicts recorded answers and coded respondent attributes more accurately than a baseline that assigns the most frequent training answer to each question. Matched information controls measure the contribution of household profiles (Section~5.2), and the one-shot benchmark compares models on the same choices (Section~5.3). In a controlled 1,000-agent benchmark with the same model allocation, Genese completes accepted decisions and state updates faster than OneSim and OASIS (Section~5.5).
 
 YN-mini-MLX runs eight financial task families. The 500M resource supports cohort construction; the completed population application executes 24M one-shot choices for 12M distinct households and advances their independently calculated monthly ledgers. Jointly raising purchase goals and approved limits increases simulated consumption. Education, employment and household-size differences persist after standardization to a common age--income distribution, largely through transitions from deferral to purchase. A separate retrospective consumption experiment compares learned and fully rational household policies against observed annual spending.
 
@@ -101,17 +101,17 @@ YN-mini-MLX runs eight financial task families. The 500M resource supports cohor
 
 Survey-conditioned agents connect language modeling to empirical response distributions. Argyle et al. condition GPT-3 on sociodemographic backstories and compare generated subpopulation responses with survey samples \href{https://www.cambridge.org/core/journals/political-analysis/article/abs/out-of-one-many-using-language-models-to-simulate-human-samples/035D7C8A55B237942FB6DBAD7CAA4E49}{[25]}. Park et al. construct interview- and survey-grounded agents for 1,052 Americans and evaluate held-out responses against the represented individuals' test--retest consistency \href{https://arxiv.org/abs/2411.10109v3}{[26]}. YN-mini learns direct decisions from observed consumer survey responses. Question-majority and matched-profile controls measure the contribution of respondent information to held-out answer prediction. The application ledger calculates the financial consequences of selected plans.
 
-MatrAIx combines dependency-aware population construction with biographies, reviews, surveys and self-reports \href{https://arxiv.org/abs/2608.04205}{[1]}. S\textsuperscript{2}-MAS uses a 36-field household representation constructed through processing and statistical calibration of real-survey data. PCA characterizes the economic structure of the resulting population.
+MatrAIx combines dependency-aware population construction with biographies, reviews, surveys and self-reports \href{https://arxiv.org/abs/2608.04205}{[1]}. S\textsuperscript{2}-MAS uses a 36-field household representation constructed through processing and statistical calibration of real-survey data. Principal component analysis (PCA) characterizes the economic structure of the resulting population.
 
 MatrAIx compares AI persona ratings with human assessments \href{https://arxiv.org/abs/2608.04205}{[1]}. We use this evaluation approach for the processed-field cohort described in Supplementary Methods M7.
 
 \subsection*{2.2. Direct decision models and financial supervision}
 
-Direct decision models score named alternatives or return structured probabilities without generating a prose answer. Jev's official introduction names RLCD as its training approach and its API defines typed outputs \href{https://typesafe.ai/blog/introducing-system-one-models-and-jev}{[35]}, \href{https://docs.typesafe.ai/introduction}{[11]}. Kev-4B publishes option-classification CE for its LoRA/pointer adapter; Laya's open trainer combines noisy-logit proper-reward policy gradients with soft CE \href{https://raw.githubusercontent.com/jaredpalmer/kev/main/docs/model-cards/kev-4b.md}{[37]}, \href{https://github.com/NandhaKishorM/laya/blob/main/laya/train.py}{[36]}. Encoder interfaces include Laya and Von; decoder decision readouts include Kev, Clef and Nimble \href{https://github.com/LeonaDavinci/laya-system-one}{[2]}--\href{https://github.com/jaredpalmer/kev}{[4]}, \href{https://blog.cloudflare.com/clef-decision-models/}{[8]}, \href{https://github.com/bespokelabsai/nimble}{[9]}. S\textsuperscript{2}-MAS adapts Laya's existing option-scoring interface to recorded household answers and coded states. Supplementary Methods M5 compares available interfaces on the same held-out consumer questions.
+Direct decision models score named alternatives or return structured probabilities without generating a prose answer. Jev's official introduction names RLCD as its training approach and its API defines typed outputs \href{https://typesafe.ai/blog/introducing-system-one-models-and-jev}{[35]}, \href{https://docs.typesafe.ai/introduction}{[11]}. Kev-4B trains its pointer adapter with low-rank adaptation (LoRA) and an option-classification cross-entropy (CE) loss; Laya's open trainer combines noisy-logit proper-reward policy gradients with soft CE \href{https://raw.githubusercontent.com/jaredpalmer/kev/main/docs/model-cards/kev-4b.md}{[37]}, \href{https://github.com/NandhaKishorM/laya/blob/main/laya/train.py}{[36]}. Encoder interfaces include Laya and Von; decoder decision readouts include Kev, Clef and Nimble \href{https://github.com/LeonaDavinci/laya-system-one}{[2]}--\href{https://github.com/jaredpalmer/kev}{[4]}, \href{https://blog.cloudflare.com/clef-decision-models/}{[8]}, \href{https://github.com/bespokelabsai/nimble}{[9]}. S\textsuperscript{2}-MAS adapts Laya's existing option-scoring interface to recorded household answers and coded states. Supplementary Methods M5 compares available interfaces on the same held-out consumer questions.
 
 Table S7 records the decision interfaces, backbones and readouts; Table S8 distinguishes financial adaptation from general decision training, instruction tuning and financial-language pretraining. Table S9 reports the populations and execution units of selected simulation studies.
 
-Financial language adaptation spans large-corpus pretraining, instruction tuning and expert numerical QA. BloombergGPT uses 363B financial tokens plus 345B general tokens for pretraining \href{https://arxiv.org/abs/2303.17564}{[12]}. PIXIU's NeurIPS 2023 FIT release contains 128,640 instruction samples for financial NLP and prediction \href{https://proceedings.nips.cc/paper\_files/paper/2023/file/6a386d703b50f1cf1f61ab02a15967bb-Paper-Datasets\_and\_Benchmarks.pdf}{[13]}. FinGPT distributes task-specific instruction sets, including 76.8K sentiment, 82.2K headline and 17.1K financial-QA training rows \href{https://github.com/AI4Finance-Foundation/FinGPT}{[14]}. FinQA targets expert-written numerical reasoning over financial reports \href{https://aclanthology.org/2021.emnlp-main.300/}{[15]}. These resources measure document interpretation, linguistic tasks and market prediction.
+Financial language adaptation spans large-corpus pretraining, instruction tuning and expert numerical question answering. BloombergGPT uses 363B financial tokens plus 345B general tokens for pretraining \href{https://arxiv.org/abs/2303.17564}{[12]}. PIXIU's NeurIPS 2023 FIT release contains 128,640 instruction samples for financial NLP and prediction \href{https://proceedings.nips.cc/paper\_files/paper/2023/file/6a386d703b50f1cf1f61ab02a15967bb-Paper-Datasets\_and\_Benchmarks.pdf}{[13]}. FinGPT distributes task-specific instruction sets, including 76.8K sentiment, 82.2K headline and 17.1K financial-QA training rows \href{https://github.com/AI4Finance-Foundation/FinGPT}{[14]}. FinQA targets expert-written numerical reasoning over financial reports \href{https://aclanthology.org/2021.emnlp-main.300/}{[15]}. These resources measure document interpretation, linguistic tasks and market prediction.
 
 Financial Laya checkpoints adapt the same direct-decision interface to narrower tasks. The public Laya-Finance card lists financial sentiment, topics, central-bank text, headlines and terminology \href{https://huggingface.co/hravi/laya-finance}{[27]}. A Banking77 adaptation trains typed decision heads on 7,994 customer-service messages while keeping its encoder frozen \href{https://huggingface.co/dimitrisdais/laya-banking77-typed-decisions}{[28]}. YN-mini updates its encoder and decision head with observed household and respondent survey targets. Supplementary Methods M5 evaluates the external Laya-Finance checkpoint on the same held-out consumer questions.
 
@@ -126,10 +126,9 @@ OneSim, OASIS, AgentSociety and Generative Agents study multi-agent activity at 
 Household-finance research studies consumption responses through the distribution of resources and obligations. Kaplan, Moll and Violante's heterogeneous-household framework links uninsured income risk and assets with different liquidity to heterogeneous consumption responses \href{https://www.aeaweb.org/articles?id=10.1257/aer.20160042}{[31]}. S\textsuperscript{2}-MAS represents income, spending, assets and debt jointly and evaluates how those states change the executable response to a shared financial condition.
 
 
-
 \section*{3. From population resources to executable experiments}
 
-An experiment in S\textsuperscript{2}-MAS specifies four inputs: a population, a policy adapter, a task and condition specification, and state-transition rules. The population supplies whole-agent attributes. The task converts current state and available information into a question with explicit alternatives. The adapter returns an option and its probabilities; the execution layer applies the registered consequence and records the resulting state. Ordinary agent, condition and task IDs connect these stages across partitions and retries.
+An experiment in S\textsuperscript{2}-MAS specifies four inputs: a population, a policy adapter, a task and condition specification, and state-transition rules. The population supplies each household's attributes. The task converts current state and available information into a question with explicit alternatives. The adapter returns an option and its probabilities; the execution layer applies the registered consequence and records the resulting state. Ordinary agent, condition and task IDs connect these stages across partitions and retries.
 
 A static episode evaluates a selected plan through its horizon. YN-Lite-4B and YN-mini provide two trainable policy routes within the same contract. Changing a policy or designated condition preserves the other inputs and the same-household pairing. Policy proposals and their feasible execution remain separately observable.
 
@@ -148,32 +147,34 @@ The financial task library instantiates this contract across eight families (Tab
 
 \end{figure}
 
-The static task suite contains 45,473 cases per language, including 22,736 baseline/intervention pairs and one additional case. Task specifications separate model-visible information from execution-only realizations and provide 147,787 conditional option paths over twelve months. The completed suite uses YN-mini-MLX and the original Laya reference. The population-scale application fixes one T3 contrast.
+The static task suite contains 45,473 cases per language, including 22,736 baseline/intervention pairs and one additional case. Task specifications separate model-visible information from execution-only realizations and provide 147,787 conditional option paths over twelve months. We evaluated YN-mini-MLX and original Laya on all eight tasks in English and Chinese (Appendix~S11). Section~6.2 applies the purchase-funding task (T3) to 12 million synthetic households.
 \begin{table}[!htbp]
 \begin{minipage}{\textwidth}
-\fontsize{8.5}{10.3}\selectfont
-\refstepcounter{table}\label{table:main1}Table \thetable{} | Financial task specifications and reported applications
+\fontsize{9}{11}\selectfont
+\renewcommand{\arraystretch}{1.10}
+\refstepcounter{table}\label{table:main1}Table \thetable{} | Household financial tasks, choices and outcomes
 \par\vspace{4pt}
-\begin{tabularx}{\textwidth}{@{}>{\hsize=1.028571\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=0.990476\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=0.876190\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.104762\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=.94\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.18\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.88\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
 \toprule
-Task / changed condition & Offered actions & Financial measures & Evidence reported here \\
+Financial task & Available actions & Financial outcomes \\
 \midrule
-T1: income and consumption & Adjust discretionary spending & Consumption, cash, unmet needs & Paired static YN-mini/Laya execution (Appendix S11) \\
-T2: medical expense funding & Use savings, borrow or combine both & Cash, debt, unmet needs & paired YN-mini/Laya execution (Appendix S11) \\
-T3: purchase-funding need & Defer purchase or finance a partial/full amount & Consumption, cash, payments, debt & Paired bilingual execution and 12M application (§6.2, Tables S32--S33) \\
-T4: loan product and term & Choose a short/long contract or defer purchase & Payments, cash, arrears & paired YN-mini/Laya execution (Appendix S11) \\
-T5: liquid saving and risky assets & Allocate between liquid and risky holdings & Cash, assets, unfunded needs & paired YN-mini/Laya execution (Appendix S11) \\
-T6: multiple-debt payments & Allocate a payment budget across debts & Debt balances, arrears, default & paired YN-mini/Laya execution (Appendix S11) \\
-T7: repayment difficulty & Retain schedule, prepay or request extension & Payments, debt, extension outcome & paired YN-mini/Laya execution (Appendix S11) \\
-T8: liquidity shortfall & Sell assets, refinance or combine both & Cash, assets, debt & paired YN-mini/Laya execution (Appendix S11) \\
+T1. Income and consumption & Adjust discretionary spending & Consumption, cash, unmet needs \\
+T2. Medical expenses & Use savings, borrow or combine both & Cash, debt, unmet needs \\
+T3. Purchase funding & Defer the purchase or finance part or all of it & Consumption, cash, payments, debt \\
+T4. Loan product and term & Choose a short- or long-term contract, or defer the purchase & Payments, cash, arrears \\
+T5. Liquid saving and risky assets & Allocate funds between liquid and risky assets & Cash, assets, unmet needs \\
+T6. Multiple debt payments & Allocate a payment budget across debts & Debt balances, arrears, default \\
+T7. Repayment difficulty & Keep the repayment schedule, prepay or request an extension & Payments, debt, extension outcome \\
+T8. Liquidity shortfall & Sell assets, refinance or combine both & Cash, assets, debt \\
 \bottomrule
 \end{tabularx}
-\par\vspace{3pt}{\fontsize{8}{9.5}\selectfont All eight families have paired specifications, conditional option paths and completed YN-mini/original-Laya execution with Chinese variants included. The static task set is derived from 207 financial parent records; parameter variants are not independent households. The separate DeepSeek workflow study remains in Appendix S9.}
+\par\vspace{4pt}{\fontsize{8}{9.6}\selectfont The paired scenarios vary the financial conditions for 207 underlying records. Multiple scenarios can therefore represent the same household.}
 \end{minipage}
 \end{table}
 
+
 \noindent\begin{minipage}{\textwidth}
-Consider a synthetic household assigned CNY 6,000 monthly income, CNY 3,000 opening cash, CNY 3,500 essential and CNY 1,800 usual adjustable spending, and no opening debt. A CNY 20,000 purchase goal offers deferral, half financing or full financing at 5\% nominal annual interest over 24 installments. Selecting full financing buys CNY 20,000 immediately and records the dated purchase contract. Month-0 cash is 3,000 + 6,000 + 20,000 - 20,000 - 3,500 - 1,800 = CNY 3,700, with repayment beginning in month 1.
+Consider a synthetic household with monthly income of CNY 6,000, opening cash of CNY 3,000 and no outstanding debt. Its usual monthly spending is CNY 3,500 on essentials and CNY 1,800 on discretionary items. The household can defer a CNY 20,000 purchase or finance half or all of it at 5\% nominal annual interest over 24 installments. If it finances the full purchase, the loan proceeds and the purchase payment offset each other. The household ends month 0 with CNY 3,700 in cash and begins repaying the loan in month 1.
 \end{minipage}
 
 
@@ -185,7 +186,7 @@ Real-survey data support the household attributes, recorded responses and coded 
 
 The reusable 10M consumer bank supports descriptive analysis of the constructed representation. The 12M execution cohort selects whole records without replacement from two 10M-row shards of the 500M resource, with the cohort fixed before inference.
 
-The same preparation produces supervision for policy learning. The 4,172,421 underlying QA observations have aligned bilingual views, retaining wording, alternatives and monetary units. Target-related fields are omitted from the input, and all questions and language copies for a respondent group share a split. The grouped training partition contains 2,925,263 examples per language. YN-mini uses the full training partition; the matched downstream comparisons use nested 50k/200k training sets, including the selected 200k YN-Lite-4B route (Appendix S10).
+The same preparation produces supervision for policy learning. The 4,172,421 underlying question--answer (QA) records have aligned bilingual views, retaining wording, alternatives and monetary units. Target-related fields are omitted from the input, and all questions and language copies for a respondent group share a split. The grouped training partition contains 2,925,263 examples per language. YN-mini uses the full training partition; the matched downstream comparisons use nested 50k/200k training sets, including the selected 200k YN-Lite-4B route (Appendix S10).
 \subsection*{4.2. Decision execution and financial accounting}
 
 Genese separates decision proposals from authoritative state updates (Figure~\ref{figure:main2}). World stores numeric state in entity--component--system arrays indexed by entity ID. Brain receives bounded decision partitions, reuses model connections and returns policy intents. World validates these intents, resolves registered effects and applies updates. Production PostgreSQL commits world state, the event outbox and command result together; a failed pre-commit transition restores the tick snapshot. An outbox relay publishes committed events asynchronously.
@@ -208,7 +209,6 @@ Section 5.5 reports controlled decision-and-writeback benchmarks and end-to-end 
 \end{figure}
 
 
-
 \subsection*{4.3. Learning and substituting decision policies}
 
 YN-Lite-4B and YN-mini learn choices from household states and task alternatives. YN-Lite-4B combines a decoder backbone with LoRA and a learned decision head; YN-mini adapts a compact encoder and option-marker head. Existing approaches include Jev's RLCD \href{https://typesafe.ai/blog/introducing-system-one-models-and-jev}{[35]}, Kev's option cross-entropy \href{https://raw.githubusercontent.com/jaredpalmer/kev/main/docs/model-cards/kev-4b.md}{[37]} and Laya's encoder-based SFT and RLCD \href{https://github.com/LeonaDavinci/laya-system-one}{[2]}, \href{https://github.com/NandhaKishorM/laya/blob/main/laya/train.py}{[36]}. Figure~\ref{figure:main3} groups the benchmarked interfaces into six routes. The fixed-budget study contains ten trained versions: five YN-mini encoder adaptations and five YN-Lite-4B or YN-master-9B head-only or LoRA adaptations, including YN-Lite-4B. Full-data YN-mini is reported separately.
@@ -226,16 +226,16 @@ The YN family comprises the compact YN-mini encoder, YN-Lite-4B and YN-master-9B
 
 The controls retain nested 50k/200k YN-Lite-4B head-only and LoRA routes, the selected YN-master-9B LoRA route, and native Laya SFT on the same example sets. Additional native RLCD and CE-continuation controls start from the same SFT parent and share an added full-pass budget and development rule. Unique examples, repeated exposures, selected checkpoints and allocated GPU-hours are reported in Appendix S10.
 
-All adapters preserve the state, question and semantic alternatives while translating the policy's scoring interface. The final 240,458-record test evaluates every fixed trained version and the original native reference after method and budget selection.
+Each adapter presents the same household state, question and alternatives to its model. After selecting the training method and budget, we evaluated all ten trained variants and original Laya on the same 240,458 test records.
 \FloatBarrier
 \section*{5. Evaluating the framework components}
 
-We evaluate household information, decision-policy training and substitution, and action execution. YN-Lite-4B and YN-mini provide the two principal training routes; matched controls compare adaptation choices, and execution benchmarks time accepted choices and state updates.
+We first evaluate the household representation and the contribution of respondent information to answer prediction. We then compare trained policies on common questions and measure the time required to execute their choices.
 
 
 \subsection*{5.1. Population structure and cohort coverage}
 
-PCA summarizes 14 standardized ordinal attributes in the constructed 10M bank. Among 7,227,206 complete records, PC1 explains 32.8904\% of variance and PC2 explains 11.5234\%. Income, spending, assets and debt load positively on the main axis, while age loads negatively. The 500M resource separately has a shard-mean PC1 explained variance of 32.62\%, with loading standard deviations at most 0.0003. Tables S17--S18 report the bank analysis, and M2--M3 give the descriptive protocol. The independent synthetic companion supplies a reusable population with assigned financial states: Figures S1 and S4 describe its 2M personas, including the income, liquidity and obligation dimensions that enter the scenario interface.
+PCA summarizes 14 standardized ordinal attributes in the constructed 10M bank. Among 7,227,206 complete records, PC1 explains 32.890\% of variance and PC2 explains 11.523\%. Income, spending, assets and debt load positively on the main axis, while age loads negatively. The 500M resource separately has a shard-mean PC1 explained variance of 32.62\%, with loading standard deviations at most 0.0003. Tables S17--S18 report the bank analysis, and M2--M3 give the descriptive protocol. The independent synthetic companion supplies a reusable population with assigned financial states: Figures S1 and S4 describe its 2M personas, including the income, liquidity and obligation dimensions that enter the scenario interface.
 
 Rendered-persona evaluation finds high field coverage and uneven sensitivity to reconstruction errors (Figure~\ref{figure:main4}). Six human raters score 100 personas against processed reference fields, with a pooled mean of 4.570/5. DeepSeek and GLM agree within one point of the human mean on 94.0\% of persona-dimension comparisons, while giving higher scores for avoidance of unsupported inference and overall fidelity. Their omission sensitivity differs: GLM detects 24 of 24 valid omitted-target pairs, compared with 2 of 24 for DeepSeek. M7 describes the rendering, scoring and perturbation design.
 
@@ -256,23 +256,23 @@ Rendered-persona evaluation finds high field coverage and uneven sensitivity to 
 
 \subsection*{5.2. Persona information and policy adaptation}
 
-Financial supervision improves shared-question prediction in the YN family (Figure~\ref{figure:main5}). The three-round policy raises native BF16 accuracy from 60.2080\% to 74.5336\% and question-macro F1 from 29.5574\% to 38.0164\%. Full-data YN-mini maintains shared-question accuracy at 74.5586\% while extending supervised task coverage: accuracy on the expanded test rises from 56.3657\% to 67.2728\%. The auxiliary YN-mini-322M policy evaluated in Chinese gains 21.61 accuracy points and 10.60 F1 points over its multilingual base.
+Financial training improved both accuracy and question-macro F1 on the shared test (Figure~\ref{figure:main5}). For the three-round English model, accuracy rose from 60.208\% to 74.534\% and F1 from 29.557\% to 38.016\%. After further training, full-data YN-mini scored 74.559\% on this test, while accuracy on the expanded test rose from 56.366\% to 67.273\%. On the Chinese test, YN-mini-322M gained 21.605 percentage points in accuracy and 10.597 points in F1 over its multilingual base.
 \begin{figure}[!htbp]
 
 \begin{minipage}{\textwidth}
 
 \centering
 
-\includegraphics[width=.90\textwidth,trim=0pt 4pt 0pt 2pt,clip,keepaspectratio]{figures/F3.pdf}
+\includegraphics[width=\textwidth]{figures/F3.pdf}
 
-\par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright \refstepcounter{figure}\label{figure:main5}Figure \thefigure{} | Financial training improves shared-question prediction in the YN family. a, The YN-mini-3rounds policy uses financial-question supervision; full-data YN-mini adds expanded financial supervision through another SFT and RLCD stage. YN-mini-322M derives from multilingual Laya and remains an initial-supervision adaptation. b, Accuracy gains over the corresponding base are 14.33 and 14.35 percentage points for the native variants and 21.61 points for YN-mini-322M evaluated in Chinese. c, Question-macro F1 rises by 8.46, 8.84 and 10.60 points. Comparisons use 240,458 shared financial-question QA observations, 119 question versions and PyTorch BF16. Connectors pair adaptations with their corresponding base; labels show scores and percentage-point differences. Accuracy weights observations equally; F1 averages candidate-class F1 within version, then weights supported versions equally.\par}
+\par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright \refstepcounter{figure}\label{figure:main5}Figure \thefigure{} | Prediction gains after financial training. Panels a and b show the change in accuracy and question-macro F1, respectively, from the corresponding base model. YN-mini-3rounds and full-data YN-mini use the English test and original Laya as their reference. YN-mini-322M uses the Chinese version of the same test and multilingual Laya as its reference. Each comparison covers 240,458 records and 119 question versions in PyTorch BF16. Accuracy weights records equally. Question-macro F1 averages F1 across answer classes within each question version, then weights versions equally.\par}
 
 \end{minipage}
 
 \end{figure}
 
 
-Respondent information also improves prediction when the trained policy and questions remain fixed (Figure~\ref{figure:main6}; Table~\ref{table:main3}). On the matched 20,000-QA panel, full profiles add 6.2475 question-macro F1 points over empty profiles (95\% interval 5.4958--6.7267) and 3.6047 points over another respondent's profile for the same question (2.7977--4.3155). Full profiles outperform both the question-only and training-majority controls, showing that household attributes contribute information beyond the question's answer distribution. The gain appears in financial knowledge, risk and investment attitudes, and saving and credit products.
+Respondent information improved prediction even with the policy and questions held fixed (Figure~\ref{figure:main6}, Table~\ref{table:main3}). On 20,000 matched test records, supplying the correct profile raised question-macro F1 by 6.248 percentage points over omitting the profile (95\% bootstrap interval 5.496 to 6.727). It also raised F1 by 3.605 points over supplying another respondent's profile for the same question (2.798 to 4.315). Gains appeared across questions about financial knowledge, risk and investment attitudes, and saving and credit products.
 
 \begin{figure}[!htbp]
 
@@ -283,144 +283,117 @@ Respondent information also improves prediction when the trained policy and ques
 \includegraphics[width=\textwidth,trim=0pt 12pt 0pt 20pt,clip,keepaspectratio]{figures/QA_PROFILE.pdf}
 
 \par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright \refstepcounter{figure}\label{figure:main6}Figure \thefigure{} | Respondent information improves survey-answer prediction.
-a, Question-macro F1 of full-profile YN-mini minus each labelled comparator, in percentage points; zero indicates equal scores and positive values favour full-profile YN-mini. Points show paired differences on 20,000 QA; lines show 95\% bootstrap intervals from 2,000 resamples of 6,752 household/respondent groups. The wrong-profile control supplies another respondent's information for the same question.
-b, YN-mini scores with full profiles (teal) and no respondent information (grey), grouped by financial question family. Counts give QA and question versions. Full profiles improve F1 in all three families.\par}
+a, Question-macro F1 of full-profile YN-mini minus each labelled comparator, in percentage points; zero indicates equal scores and positive values favour full-profile YN-mini. Points show paired differences on 20,000 test records. Lines show 95\% bootstrap intervals from 2,000 resamples of 6,752 household/respondent groups. The wrong-profile control supplies another respondent's information for the same question.
+b, Question-macro F1 for YN-mini with full profiles (teal) and without respondent information (grey). The three financial question families shown comprise 14,243 of the 20,000 matched records and 74 of the 119 question versions. Each family scores higher with the full profile.\par}
 
 \end{minipage}
 
 \end{figure}
 
 
-The adaptation controls distinguish the training choices supported by the common interface (Tables 2 and 5). YN-Lite-4B is the selected 200k 4B LoRA-plus-head route; updating the backbone is more effective than training only its head. The evaluated YN-Lite-4B and YN-master-9B routes reach similar accuracy under the common downstream protocol. Native Laya controls show that supervised adaptation supplies most of the encoder's predictive gain. Additional RLCD raises accuracy slightly over SFT, whereas CE continuation yields higher question-macro F1 than RLCD. Table~\ref{table:main2} retains every fixed-budget version, and Appendix S10 reports development selection, repeated exposures, training cost and paired intervals.
+\begin{samepage}With 200,000 training examples, the 4B model reached 67.284\% accuracy with a trained decision head and a frozen backbone. Training LoRA adapters alongside the head raised accuracy to 74.144\% (Table~\ref{table:main2}). Under the same one-pass LoRA protocol, YN-master-9B reached 74.092\%. Supervised fine-tuning accounted for most of the gain for native Laya. Continuing with RLCD increased accuracy slightly, while continuing with CE gave the higher question-macro F1. \hyperref[tab:paired-training]{Table~S25} gives the paired differences and intervals.\par\end{samepage}
 
-YN-mini-SFT-200k uses 0.733 allocated H100 GPU-hours, versus 24.043 for YN-Lite-4B and 29.782 for YN-master-9B (Table S24). These downstream-stage totals include validation and saving.
-\begin{table}[!htbp]
-\begin{minipage}{\textwidth}
-\fontsize{8.5}{10.3}\selectfont
-\refstepcounter{table}\label{table:main2}Table \thetable{} | Common-test performance of every fixed-budget trained version
-\par\vspace{4pt}
-\begin{tabularx}{\textwidth}{@{}>{\hsize=1.65\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.85\hsize\linewidth=\hsize}X>{\hsize=.9\hsize\linewidth=\hsize}X>{\hsize=.8\hsize\linewidth=\hsize}X>{\hsize=.8\hsize\linewidth=\hsize}X@{}}
-\toprule
-Model / adaptation & Unique training QA & Selected cumulative exposures & Accuracy (\%) & Question-macro F1 (\%) \\
-\midrule
-Original native Laya & 0 & 0 & 60.1972 & 29.5995 \\
-YN-Lite-4B-head-50k & 50,000 & 100,000 & 67.3369 & 31.0166 \\
-YN-Lite-4B-LORA-50k & 50,000 & 50,000 & 73.7289 & 36.6225 \\
-YN-Lite-4B-head-200k & 200,000 & 200,000 & 67.2841 & 30.8995 \\
-YN-Lite-4B & 200,000 & 200,000 & 74.1435 & 36.7343 \\
-YN-master-9B & 200,000 & 200,000 & 74.0919 & 36.6622 \\
-YN-mini-SFT-50k & 50,000 & 50,000 & 72.6942 & 34.8511 \\
-YN-mini-SFT-200k & 200,000 & 200,000 & 73.8753 & 35.9949 \\
-YN-mini-RLCD-50k & 50,000 & 100,000 & 72.9258 & 34.7841 \\
-YN-mini-RLCD-200k & 200,000 & 400,000 & 73.9268 & 36.0503 \\
-YN-mini-CE-200k & 200,000 & 250,688 & 73.8986 & 36.1732 \\
-\bottomrule
-\end{tabularx}
-\par\vspace{3pt}{\fontsize{8}{9.5}\selectfont shared test: 240,458 records, 119 question versions and 8,275 respondent groups; invalid decisions count as incorrect. All ten trained versions use their development-best checkpoint. Exposures count downstream example presentations in this experiment, including the SFT parent for continued native models. Original Laya has zero new downstream training here, in addition to its upstream training. YN-mini's full-data training is reported separately. Native and Qwen inference use BF16; the full-data YN-mini system comparison in Table~\ref{table:main4} uses MLX FP16. The complete training costs and terminal exposures appear in Appendix S10.}
-\end{minipage}
-\end{table}
 
 \begin{table}[!htbp]
 \begin{minipage}{\textwidth}
-\fontsize{8.5}{10.3}\selectfont
-\refstepcounter{table}\label{table:main3}Table \thetable{} | Matched respondent-information controls
+\fontsize{9}{11}\selectfont
+\renewcommand{\arraystretch}{1.10}
+\refstepcounter{table}\label{table:main2}Table \thetable{} | Financial-choice prediction after fixed-budget adaptation
 \par\vspace{4pt}
-\begin{tabularx}{\textwidth}{@{}XXXX@{}}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=1.35\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.76\hsize\linewidth=\hsize\raggedleft\arraybackslash}X>{\hsize=.89\hsize\linewidth=\hsize\raggedleft\arraybackslash}X@{}}
 \toprule
-Model / information condition & QA & Weighted accuracy (\%) & Question-macro F1 (\%) \\
+Model & Accuracy (\%) & Question-macro F1 (\%) \\
 \midrule
-Base Laya, full profile & 20000 & 60.14 & 29.26 \\
-YN-mini, full profile & 20000 & 74.40 & 37.77 \\
-YN-mini, no profile & 20000 & 71.19 & 31.53 \\
-YN-mini, wrong same-question profile & 20000 & 69.56 & 34.17 \\
-Training-question majority & 20000 & 71.71 & 32.09 \\
+Original native Laya & 60.197 & 29.600 \\
+YN-Lite-4B-head-50k & 67.337 & 31.017 \\
+YN-Lite-4B-LORA-50k & 73.729 & 36.623 \\
+YN-Lite-4B-head-200k & 67.284 & 30.900 \\
+YN-Lite-4B & 74.144 & 36.734 \\
+YN-master-9B & 74.092 & 36.662 \\
+YN-mini-SFT-50k & 72.694 & 34.851 \\
+YN-mini-SFT-200k & 73.875 & 35.995 \\
+YN-mini-RLCD-50k & 72.926 & 34.784 \\
+YN-mini-RLCD-200k & 73.927 & 36.050 \\
+YN-mini-CE-200k & 73.899 & 36.173 \\
 \bottomrule
 \end{tabularx}
-\par\vspace{3pt}{\fontsize{8}{9.5}\selectfont The same 20,000 held-out QA and 119 question versions enter every row. Accuracy uses full-test question frequencies. The majority baseline uses training answers only; wrong profiles are drawn within question version.}
+\par\vspace{4pt}{\fontsize{8}{9.6}\selectfont All models were evaluated in BF16 on 240,458 records from 8,275 respondent groups across 119 question versions. For each trained model, we used the checkpoint selected on the development set. \hyperref[tab:training-costs]{Table~S24} gives the training sample sizes, exposures and GPU-hours.}
 \end{minipage}
 \end{table}
 
+
+\begin{table}[!htbp]
+\begin{minipage}{\textwidth}
+\fontsize{9}{11}\selectfont
+\renewcommand{\arraystretch}{1.10}
+\refstepcounter{table}\label{table:main3}Table \thetable{} | Effect of respondent information on financial-choice prediction
+\par\vspace{4pt}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=1.35\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.76\hsize\linewidth=\hsize\raggedleft\arraybackslash}X>{\hsize=.89\hsize\linewidth=\hsize\raggedleft\arraybackslash}X@{}}
+\toprule
+Model and input & Weighted accuracy (\%) & Question-macro F1 (\%) \\
+\midrule
+Base Laya, full profile & 60.138 & 29.260 \\
+YN-mini, full profile & 74.398 & 37.773 \\
+YN-mini, no profile & 71.192 & 31.526 \\
+YN-mini, another respondent's profile & 69.557 & 34.169 \\
+Question-majority baseline & 71.707 & 32.093 \\
+\bottomrule
+\end{tabularx}
+\par\vspace{4pt}{\fontsize{8}{9.6}\selectfont All rows use the same 20,000 records and 119 question versions. Accuracy is weighted by question frequency in the full test. Each substituted profile comes from another respondent answering the same question version. The baseline uses the most frequent training answer for that version.}
+\end{minipage}
+\end{table}
 
 
 \FloatBarrier
 \subsection*{5.3. Comparing models on one-shot consumer choices}
 
-Fourteen models and a question-majority baseline predict recorded answers and coded respondent targets on the same 240,458 one-shot consumer financial-choice records and 119 question versions (Table~\ref{table:main4}a). YN-mini-MLX achieves the highest accuracy, 74.55\%, with question-macro F1 of 38.37\%. Its accuracy exceeds GLM-5.3-Flash (68.88\%), Jev 1.13 (65.26\%), DeepSeek-V4.1-Flash (63.75\%) and GPT-6-Luna (62.10\%). Their question-macro F1 scores are 38.00\%, 37.48\%, 37.94\% and 35.74\%, respectively.
+Fourteen models and a question-majority baseline were evaluated on the complete test (Table~\ref{table:main4}a). YN-mini-MLX had the highest accuracy at 74.554\%, 2.783 percentage points above the baseline. Its question-macro F1 was 38.375\%, 6.206 points above the baseline.
 
-GPT-6-Astra is evaluated on a fixed 500-group sample containing 14,441 records and all 119 question versions. Restricting YN-mini-MLX to those same records gives 74.73\% accuracy and 37.30\% question-macro F1, compared with GPT-6-Astra's 69.34\% and 36.24\% (Table~\ref{table:main4}b). The paired accuracy gain is 5.39 percentage points (95\% interval 4.76--6.10), and the F1 gain is 1.07 points (0.37--1.85), using 1,000 joint resamples of the 500 complete groups.
+We compared GPT-6-Astra with YN-mini-MLX on the same 14,441 records from 500 respondent groups (Table~\ref{table:main4}b). YN-mini-MLX scored 5.387 percentage points higher in accuracy (95\% bootstrap interval 4.759 to 6.102) and 1.066 points higher in question-macro F1 (0.367 to 1.853).
 
-The paired YN-mini-MLX--Jev accuracy gain is 9.2960 percentage points (95\% interval 9.0637--9.5174), and its F1 gain is 0.8953 points (0.5448--1.2834). Against GLM-5.3-Flash \href{https://docs.z.ai/guides/vlm/glm-5.3-flash}{[40]}, the paired accuracy gain is 5.6787 points (5.5090--5.8459), and the F1 gain is 0.3754 points (0.0398--0.7234). These intervals use 1,000 joint resamples of 8,275 household/respondent groups.
+On the full test, YN-mini-MLX exceeded Jev 1.13 by 9.296 percentage points in accuracy (95\% bootstrap interval 9.064 to 9.517) and by 0.895 points in question-macro F1 (0.545 to 1.283). The corresponding gains over GLM-5.3-Flash were 5.679 (5.509 to 5.846) and 0.375 (0.040 to 0.723) points. Both the full-test and subset intervals use 1,000 paired resamples of respondent groups.
 
-Clef Flash 9B has the highest F1, 38.5193\%; the paired YN-mini-MLX--Clef difference is -0.1447 percentage points (95\% interval -0.6208 to 0.4380). At 421M parameters, YN-mini reaches a similar measured F1 to the 9B comparator through this runtime, while scoring higher in accuracy. Relative to the question-majority baseline, its F1 increases by 6.2058 points.
+Clef Flash 9B had the highest question-macro F1 at 38.519\%. The F1 difference between YN-mini-MLX and Clef was $-0.145$ percentage points (95\% bootstrap interval $-0.621$ to $0.438$). The 421M-parameter YN-mini-MLX thus achieved a similar F1 score to the 9B model while predicting more individual answers correctly.
 
 \begin{table}[!htbp]
 \begin{minipage}{\textwidth}
-\fontsize{8}{9.7}\selectfont
-\refstepcounter{table}\label{table:main4}Table \thetable{} | One-shot consumer financial-choice prediction benchmark
+\fontsize{9}{11}\selectfont
+\renewcommand{\arraystretch}{1.10}
+\refstepcounter{table}\label{table:main4}Table \thetable{} | One-shot prediction of household financial choices
 \par\vspace{4pt}
-a, Complete test: 240,458 records; 119 question versions; 8,275 household/respondent groups
-\par\vspace{3pt}
-\begin{tabularx}{\textwidth}{@{}>{\hsize=1.45\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.65\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.00\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.25\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.75\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.90\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
+(a) Full test (240,458 records, 8,275 respondent groups)\par\vspace{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=1.58\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.83\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.68\hsize\linewidth=\hsize\raggedleft\arraybackslash}X>{\hsize=.91\hsize\linewidth=\hsize\raggedleft\arraybackslash}X@{}}
 \toprule
-Model & Model size & Backend & QA / valid & Accuracy (\%) & Question-macro F1 (\%) \\
+Model & Parameters & Accuracy (\%) & Question-macro F1 (\%) \\
 \midrule
-YN-mini-MLX & 421M & MLX CUDA FP16 & 240,458 / 240,458 & 74.5544 & 38.3746 \\
-Question-majority baseline & — & CPU; training labels & 240,458 / 240,458 & 71.7710 & 32.1688 \\
-GLM-5.3-Flash & 320B & API; provider precision & 240,458 / 240,360 & 68.8756 & 37.9991 \\
-Jev 1.13 & Not disclosed & API; provider precision & 240,458 / 240,458 & 65.2584 & 37.4793 \\
-Kev 4B & 4B & CUDA BF16 & 240,458 / 240,458 & 64.9120 & 36.0435 \\
-DeepSeek-V4.1-Flash & 552B + 196B & Provider API & 240,458 / 240,400 & 63.7546 & 37.9400 \\
-Clef Flash 9B & 9B & CUDA BF16 & 240,458 / 240,458 & 63.6490 & 38.5193 \\
-GPT-6-Luna & Not disclosed & Provider API & 240,458 / 240,458 & 62.1048 & 35.7412 \\
-Base Laya & 421M & MLX CUDA FP16 & 240,458 / 240,458 & 60.1831 & 29.5760 \\
-Laya-Finance (hravi) & 421M & CUDA FP32 & 240,458 / 240,458 & 59.8317 & 28.7871 \\
-Tev1 4B & 4B & CUDA BF16 & 240,458 / 240,458 & 58.8909 & 35.4105 \\
-Liquid d1-omni-600M & 587M & CUDA FP16 & 240,458 / 240,458 & 58.4227 & 28.2825 \\
-OpenDecider Nano & \textasciitilde{}400M & Ettin / CUDA FP32 & 240,458 / 240,458 & 57.3572 & 28.3874 \\
-Von 1.3 & 395M & CUDA FP32 & 240,458 / 240,458 & 42.4873 & 26.8372 \\
-GLiNER2.5-Decide & 486M & CUDA FP32 & 240,458 / 240,458 & 30.8815 & 19.6371 \\
+YN-mini-MLX & 421M & 74.554 & 38.375 \\
+Question-majority baseline & — & 71.771 & 32.169 \\
+GLM-5.3-Flash & 320B & 68.876 & 37.999 \\
+Jev 1.13 & Not disclosed & 65.258 & 37.479 \\
+Kev 4B & 4B & 64.912 & 36.043 \\
+DeepSeek-V4.1-Flash & 552B + 196B & 63.755 & 37.940 \\
+Clef Flash 9B & 9B & 63.649 & 38.519 \\
+GPT-6-Luna & Not disclosed & 62.105 & 35.741 \\
+Base Laya & 421M & 60.183 & 29.576 \\
+Laya-Finance (hravi) & 421M & 59.832 & 28.787 \\
+Tev1 4B & 4B & 58.891 & 35.411 \\
+Liquid d1-omni-600M & 587M & 58.423 & 28.283 \\
+OpenDecider Nano & \textasciitilde{}400M & 57.357 & 28.387 \\
+Von 1.3 & 395M & 42.487 & 26.837 \\
+GLiNER2.5-Decide & 486M & 30.881 & 19.637 \\
 \bottomrule
 \end{tabularx}
-\par\vspace{7pt}
-b, Matched fixed sample: 14,441 records; 119 question versions; 500 groups
-\par\vspace{3pt}
-\begin{tabularx}{\textwidth}{@{}>{\hsize=1.45\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.65\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.00\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.25\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.75\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.90\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
+\par\vspace{6pt}
+(b) Matched subset (14,441 records, 500 respondent groups)\par\vspace{2pt}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=1.58\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.83\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.68\hsize\linewidth=\hsize\raggedleft\arraybackslash}X>{\hsize=.91\hsize\linewidth=\hsize\raggedleft\arraybackslash}X@{}}
 \toprule
-Model & Model size & Backend & QA / valid & Accuracy (\%) & Question-macro F1 (\%) \\
+Model & Parameters & Accuracy (\%) & Question-macro F1 (\%) \\
 \midrule
-YN-mini-MLX & 421M & MLX CUDA FP16 & 14,441 / 14,441 & 74.7317 & 37.3026 \\
-GPT-6-Astra & Not disclosed & Provider API & 14,441 / 14,441 & 69.3442 & 36.2366 \\
+YN-mini-MLX & 421M & 74.732 & 37.303 \\
+GPT-6-Astra & Not disclosed & 69.344 & 36.237 \\
 \bottomrule
 \end{tabularx}
-\par\vspace{3pt}{\fontsize{7.7}{9.3}\selectfont Panel a uses the complete 240,458-record test across 119 question versions. Panel b uses the same fixed 500-group sample of 14,441 records for YN-mini-MLX and GPT-6-Astra, covering all 119 versions. QA / valid gives total records and legal decisions; invalid responses count as incorrect. GLM-5.3-Flash has 98 invalid responses and DeepSeek-V4.1-Flash has 58; the remaining rows have none. GLM reports 320B total and 18B active parameters \href{https://docs.z.ai/guides/vlm/glm-5.3-flash}{[40]}. DeepSeek reports 552B backbone plus 196B Engram parameters, with 8B active during prefill and 16B during decode \href{https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf}{[41]}. GLiNER\textquotesingle{}s complete checkpoint has 486M parameters; its card uses the 340M label \href{https://huggingface.co/fastino/GLiNER2.5-Decide}{[6]}. Kev, Clef and Tev sizes are their published backbone classes; other local sizes follow released weights or model cards. These are model sizes, not trainable-adapter counts. The majority baseline uses training labels. YN-mini and base Laya use MLX CUDA FP16 here; Table~\ref{table:main2} reports the controlled BF16 adaptations. Supplementary Methods M5 describes adapters and input settings.}
-\end{minipage}
-\end{table}
-
-\FloatBarrier
-The system comparison in Table~\ref{table:main4} captures differences across decision interfaces; matched controls in Table~\ref{table:main5} isolate the effects of adaptation within each backbone.
-\begin{table}[!htbp]
-\begin{minipage}{\textwidth}
-\fontsize{8.2}{10.0}\selectfont
-\refstepcounter{table}\label{table:main5}Table \thetable{} | What the component controls and policy comparisons establish
-\par\vspace{4pt}
-\begin{tabularx}{\textwidth}{@{}>{\hsize=1.02\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.18\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.80\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
-\toprule
-Tested component and contrast & Observed result & Contribution to the framework \\
-\midrule
-Respondent information: full versus empty profile, same YN-mini policy and questions; 20,000 QA & Full profiles add 6.2475 points of question-macro F1 (95\% interval 5.4958--6.7267) & Agent attributes contribute predictive information beyond the question alone \\
-\addlinespace[3pt]
-Compact domain adaptation: original native Laya versus SFT on 200k unique QA; same 421M architecture, BF16 & Accuracy rises from 60.1972\% to 73.8753\% & Survey supervision supplies most of the native policy's downstream gain \\
-\addlinespace[3pt]
-Continuation objective: same SFT200 parent and added 200k-example pass budget; development-selected RLCD and CE checkpoints & RLCD raises accuracy from SFT's 73.8753\% to 73.9268\%. Against CE continuation, RLCD's F1 is 0.1229 points lower (95\% interval -0.2073 to -0.0330) & The continuation objective changes the metric balance after SFT; CE has higher F1 in this comparison \\
-\addlinespace[3pt]
-Representation adaptation: YN-Lite-4B-head-200k versus YN-Lite-4B on the same 200k QA & Accuracy is 67.2841\% with head-only training and 74.1435\% with LoRA & Updating the representation adds value beyond the frozen-backbone route \\
-\addlinespace[3pt]
-Backbone substitution: YN-Lite-4B and YN-master-9B, same 200k-example one-pass LoRA protocol; different upstream histories & Accuracy is 74.1435\% and 74.0919\%; 9B minus 4B is -0.0516 points (-0.0981 to -0.0071) & These two adaptation routes reach similar accuracy on the common test \\
-\addlinespace[3pt]
-External policy substitution: full-data YN-mini versus complete decision-model systems on common records and alternatives & YN-mini exceeds Jev by 9.2960 accuracy points and 0.8953 F1 points. Clef has the highest F1: 38.5193\%, versus YN-mini's 38.3746\%; their paired F1 difference includes zero & A common interface exposes accuracy/F1 tradeoffs across decision systems with different readouts \\
-\bottomrule
-\end{tabularx}
-\par\vspace{3pt}{\fontsize{8}{9.5}\selectfont F1 denotes question-macro F1; differences are percentage points. The information control uses 6,752 respondent/household groups. The remaining rows use the common test of 240,458 records, 119 question versions and 8,275 respondent/household groups. Matched adaptations use BF16; the full-data YN-mini system comparison uses MLX FP16. Equal continuation pass budgets permit development to select different cumulative exposures: 400,000 for RLCD and 250,688 for CE. Tables 2 and 4 retain all version scores; Appendix S10 gives the training work and paired comparisons. External systems differ in upstream training and readout, so their row evaluates policy substitution rather than an architecture ablation.}
+\par\vspace{4pt}{\fontsize{8}{9.6}\selectfont Both panels cover all 119 question versions. Invalid choices count as incorrect. GLM-5.3-Flash returned 98 invalid choices and DeepSeek-V4.1-Flash returned 58. All remaining entries had valid choices for every record. \hyperref[sec:benchmark-methods]{Supplementary Methods~M5} describes the model sizes, inference settings and scoring.}
 \end{minipage}
 \end{table}
 
@@ -430,15 +403,14 @@ External policy substitution: full-data YN-mini versus complete decision-model s
 
 YN-mini-MLX deploys the full-data encoder policy in MLX CUDA FP16 for the population applications (Table S5a).
 
-The separate single-request deployment benchmark evaluates YN-mini-322M in PyTorch and YN-mini-322M-MLX through MLX (Table S5b). On that measured workload, YN-mini-322M-MLX delivers 2.42 times the same checkpoint's PyTorch shared-input-token throughput and 22.72 times Jev API's measured throughput. These rates count shared input tokens processed by a candidate-scoring request, rather than generated output tokens; the 322M timing workload is separate from the 421M population application and the 4B/9B household experiment. The three fixed Chinese inputs and single-request timing protocol are described in Supplementary Methods M9.
+The separate single-request deployment benchmark evaluates YN-mini-322M in PyTorch and YN-mini-322M-MLX through MLX (Table S5b). On that measured workload, the MLX implementation processed shared input tokens at 2.42 times the PyTorch rate for the same checkpoint and 22.72 times the measured Jev API rate. These rates count shared input tokens processed by a candidate-scoring request, rather than generated output tokens; the 322M timing workload is separate from the 421M population application and the 4B/9B household experiment. The three fixed Chinese inputs and single-request timing protocol are described in Supplementary Methods M9.
 \FloatBarrier
 \subsection*{5.5. Scaling execution and persistent state}
 
 Fixed-upstream comparisons hold the task and model allocation common, timing one accepted choice and writeback per agent. At 1,000 agents with one T4 replica, Genese takes 6.17 seconds, versus 7.45 for OASIS and 7.70 for OneSim. Twenty randomized interleaved immediate-response blocks isolate execution overhead: Genese's medians are 2.788 seconds with default partitions and 2.743 with parallel partitions. All 280 rounds across the two population sizes accept and write back every requested choice (Figure~\ref{figure:main7}; Table~\ref{table:main6}). These local adapters use a memory-backed SQLite WAL state--event store; production uses PostgreSQL.
 
-The 12M purchase-funding run tests the preparation--inference--ledger pipeline at population scale using YN-mini-MLX.
 
-The 12M-household application executes 24M one-shot choices and 288M monthly ledger states through the asynchronous HTTP policy--ledger runner. A total of 14 GPUs (eight H100 and six A100) complete the common end-to-end interval in 3 h 59 min 17 s, sustaining 1,671.66 choices/s (Figure~\ref{figure:main8}a). The runner overlaps input preparation, direct option scoring, ledgers and compressed writes across 2,400 work units, using service batches of at most sixteen requests. Supplementary Methods M9 defines the measured interval, token accounting and completed-result recovery.
+In the 12-million-household purchase-funding simulation, 14 GPUs (eight H100s and six A100s) processed 24 million choices and 288 million monthly ledger states in 3~h 59~min 17~s, an average of 1,671.66 choices per second (\hyperref[tab:scale-work]{Table~S33}). The runner overlaps input preparation, option scoring, ledger updates and compressed writes across 2,400 work units, with at most sixteen requests per service batch. Supplementary Methods~M9 defines the timing interval and token counts.
 \begin{figure}[!htbp]
 
 \begin{minipage}{\textwidth}
@@ -456,7 +428,7 @@ The 12M-household application executes 24M one-shot choices and 288M monthly led
 \begin{table}[!htbp]
 \begin{minipage}{\textwidth}
 \fontsize{8.5}{10.3}\selectfont
-\refstepcounter{table}\label{table:main6}Table \thetable{} | Fixed benchmark matrices and completed execution
+\refstepcounter{table}\label{table:main6}Table \thetable{} | Execution times by workload and model configuration
 \par\vspace{4pt}
 \begin{tabularx}{\textwidth}{@{}XXXX@{}}
 \toprule
@@ -464,8 +436,8 @@ Measurement & Configuration / scope & Genese result & Other results \\
 \midrule
 1,000 agents, immediate backend & 2\ensuremath{\times}Xeon Platinum 8268; 96 threads; 20 interleaved blocks & Default 2.788 s; partitions 2.743 s & AgentSociety 5.818; OneSim 6.223; OASIS 7.386; MiroFish 11.255; MatrAIx 1,062.153 s \\
 100 agents, immediate backend & 2\ensuremath{\times}Xeon Platinum 8268; 96 threads; 20 interleaved blocks & Default 0.362 s; partitions 0.360 s & AgentSociety 1.063; OneSim 0.521; OASIS 0.931; MiroFish 1.163; MatrAIx 96.529 s \\
-100 agents, YN-mini fl4 & 3 T4 model replicas; 3 blocks & 0.517 s & OneSim 0.683; OASIS 1.140; MiroFish 1.403 s \\
-100 agents, YN-mini fl5 & Separate adapter matrix; 3 blocks & 0.509 s & MatrAIx uses this separate reference (Supplementary Figure S5d) \\
+100 agents, YN-mini & 3 T4 model replicas; 3 blocks & 0.517 s & OneSim 0.683; OASIS 1.140; MiroFish 1.403 s \\
+100 agents, YN-mini (MatrAIx comparison) & Separate adapter matrix; 3 blocks & 0.509 s & MatrAIx uses this separate reference (Supplementary Figure S5d) \\
 1,000 agents, YN-mini & 1 T4 model replica; 2 blocks & 6.17 s & OASIS 7.45; OneSim 7.70 s \\
 1,000 agents, Jev & 2 blocks & 5.97 s & OASIS 8.21 s; OneSim 0/2 completed \\
 \bottomrule
@@ -477,43 +449,45 @@ Measurement & Configuration / scope & Genese result & Other results \\
 
 \section*{6. Applications across financial tasks and horizons}
 
-\subsection*{6.1. Application groups}
+\subsection*{6.1. Financial tasks and study populations}
 
 We evaluate YN-mini-MLX in an eight-task suite and the 12M purchase-funding experiment (Table~\ref{table:main7}). A separate two-million-household fixed-plan credit application supplies supporting consumption and cash results in Appendix S12.
 
-In that sixteen-month task, a 2,000-household comparison holds households, the available menu and the ledger fixed. YN-mini selects fully funded plans for 87.00\% of households, compared with 79.30\% for original Laya and 88.05\% for the fixed restrained-consumption plan C0. Relative to C0, YN-mini executes CNY 1,146.60 more consumption and retains CNY 1,115.34 less cash. Information and menu controls separate changes in what agents are told from changes in the available plans (Appendix S12).
+In that sixteen-month task, a 2,000-household comparison holds households, the available menu and the ledger fixed. YN-mini selects fully funded plans for 87.00\% of households, compared with 79.30\% for original Laya and 88.05\% for the fixed restrained-consumption plan C0. Relative to C0, households following YN-mini's choices spend CNY 1,146.60 more and retain CNY 1,115.34 less cash on average. Information and menu controls separate changes in what agents are told from changes in the available plans (Appendix S12).
 
 \begin{center}
 \begin{minipage}{\textwidth}
 \fontsize{8.3}{10.1}\selectfont
-\refstepcounter{table}\label{table:main7}Table \thetable{} | Applications connecting task reuse and population scale
+\refstepcounter{table}\label{table:main7}Table \thetable{} | Financial tasks, study populations and simulation horizons
 \par\vspace{4pt}
-\begin{tabularx}{\textwidth}{@{}XXXX@{}}
+\begin{tabularx}{\textwidth}{@{}>{\hsize=.94\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=1.18\hsize\linewidth=\hsize\raggedright\arraybackslash}X>{\hsize=.88\hsize\linewidth=\hsize\raggedright\arraybackslash}X@{}}
 \toprule
-Application & Population and conditions & Choices and state horizon & Framework capability \\
+Application & Households and conditions & Choices and accounting period \\
 \midrule
-Eight one-shot financial families & 207 financial parents; YN-mini and original Laya, with Chinese variants & 181,892 one-shot choices; twelve-month ledgers & Reuse one decision interface across eight mechanisms \\
-12M purchase-funding simulation & 12M distinct synthetic households; goals and tied approved limits of CNY 20k/30k & 24M one-shot choices; 288M monthly ledger states & Execute the same task and accounting rules at population scale \\
+Eight financial tasks & 207 underlying records, with English and Chinese inputs for YN-mini and original Laya & 181,892 one-shot choices with twelve-month ledgers \\
+Purchase-funding simulation & 12 million synthetic households, each facing CNY 20,000 and CNY 30,000 purchase goals with matching credit limits & 24 million one-shot choices and 288 million monthly ledger states \\
 \bottomrule
 \end{tabularx}
+
+
 \par\vspace{3pt}{\fontsize{8}{9.5}\selectfont One-shot selections govern the subsequent fixed ledger path. Tables S32--S33 give full 12M results and measurement scopes.}
 \end{minipage}
 \end{center}
 
 \subsection*{6.2. Reusing one-shot task interfaces at scale}
 
-YN-mini-MLX and original Laya completed 181,892 one-shot choices across the eight-task suite in English and Chinese: 181,888 choices in complete condition pairs and four supplemental T1 choices. Each task contains 2,842 pairs from its eligible financial parents within a 207-parent pool. Table S27 specifies the income, medical-bill, purchase, loan-rate, return, payment-budget and asset-value changes, together with their action consequences. Task-specific parent counts define the response intervals. In the exploratory T3 grid, raising the purchase goal and tied approved limit by 50\% raised YN-mini-MLX's consumption by CNY 17,148.49 (95\% interval 14,818.58--19,601.23), versus 1,194.03 with Chinese inputs (638.59--1,825.40). These intervals resampled the 207 parents. Both input languages use the same English-base checkpoints with identical financial specifications. The input-language difference accompanied changes in payments, debt and unmet routine needs (Appendix S11).
+YN-mini-MLX and original Laya completed 181,892 choices across eight tasks in English and Chinese. Of these, 181,888 belonged to complete condition pairs and four were additional T1 choices. Each task contained 2,842 pairs drawn from the eligible records in a pool of 207. Table~S27 lists the financial conditions, available choices and accounting rules. In the exploratory T3 scenarios, jointly raising the purchase goal and credit limit by 50\% increased mean consumption under YN-mini-MLX by CNY 17,148.49 with English inputs (95\% interval 14,818.58 to 19,601.23) and by CNY 1,194.03 with Chinese inputs (638.59 to 1,825.40). The intervals use resamples of the 207 underlying records. The checkpoint and financial specifications were the same in both languages. Payments, debt and unmet routine needs also differed by input language (Appendix~S11).
 
-The purchase-funding application uses one fixed T3 comparison for 12M distinct synthetic household agents, with English inputs and frozen YN-mini-MLX: the full-data English-base YN-mini checkpoint in MLX CUDA FP16. Each household faced a deferrable purchase goal and tied approved limit of CNY 20,000 or 30,000, with alternatives to defer, finance half, or finance the full purchase at an assigned 5\% annual rate over 24 months. The bounded HTTP decision service returned one selection per condition, which the independent accounting path carried through a twelve-month ledger (Figure~\ref{figure:main8}a; Table S33).
+In the population-scale T3 experiment, YN-mini-MLX made one decision in English for each of 12 million synthetic households under each condition. The purchase goal and approved credit limit were both CNY 20,000 in the first condition and CNY 30,000 in the second. Each household could defer the purchase or finance half or all of it at 5\% annual interest over 24 months. A separate ledger tracked the first twelve months after each choice.
 
-Executed purchase spending rose by CNY 2,890.97 per household; a CNY 3.79 reduction in routine consumption yielded a CNY 2,887.18 increase in total twelve-month consumption. Closing cash fell by CNY 928.76 and closing debt rose by CNY 2,072.45; actual debt payments and accrued interest also increased. Unfunded routine needs rose by CNY 3.79, and simulated default rose by 1.6663 percentage points (Figure~\ref{figure:main8}b--c). The ledger followed the first twelve months of the twenty-four-month financing contract (Tables S32--S33).
+Raising the goal and credit limit together increased mean purchase spending by CNY 2,890.97 per household. Routine spending fell by CNY 3.79, giving a net increase of CNY 2,887.18 in twelve-month consumption (Figure~\ref{figure:main8}a). Households ended the year with CNY 928.76 less cash and CNY 2,072.45 more debt on average. They paid an additional CNY 932.55 toward debt and accrued CNY 114.03 more interest. Unfunded routine needs rose by CNY 3.79. The share of households with a simulated default rose by 1.666 percentage points (Figure~\ref{figure:main8}b).
 
 
 \begin{figure}[!htbp]
 \begin{minipage}{\textwidth}
 \centering
 \includegraphics[width=\textwidth]{figures/SCALE12M_FRAMEWORK.pdf}
-\par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright \refstepcounter{figure}\label{figure:main8}Figure \thefigure{} | Population-scale execution and paired financial outcomes. a, YN-mini-MLX FP16 executes two frozen T3 conditions for 12M synthetic household agents, producing 24M one-shot choices and 288M monthly ledger states. Each selected action is executed through twelve accounting months. b, Full-panel paired mean changes, with total consumption comprising purchase and routine spending, when the deferrable purchase goal and tied approved limit rise from CNY 20,000 to 30,000, with an assigned 5\% annual rate and 24-month loan. c, Simulated default over the twelve-month ledger horizon rises from 17.35\% to 19.01\%. Differences are intervention minus baseline for the same synthetic agents. Tables S32--S33 give complete financial means and measurement definitions.\par}
+\par\vspace{5pt}{\fontsize{8.5}{10.3}\selectfont\raggedright \refstepcounter{figure}\label{figure:main8}Figure \thefigure{} | Household spending, financing and default under two purchase limits. Each of 12 million synthetic households faced a CNY 20,000 and a CNY 30,000 purchase goal with a matching credit limit. The loan term was 24 months at 5\% annual interest in both conditions. Panel a shows the mean within-household difference (CNY 30,000 condition minus CNY 20,000 condition). Spending, payments, interest and unmet needs are twelve-month totals. Cash and debt are closing balances. Panel b shows the share of households with any simulated bank-facility default during those twelve months. Table~S32 gives the underlying means.\par}
 \end{minipage}
 \end{figure}
 
@@ -524,7 +498,7 @@ Executed purchase spending rose by CNY 2,890.97 per household; a CNY 3.79 reduct
 
 Households whose decision makers are aged 25--34 show a consumption increment of CNY 9,161.69, compared with 12.88 at ages 55--64 and zero at ages 65 and above. Reweighting each age group to the full panel's income distribution preserves the contrast: the 25--34 mean becomes 9,181.62 and the age-65+ mean remains zero. Across annual-income groups, the mean increment rises from CNY 1,059.67 below 20,000 to 6,052.72 at 500,000 or above. Within ages 25--34, the income pattern is nonmonotonic, linking the marginal gradient to the joint household profile (Tables S38--S40). All 2,364,307 households with decision makers aged 65+ deferred the purchase in both conditions. At ages 55--64, 99.96\% also deferred in both; 859 switched from deferral to the full purchase, 36 kept the full-purchase option and two switched to deferral, producing the CNY 12.88 mean increment.
 
-The ledger connects these selected purchases to subsequent resources and payments (Figure~\ref{figure:main9}c). The lowest income bracket increases purchase spending by CNY 1,061.72 and reduces routine spending by 2.04; the highest bracket increases purchases by 6,052.72 with routine spending unchanged. Their additional actual debt payments are 60.45 and 2,877.92, respectively. T3 purchases are fully financed at origination; subsequent cash use and repayment determine the debt carried through the horizon. With income and opening resources fixed within each pair, $\Delta C=\Delta D-\Delta K-\Delta I$ links additional consumption to additional closing debt, cash drawdown and accrued interest.
+The ledger shows how households financed these purchases (Figure~\ref{figure:main9}c). Households in the lowest income bracket spent CNY 1,061.72 more on purchases and CNY 2.04 less on routine expenses. In the highest bracket, purchase spending rose by CNY 6,052.72 and routine spending was unchanged. Debt payments rose by CNY 60.45 and CNY 2,877.92, respectively. The loans covered the full initial cost of the purchases households chose to make. Subsequent cash use and repayments determined how much debt remained after twelve months. With income and opening resources fixed within each pair, $\Delta C=\Delta D-\Delta K-\Delta I$ relates the change in consumption to changes in closing debt, closing cash and accrued interest.
 
 \begin{figure}[!htbp]
 \begin{minipage}{\textwidth}
@@ -541,10 +515,9 @@ The choice transitions explain most of these differences. Of the CNY 3,427.57 di
 \par
 \end{samepage}
 
-Financial assets distinguish consumption size from the way households carry the obligation. The raw consumption increment is CNY 2,580.88 for financial assets below 10,000 and 3,054.60 for assets of 1--2 million. Reweighting both asset groups to the same age--income distribution reverses that ordering to 3,014.26 and 2,361.25. The higher-asset group nevertheless makes more additional actual payments (1,137.87 versus 905.61), uses more cash (1,136.28 versus 905.61) and retains less additional closing debt (1,311.52 versus 2,229.04). Higher financial-asset stock therefore accompanies a larger cash-and-payment contribution to a smaller consumption increment under the common profile mixture (Table S41).
+Financial assets distinguished the size of the consumption response from the way households financed it. Mean consumption rose by CNY 2,580.88 for households with less than CNY 10,000 in financial assets and by CNY 3,054.60 for those with CNY 1--2 million. After reweighting both groups to the same age and income distribution, this ordering reversed (CNY 3,014.26 and CNY 2,361.25, respectively). The higher-asset group drew down more cash (CNY 1,136.28 versus CNY 905.61) and made larger additional debt payments (CNY 1,137.87 versus CNY 905.61). At year end, its additional debt was CNY 1,311.52, compared with CNY 2,229.04 for the lower-asset group (Table~S41).
 
 Opening debt reveals a different adjustment. Under the same age--income mixture, households without old debt increase consumption by CNY 2,864.61 and actual payments by 1,063.72. Households with CNY 2--5 million of opening debt increase consumption by 1,811.13 and actual payments by 44.31; their cash drawdown is 43.97 and closing-debt increment 1,848.23. The high-debt group's additional consumption is carried predominantly as debt through the twelve-month window. Adding debt stock to age--income groups increases the between-group share of consumption-response variation by 1.40 percentage points and payment-response variation by 2.15 points (Tables S41--S42).
-
 
 
 \FloatBarrier
@@ -554,7 +527,7 @@ Opening debt reveals a different adjustment. Under the same age--income mixture,
 \clearpage
 \section*{8. Discussion and future work}
 
-The two applications address complementary questions: how purchase responses vary across a large population, and how well learned policies predict household consumption. In S\textsuperscript{2}-MAS, the shared state and action interface lets different policies be compared using the same household profiles and accounting rules.
+The purchase-funding simulation measures how consumption and financing change across households when the purchase goal and credit limit rise together. The retrospective study measures how closely annual consumption forecasts match recorded spending. Both use the same decision interface to compare policies under a common set of household profiles and accounting rules within each experiment.
 
 \subsection*{Purchase choices and financial channels}
 
@@ -569,11 +542,10 @@ The adaptation controls show that LoRA improves on head-only training and that s
 Extending the ledger to asset repricing, employment transitions and transfers would allow the same household policies to be studied under changes in both income and wealth.
 \section*{9. Conclusion}
 
-S\textsuperscript{2}-MAS combines household personas, trained decision policies and financial accounting to simulate responses across heterogeneous populations. In the 12M-household application, purchase transitions explain much of the consumption variation, while cash use, repayment and closing debt identify how households fund those purchases. The 1,060-household consumption--saving study connects learned decisions to observed annual consumption, group errors and information sensitivity. Together, these applications support learned decision rules as another route to large-scale heterogeneous-household modeling.
+S\textsuperscript{2}-MAS combines household personas, trained decision policies and financial accounting to simulate responses across heterogeneous populations. In the 12M-household application, purchase transitions explain much of the consumption variation, while cash use, repayment and closing debt identify how households fund those purchases. In the retrospective study of 1,060 households, we compared annual consumption forecasts with recorded spending, measured errors within income and wealth groups and tested how the policies responded to additional information. Together, these applications support learned decision rules as another route to large-scale heterogeneous-household modeling.
 \section*{Data and code availability}
 
 YN-Lite-4B and YN-mini are the principal decision policies; YN-mini-MLX provides the full YN-mini checkpoint in MLX format. Model weights and cards are available at \href{https://huggingface.co/ya9919/sharp-4b}{YN-Lite-4B}, \href{https://huggingface.co/ya9919/sharp-421m}{YN-mini} and \href{https://huggingface.co/ya9919/sharp-421m-mlx}{YN-mini-MLX}.
-
 
 
 Scientific reproduction code and reported non-identifying aggregates accompany the \href{https://github.com/KataDavidXD/s2-mas}{project repository}. The \href{https://github.com/KataDavidXD/s2-mas/blob/main/resources/MODEL_CATALOG.md}{model catalog} identifies the ten trained release versions and additional checkpoints and runtime formats. Project model releases use noncommercial research terms prohibiting redistribution and reverse engineering. Survey-derived decision QA, study-cohort records and individual trajectories remain under restricted access.
@@ -585,7 +557,7 @@ A \href{https://github.com/KataDavidXD/s2-mas/tree/main/resources/public_compani
 \fontsize{9}{11}\selectfont
 \hypersetup{urlcolor=ink,linkcolor=ink}
 \begin{thebibliography}{99}
-\setlength{\itemsep}{2.5pt}
+\setlength{\itemsep}{1.25pt}
 \setlength{\parsep}{0pt}
 \raggedright
 \bibitem{ref1} \href{https://arxiv.org/abs/2608.04205}{MatrAIx: Simulating the World with 8.3 Billion Persona Agents. 2026. arXiv:2608.04205}.
@@ -644,7 +616,6 @@ Inputs and evaluations use English by default; Chinese and bilingual settings ar
 The prepared corpus contains 4,172,421 QA observations with aligned Chinese and English views. Repeated questions and both languages are assigned together within an operational household/respondent group. Target-related attributes are excluded before prediction, and groups are partitioned across training, development, calibration and test.
 
 Supervision combines recorded questionnaire answers and targets formed from observed financial, occupation and education categories. Cleaning preserves question wording, complete alternatives, monetary units and the distinction between missing values and zero. Target-related fields are removed from each input as specified below.
-
 
 
 \begin{center}
@@ -728,7 +699,6 @@ The 10M consumer bank contains constructed, survey-derived records. Its delivere
 The 14-field PCA uses complete cases from the delivered 10M bank; loading and completeness summaries appear in Tables S17--S18.
 
 
-
 For the 12M purchase-funding application, two staged shards contain 20M distinct constructed records from the 500M resource. Seed 20261018, finite-pool inclusion caps and randomized cell-count rounding select whole rows without replacement before inference; uniform row draws operate within the selected cells. The 12M panel retains each selected profile, including 2,818,405 households with assigned baseline deficits and 543,327 with debt above CNY 500,000. The 35,000-household pilot is a nested subset whose completed choices are retained in the full run. Equal household weights define the reported fixed-panel means.
 
 \section*{Supplementary Methods M4. Full prediction and respondent-information results}
@@ -739,10 +709,9 @@ The serialized input places the question and candidate descriptions before the r
 
 The primary comparison uses 240,458 shared financial-question test records and 119 question versions in PyTorch BF16. Accuracy pools correct choices across records. Question-macro F1 averages candidate-class F1 within each question version and then weights versions equally; classes with zero denominators receive zero (Figure~\ref{figure:main5}).
 
-Figure~\ref{figure:main5} reports the shared-question native and bilingual predictions. On the expanded-supervision test, native question-macro F1 rises from 19.2395\% for YN-mini-3rounds to 27.8355\% for YN-mini. Appendix S3 reports the shared- and expanded-test results in MLX.
+Figure~\ref{figure:main5} shows gains over the corresponding base model on the English and Chinese versions of the shared test. On the expanded-supervision test, native question-macro F1 rises from 19.2395\% for YN-mini-3rounds to 27.8355\% for YN-mini. Appendix S3 reports the shared- and expanded-test results in MLX.
 
-A training-question majority baseline predicts each question's most frequent observed training answer. On all 240,458 shared test records, it obtains 71.7710\% accuracy and 32.1688\% question-macro F1. YN-mini in MLX obtains 74.5544\% and 38.3746\%, gains of 2.7834 and 6.2058 percentage points.
-
+A training-question majority baseline predicts each question's most frequent observed training answer. On all 240,458 shared test records, it obtains 71.771\% accuracy and 32.169\% question-macro F1. YN-mini in MLX obtains 74.554\% and 38.375\%, gains of 2.783 and 6.206 percentage points.
 
 
 Matched information controls use 20,000 held-out QA drawn proportionally within all 119 question versions, with at least one record per version and seed 20261014. Empty-profile requests remove only the respondent state. Wrong-profile requests use another held-out respondent's profile for the same question; questions, candidate meanings and gold answers remain fixed. Accuracy weights question versions by their full-test frequencies; F1 retains equal weighting of versions. Table~\ref{table:main3} reports all five conditions.
@@ -752,9 +721,7 @@ Intervals in Figure~\ref{figure:main6} use 2,000 paired bootstrap draws over the
 The registry defines three financial families: financial knowledge, risk and investment attitudes, and financial-product, saving and credit behavior. Full-profile versus empty-profile F1 is 30.0124\% versus 18.1357\% for financial knowledge, 28.1147\% versus 20.2383\% for risk and investment, and 50.6979\% versus 45.6257\% for saving and credit products (Figure~\ref{figure:main6}). The panel contains 14,243 QA across 74 versions in these families. Table S22 reports the remaining registry domains.
 
 
-
-On the complete shared test, YN-mini exceeds the training-majority F1 in 80 of 119 question versions, falls below it in two and ties in 37. The equal-version gain is 6.2058 percentage points (95\% interval 5.8711–6.4951); weighting those same version-level F1 scores by test frequency gives 7.4109 points (7.2111–7.6073). The two versions with fewer than 30 responses contain 22 QA and contribute -0.2489 points to the overall equal-version gain. Financial-knowledge, risk-attitude and saving/credit families each improve over majority (Table S2).
-
+On the complete shared test, YN-mini exceeds the training-majority F1 in 80 of 119 question versions, falls below it in two and ties in 37. The equal-version gain is 6.206 percentage points (95\% interval 5.871–6.495); weighting those same version-level F1 scores by test frequency gives 7.4109 points (7.2111–7.6073). The two versions with fewer than 30 responses contain 22 QA and contribute -0.2489 points to the overall equal-version gain. Financial-knowledge, risk-attitude and saving/credit families each improve over majority (Table S2).
 
 
 \begin{center}
@@ -775,9 +742,9 @@ Risk and investment attitudes & 17,923 & 7 & 7.79 & 7.36 to 8.18 \\
 \end{minipage}
 \end{center}
 
-\section*{Supplementary Methods M5. One-shot consumer financial-choice benchmark}
+\section*{Supplementary Methods M5. One-shot consumer financial-choice benchmark}\label{sec:benchmark-methods}
 
-All evaluated models receive the same financial-test questions, respondent states and semantic alternatives. Model-specific adapters map returned choices to the original candidate IDs. Table~\ref{table:main4}a reports fourteen models and the question-majority baseline on 240,458 records from 8,275 household/respondent groups. Table~\ref{table:main4}b compares GPT-6-Astra and YN-mini-MLX on the same fixed 500-group sample of 14,441 records; both panels cover all 119 question versions. The YN-mini-MLX predictions in panel b are restricted to the exact records evaluated by GPT-6-Astra. Invalid responses count as incorrect: GLM-5.3-Flash has 98 and DeepSeek-V4.1-Flash has 58. Question-macro F1 averages class-macro F1 over the original alternatives within each question version, then gives the 119 versions equal weight. Reported full-test paired intervals use 1,000 whole-group bootstrap resamples of the 8,275 groups, retaining all records from each sampled group. Table~\ref{table:main2} gives the controlled BF16 adaptations, and Figure~\ref{figure:main5} gives the native full-data predictions.
+All evaluated models receive the same financial-test questions, respondent states and semantic alternatives. Model-specific adapters map returned choices to the original candidate IDs. Table~\ref{table:main4}a reports fourteen models and the question-majority baseline on 240,458 records from 8,275 household/respondent groups. Table~\ref{table:main4}b compares GPT-6-Astra and YN-mini-MLX on the same fixed 500-group sample of 14,441 records; both panels cover all 119 question versions. The YN-mini-MLX predictions in panel b are restricted to the exact records evaluated by GPT-6-Astra. Invalid responses count as incorrect: GLM-5.3-Flash has 98 and DeepSeek-V4.1-Flash has 58. Question-macro F1 averages class-macro F1 over the original alternatives within each question version, then gives the 119 versions equal weight. Reported full-test paired intervals use 1,000 whole-group bootstrap resamples of the 8,275 groups, retaining all records from each sampled group. Table~\ref{table:main2} gives the controlled BF16 adaptations, and Figure~\ref{figure:main5} shows the full-data model's gains over original Laya in PyTorch BF16.
 
 The 119-version registry in Table S22 was fixed for the initial shared-model comparison and retained for the API extension. Every eligible held-out record in that registry enters the complete test. Targets comprise recorded questionnaire answers and coded respondent attributes; the authored financial applications execute selected plans through their specified action menus and accounting rules.
 
@@ -785,13 +752,13 @@ GPT-6-Luna and GPT-6-Astra were evaluated from 20 to 22 October 2026 with reques
 
 The Astra sample was drawn before the new model outputs using seed 20261020: 500 household/respondent groups are sampled at random, retaining every record in each selected group. It contains all 119 versions. YN-mini-MLX is restricted to exactly those records. Paired intervals jointly resample the 500 complete groups 1,000 times with seed 20261018 and use the 2.5th and 97.5th percentiles; the question-macro calculation retains all original candidate classes and equal version weights.
 
-The public Laya-Finance checkpoint contains 421,293,830 parameters, rounded to 421M in Table~\ref{table:main4} \href{https://huggingface.co/hravi/laya-finance}{[27]}.
+YN-mini-MLX and base Laya ran in MLX CUDA FP16. The fixed-budget models in Table~\ref{table:main2} used BF16. Table~\ref{table:main4} reports model size. GLM-5.3-Flash has 320B total and 18B active parameters \href{https://docs.z.ai/guides/vlm/glm-5.3-flash}{[40]}. DeepSeek reports a 552B backbone and 196B Engram parameters, with 8B active during prefill and 16B during decoding \href{https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf}{[41]}. GLiNER2.5-Decide has a 486M-parameter checkpoint \href{https://huggingface.co/fastino/GLiNER2.5-Decide}{[6]}. Kev, Clef and Tev are listed by published backbone size. Laya-Finance has 421,293,830 parameters \href{https://huggingface.co/hravi/laya-finance}{[27]}.
 
 Jev uses \texttt{jev-1.13.0} typed-choice outputs; GLM uses \texttt{glm-5.3-flash} text outputs. Both map to original candidates.
 
 QA caps are 512 input and 256 head tokens for YN-mini/base MLX, 512/192 for Laya-Finance, and 2,048 input tokens for OpenDecider. Decoder adapters preserve their released longer windows. CPU replay of the evaluated MLX input preparation finds no profile truncation on the full test or any matched information-control condition; full-profile inputs average 159.75 tokens and reach at most 230. The supplementary training procedure specifies the separate complete-context budgets used for financial deployment.
 
-YN-mini has the highest answer accuracy in the complete comparison. Clef Flash 9B obtains 38.5193\% question-macro F1 versus YN-mini's 38.3746\%. The paired YN-mini-minus-Clef difference is -0.1447 F1 points (95\% interval -0.6208 to 0.4380), alongside a 10.9054-point accuracy gain (10.6636–11.1576). The external Laya-Finance checkpoint obtains 59.8317\% accuracy and 28.7871\% F1; YN-mini's paired gains are 14.7227 points (14.5391–14.9281) and 9.5874 points (9.2879–9.8604).
+YN-mini has the highest answer accuracy in the complete comparison. Clef Flash 9B obtains 38.519\% question-macro F1 versus YN-mini's 38.375\%. The paired YN-mini-minus-Clef difference is -0.145 F1 points (95\% interval -0.621 to 0.438), alongside a 10.905-point accuracy gain (10.664–11.158). The external Laya-Finance checkpoint obtains 59.832\% accuracy and 28.787\% F1; YN-mini's paired gains are 14.723 points (14.539–14.928) and 9.587 points (9.288–9.860).
 
 \section*{Supplementary Methods M6. Training procedure and continuation variability}
 
@@ -799,7 +766,7 @@ The legacy 6-round identifier denotes the full-data release. Its optimization re
 
 Two independent full continuation replicas repeat the full-data continuation from the same completed 3-round initialization, each with one SFT pass and one RLCD pass over 2,925,263 training QA. All three runs use stage-specific calibration temperatures and evaluate the same 119-version, 240,458-QA financial-question test with RLCD fixed as the final stage.
 
-Across the three native BF16 RLCD runs, accuracy averaged 74.5647\% with sample standard deviation 0.0067 percentage points and range 74.5586–74.5719\%. Question-macro F1 averaged 38.3277\% with sample standard deviation 0.1254 points and range 38.1829–38.4016\% (Table S3). These repeats quantify continuation variability conditional on the common initialization, survey preparation and splits; the respondent bootstrap quantifies sample variation for a fixed checkpoint. The direct decision comparison in Table~\ref{table:main4} evaluates the 6-round rlcd-2 checkpoint in MLX CUDA FP16 on the same shared test.
+Across the three native BF16 RLCD runs, accuracy averaged 74.5647\% with sample standard deviation 0.0067 percentage points and range 74.559–74.5719\%. Question-macro F1 averaged 38.3277\% with sample standard deviation 0.1254 points and range 38.1829–38.4016\% (Table S3). These repeats quantify continuation variability conditional on the common initialization, survey preparation and splits; the respondent bootstrap quantifies sample variation for a fixed checkpoint. The direct decision comparison in Table~\ref{table:main4} evaluates the 6-round rlcd-2 checkpoint in MLX CUDA FP16 on the same shared test.
 
 On the expanded 418,597-record test, YN-mini obtains 67.2726\% accuracy and 27.8955\% F1 in MLX, and 67.2728\% and 27.8355\% natively. The paired MLX shared-QA gain over base is 14.3713 percentage points, with a stratified household/respondent bootstrap 95\% interval of 14.1686–14.5719. Supplementary Figure S2 provides deployment and expanded-scope results.
 
@@ -812,7 +779,7 @@ Table S3 | Continuation for YN-mini: seed variability
 \toprule
 Training run & SFT / RLCD seed & SFT Accuracy / F1 (\%) & RLCD Accuracy / F1 (\%) \\
 \midrule
-Reference & 202610120/202610121 & 74.5315 / 37.8775 & 74.5586 / 38.3986 \\
+Reference & 202610120/202610121 & 74.5315 / 37.8775 & 74.559 / 38.399 \\
 Replica 1 & 202610140/202610141 & 74.5519 / 37.9777 & 74.5635 / 38.4016 \\
 Replica 2 & 202610150/202610151 & 74.5739 / 37.8331 & 74.5719 / 38.1829 \\
 \bottomrule
@@ -830,7 +797,6 @@ Accuracy and consistency average 4.685 and 4.670; avoidance of unsupported infer
 Perturbed personas test changed facts, unsupported additions, missing targets and contradictions. GLM lowers the intended score on 95.8–100\% of valid pairs. DeepSeek's response ranges from 8.3\% for omissions to 76.0\% for contradictions. For omitted targets, GLM lowers the intended score in all 24 valid pairs, whereas DeepSeek does so in 2 of 24. Scoring proximity and known-error sensitivity therefore measure different properties of these judges (Appendix Table S16). These evaluations assess reconstruction of processed survey fields.
 
 Appendix S9 reports a separate DeepSeek financial-workflow study, comparing single-pass choice, self-check and multi-agent execution on constraint and goal adherence.
-
 
 
 \begin{center}
@@ -906,8 +872,8 @@ Table S5 | Financial prediction and deployment measurements
 \toprule
 Model and runtime & Accuracy (\%) & Question-macro F1 (\%) \\
 \midrule
-YN-mini-MLX & 74.5544 & 38.3746 \\
-Jev 1.13 · API & 65.2584 & 37.4793 \\
+YN-mini-MLX & 74.554 & 38.375 \\
+Jev 1.13 · API & 65.258 & 37.479 \\
 \bottomrule
 \end{tabularx}
 \par\vspace{6pt}
@@ -1352,7 +1318,6 @@ debt\_amount\_bracket & 0.168 \\
 \end{center}
 
 
-
 \begin{center}
 \begin{minipage}{\textwidth}
 \fontsize{8.5}{10.3}\selectfont
@@ -1553,11 +1518,11 @@ All native child checkpoints are selected on the same fixed development rule as 
 Table S24 records every formal run. Elapsed times are trainer-reported wall times, including in-stage validation and saving; allocated GPU-hours multiply this duration by eight H100 GPUs. Head-only time includes frozen feature preparation and small-head fitting under the reported run allocation. Inference is performed on six A100 40GB GPUs for the four 4B adaptations and two SFT controls, and on eight H100 80GB GPUs for 9B, native continuations and the original native reference.
 
 \begin{center}\begin{minipage}{\textwidth}\fontsize{8.2}{10}\selectfont
-Table S24 | Training exposure and cost for all ten formal versions
+\phantomsection\label{tab:training-costs}Table S24 | Training examples, exposures and computational cost
 \par\vspace{4pt}
 \begin{tabularx}{\textwidth}{@{}>{\hsize=1.6\hsize\linewidth=\hsize\raggedright\arraybackslash}X*{6}{>{\hsize=.9\hsize\linewidth=\hsize\raggedright\arraybackslash}X}@{}}
 \toprule
-Version & Unique QA & Stage terminal exposures & Selected cumulative exposures & Stage updates & Elapsed (s) & Allocated GPU-hours \\
+Version & Unique examples & Stage terminal exposures & Selected cumulative exposures & Stage updates & Elapsed (s) & Allocated GPU-hours \\
 \midrule
 YN-Lite-4B-head-50k & 50,000 & 250,000 & 100,000 & 65 & 466.85 & 1.037 \\
 YN-Lite-4B-LORA-50k & 50,000 & 50,000 & 50,000 & 1,563 & 3,498.63 & 7.775 \\
@@ -1578,24 +1543,24 @@ YN-mini-CE-200k & 200,000 & 200,000 & 250,688 & 261 & 328.27 & 0.729 \\
 Each paired interval resamples 8,275 respondent groups 1,000 times, carrying all question records from a selected group together. Accuracy and F1 differences use the same full 240,458-record test and candidate-class definitions. The six native comparisons distinguish initial SFT adaptation, the added RLCD stage, and equal added-budget CE continuation. A seventh direct comparison carries the same 200k-example test pairing across YN-Lite-4B and YN-master-9B, with 200,000 selected exposures and 6,250 updates each. Its 4B-Base and 9B post-trained initializations retain different upstream histories. Table S25 gives pointwise percentile 95\% intervals without adjustment for multiple comparisons. Full-data YN-mini serves as a separate system reference, with different cumulative supervision and MLX FP16 inference.
 
 \begin{center}\begin{minipage}{\textwidth}\fontsize{8.5}{10.3}\selectfont
-Table S25 | Direct downstream comparisons
+\phantomsection\label{tab:paired-training}Table S25 | Direct downstream comparisons
 \par\vspace{4pt}
 \begin{tabularx}{\textwidth}{@{}XXX@{}}\toprule
 Target $-$ reference & Accuracy difference (percentage points), 95\% CI & Question-macro F1 difference (percentage points), 95\% CI \\
 \midrule
-YN-mini-SFT-50k $-$ original & +12.4970 [+12.2933, +12.7005] & +5.2516 [+4.8365, +5.7448] \\
-YN-mini-SFT-200k $-$ original & +13.6781 [+13.4662, +13.8857] & +6.3953 [+5.9603, +6.9003] \\
-YN-mini-RLCD-50k $-$ YN-mini-SFT-50k & +0.2316 [+0.1771, +0.2854] & -0.0671 [-0.1516, +0.0197] \\
-YN-mini-RLCD-200k $-$ YN-mini-SFT-200k & +0.0516 [+0.0029, +0.1020] & +0.0554 [-0.0380, +0.1654] \\
-YN-mini-RLCD-200k $-$ YN-mini-CE-200k & +0.0283 [-0.0175, +0.0752] & -0.1229 [-0.2073, -0.0330] \\
-YN-mini-CE-200k $-$ YN-mini-SFT-200k & +0.0233 [-0.0288, +0.0731] & +0.1783 [+0.0762, +0.2770] \\
-YN-master-9B $-$ YN-Lite-4B & -0.0516 [-0.0981, -0.0071] & -0.0721 [-0.1725, +0.0404] \\
+YN-mini-SFT-50k $-$ original & +12.497 [+12.293, +12.701] & +5.252 [+4.836, +5.745] \\
+YN-mini-SFT-200k $-$ original & +13.678 [+13.466, +13.886] & +6.395 [+5.960, +6.900] \\
+YN-mini-RLCD-50k $-$ YN-mini-SFT-50k & +0.232 [+0.177, +0.285] & -0.067 [-0.152, +0.020] \\
+YN-mini-RLCD-200k $-$ YN-mini-SFT-200k & +0.052 [+0.003, +0.102] & +0.055 [-0.038, +0.165] \\
+YN-mini-RLCD-200k $-$ YN-mini-CE-200k & +0.028 [-0.018, +0.075] & -0.123 [-0.207, -0.033] \\
+YN-mini-CE-200k $-$ YN-mini-SFT-200k & +0.023 [-0.029, +0.073] & +0.178 [+0.076, +0.277] \\
+YN-master-9B $-$ YN-Lite-4B & -0.052 [-0.098, -0.007] & -0.072 [-0.173, +0.040] \\
 \bottomrule\end{tabularx}
 \end{minipage}\end{center}
 
 \subsection*{Complete reference comparison}
 
-Expanded-supervision YN-mini reaches 74.5544\% accuracy and 38.3746\% question-macro F1 under MLX FP16. Table S26 compares every trained variant against this reference on identical test records; staged supervision, checkpoint calibration and deployment precision differ between systems.
+Expanded-supervision YN-mini reaches 74.554\% accuracy and 38.375\% question-macro F1 under MLX FP16. Table S26 compares every trained variant against this reference on identical test records; staged supervision, checkpoint calibration and deployment precision differ between systems.
 
 \begin{center}\begin{minipage}{\textwidth}\fontsize{8.5}{10.3}\selectfont
 Table S26 | Every fixed-budget version minus YN-mini-MLX
@@ -1603,16 +1568,16 @@ Table S26 | Every fixed-budget version minus YN-mini-MLX
 \begin{tabularx}{\textwidth}{@{}XXX@{}}\toprule
 Version $-$ YN-mini-MLX & Accuracy difference (percentage points), 95\% CI & Question-macro F1 difference (percentage points), 95\% CI \\
 \midrule
-YN-Lite-4B-head-50k & -7.2175 [-7.3973, -7.0389] & -7.3580 [-7.6125, -7.0713] \\
-YN-Lite-4B-LORA-50k & -0.8255 [-0.9248, -0.7308] & -1.7520 [-1.9896, -1.4840] \\
-YN-Lite-4B-head-200k & -7.2703 [-7.4509, -7.0849] & -7.4751 [-7.7300, -7.1973] \\
-YN-Lite-4B & -0.4109 [-0.4977, -0.3248] & -1.6402 [-1.8938, -1.3596] \\
-YN-master-9B & -0.4625 [-0.5455, -0.3733] & -1.7124 [-1.9451, -1.4417] \\
-YN-mini-SFT-50k & -1.8602 [-1.9884, -1.7458] & -3.5234 [-3.7717, -3.2552] \\
-YN-mini-SFT-200k & -0.6791 [-0.7745, -0.5885] & -2.3797 [-2.6138, -2.1158] \\
-YN-mini-RLCD-50k & -1.6286 [-1.7503, -1.5133] & -3.5905 [-3.8261, -3.3252] \\
-YN-mini-RLCD-200k & -0.6276 [-0.7120, -0.5414] & -2.3242 [-2.5683, -2.0443] \\
-YN-mini-CE-200k & -0.6558 [-0.7453, -0.5602] & -2.2014 [-2.4396, -1.9297] \\
+YN-Lite-4B-head-50k & -7.217 [-7.397, -7.039] & -7.358 [-7.612, -7.071] \\
+YN-Lite-4B-LORA-50k & -0.826 [-0.925, -0.731] & -1.752 [-1.990, -1.484] \\
+YN-Lite-4B-head-200k & -7.270 [-7.451, -7.085] & -7.475 [-7.730, -7.197] \\
+YN-Lite-4B & -0.411 [-0.498, -0.325] & -1.640 [-1.894, -1.360] \\
+YN-master-9B & -0.462 [-0.545, -0.373] & -1.712 [-1.945, -1.442] \\
+YN-mini-SFT-50k & -1.860 [-1.988, -1.746] & -3.523 [-3.772, -3.255] \\
+YN-mini-SFT-200k & -0.679 [-0.774, -0.588] & -2.380 [-2.614, -2.116] \\
+YN-mini-RLCD-50k & -1.629 [-1.750, -1.513] & -3.590 [-3.826, -3.325] \\
+YN-mini-RLCD-200k & -0.628 [-0.712, -0.541] & -2.324 [-2.568, -2.044] \\
+YN-mini-CE-200k & -0.656 [-0.745, -0.560] & -2.201 [-2.440, -1.930] \\
 \bottomrule\end{tabularx}
 \par\vspace{3pt}{\fontsize{8}{9.5}\selectfont Complete test: 240,458 records, 119 question versions, 8,275 respondent groups. Pointwise 95\% intervals use 1,000 respondent-group bootstrap draws; every defined candidate class enters F1. All ten trained variants have zero invalid decisions.}
 \end{minipage}\end{center}
@@ -1762,7 +1727,7 @@ New-facility default (\%) & 0.9225 & 4.1371 & 3.2146 [3.2046, 3.2246] \\
 \end{minipage}\end{center}
 
 \begin{center}\begin{minipage}{\textwidth}\fontsize{8.2}{10}\selectfont
-Table S33 | Completed work and measurement scopes in the 12M application
+\phantomsection\label{tab:scale-work}Table S33 | Completed work and measurement scopes in the 12M application
 \par\vspace{4pt}
 \begin{tabularx}{\textwidth}{@{}>{\hsize=.95\hsize\linewidth=\hsize}X>{\hsize=.95\hsize\linewidth=\hsize}X>{\hsize=1.10\hsize\linewidth=\hsize}X@{}}\toprule
 Quantity & Measured value & Scope \\

@@ -10,12 +10,12 @@ S²-MAS combines a reusable population resource, learned decision policies and e
 
 - **500M synthetic household personas** form the population resource.
 - **12M distinct households** completed a paired purchase-funding application: 24M one-shot choices and 288M monthly ledger states in 3 h 59 min 17 s on 14 GPUs (8 H100 and 6 A100).
-- **74.55% accuracy and 38.37% question-macro F1** for YN-421m-mlx on the 240,458-record common consumer-choice test.
+- **74.554% accuracy and 38.375% question-macro F1** for YN-421m-mlx on the 240,458-record common consumer-choice test.
 - **1,060-household consumption experiment:** standalone 4B/9B policies, fully rational benchmarks, advice variants, group MAE, information-timing interventions and paired consumption–cash responses. Standalone 9B's annual MAE is 3.42% lower than the deterministic rational benchmark's, while its population mean is 19.7% below observed consumption.
 
-[Latest paper](paper/S2_MAS_Paper.pdf) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
+[Latest paper](paper/S2_MAS_Paper.pdf) · [Source ZIP](https://github.com/KataDavidXD/s2-mas/releases/download/paper-2026-11-21/S2_MAS_arXiv_2026-11-21_source.zip) · [LaTeX and figures](paper/) · [Reported aggregates](paper/source_data/) · [中文](README_ZH.md)
 
-Manuscript v67 · 28 October 2026 · 56 pages · 13 main figures and 8 supplementary figures · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
+Manuscript revision · 21 November 2026 · 55 pages · 13 main figures and 8 supplementary figures · [arXiv:2610.27746](https://arxiv.org/abs/2610.27746).
 
 ![S²-MAS framework](paper/figures/F1.png)
 

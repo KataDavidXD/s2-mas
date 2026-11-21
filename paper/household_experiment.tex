@@ -20,7 +20,7 @@ The household experiment used the head-only 200k YN-Lite-4B variant: Qwen3.5-4B-
 \clearpage
 \subsection*{7.2. Standalone policies predicted annual consumption with distinct distributional errors}
 
-We evaluated the forecasts against observed annual consumption, using fixed household weights and 2018 nominal yuan. Annual predictions combined eight-twelfths of pre-policy annual consumption with the four simulated months. This shared prefix is an assigned pre-announcement consumption level, not an observed eight-month outcome:
+We evaluated the forecasts against observed annual consumption, using fixed household weights and 2018 nominal yuan. Annual predictions combined eight-twelfths of pre-policy annual consumption with the four simulated months. We assigned the same pre-announcement spending to each policy for a given household. The annual forecast is
 \begin{equation}
  \widehat C_i=\frac{8}{12}C_i^{\mathrm{pre}}+\sum_{t=9}^{12}c_{it}^{\mathrm{policy}}.
  \label{hh:eq:annual}
@@ -31,7 +31,7 @@ Income and net wealth, each divided by the square root of household size, define
  \mu_g=\sum_{i\in g}\frac{w_i}{W_g}\left[\log(1+\widehat C_i)-\log(1+C_i)\right].
  \label{hh:eq:group}
 \end{equation}
-MAE and RMSE summarized household-level amount errors; income and wealth $D$ summarized the weighted root-mean-square of the group mean log errors, including overall prediction bias. Table~\ref{hh:tab:group-mae} additionally reports within-tertile MAE, averaging absolute household errors separately in each income and wealth group.
+Mean absolute error (MAE) and root mean square error (RMSE) summarize errors in household spending. For income and wealth tertiles, $D$ is the weighted root mean square of the group mean log errors and includes overall prediction bias. Table~\ref{hh:tab:group-mae} additionally reports within-tertile MAE, averaging absolute household errors separately in each income and wealth group.
 
 \begin{table}[H]
 \centering\footnotesize
@@ -104,10 +104,10 @@ Observed later statistics altered standalone consumption choices in 57 of 128 co
 
 
 
-In policy-only questions, YN-Lite-4B selected ``cannot determine'' in all 60 inputs. YN-master-9B selected an increase in all 40 direction questions; for annual magnitude, it selected ``cannot determine'' in 19 of 20 cases and a change within $\pm0.1\%$ once. Relabeling the policy year from 2018 to 2031 left the selected choices unchanged in all 12 paired tests per model, while moving the 9B annual-direction distribution by mean TV 0.05075 and the December-direction distribution by 0.03659. Reversing the synthetic retrospective claim changed its annual-magnitude distribution by 0.07819 and flipped one of four choices. Equivalent wording and reversed option order each changed one of 30 paired 9B choices and no 4B choices. These interventions measure decision sensitivity to supplied dates and outcome claims; they do not measure what the training corpus contains.
+In policy-only questions, YN-Lite-4B selected ``cannot determine'' in all 60 inputs. YN-master-9B selected an increase in all 40 direction questions; for annual magnitude, it selected ``cannot determine'' in 19 of 20 cases and a change within $\pm0.1\%$ once. Relabeling the policy year from 2018 to 2031 left the selected choices unchanged in all 12 paired tests per model, although the 9B response probabilities changed. Mean total variation distance was 0.05075 for the annual direction and 0.03659 for the December direction. Reversing the synthetic retrospective claim changed its annual-magnitude distribution by 0.07819 and flipped one of four choices. Equivalent wording and reversed option order each changed one of 30 paired 9B choices and no 4B choices. These interventions measure decision sensitivity to supplied dates and outcome claims; they do not measure what the training corpus contains.
 
 \clearpage
-\subsection*{7.5. Interpretation: An alternative policy module with distinct consumption--cash behavior}
+\subsection*{7.5. How household policies allocate income between consumption and cash}
 
 These results support learned decision rules as another route to large heterogeneous-agent simulation. A shared trained policy maps household profiles and budgets to feasible actions, while the simulator updates financial states. The contrast between 9B's lower individual error and 4B's smaller income-tertile mean log errors makes both levels of evaluation relevant as the simulated population becomes more heterogeneous.
 
